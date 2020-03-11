@@ -22,6 +22,6 @@ public class Room {
         guests = new ArrayList<>();
         roomTier = null;
         this.roomName = roomName;
-        this.roomId = RoomId.generate(roomName);
+        this.roomId = new RoomId(roomName);
     }
 }

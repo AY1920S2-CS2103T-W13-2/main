@@ -13,6 +13,7 @@ import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.hotel.Room;
 import seedu.address.model.hotel.person.Person;
 import seedu.address.storage.Storage;
+import seedu.address.commons.exceptions.DuplicateRoomException;
 
 /**
  *
@@ -39,10 +40,17 @@ public class Hotel implements Model {
     }
 
     /**
-     * Create new rooms.
+     * Create a new room with a room ID.
+     * @param roomId the room ID
+     * @throws DuplicateRoomException
      */
-    public void createRoom(String roomName) {
-
+    public void createRoom(String roomId) throws DuplicateRoomException {
+        for (Room room: rooms) {
+            if (room.getId().equals(roomId)) {
+                throw new DuplicateRoomException();
+            }
+        }
+        rooms.add(new Room(roomId));
     }
 
     /**

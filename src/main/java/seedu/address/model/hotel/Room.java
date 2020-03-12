@@ -24,4 +24,8 @@ public class Room {
         this.roomName = roomName;
         this.roomId = new RoomId(roomName);
     }
+
+    public String getId() {
+        return roomId.getId();
+    }
 }

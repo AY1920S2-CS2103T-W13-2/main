@@ -9,4 +9,8 @@ public abstract class Id {
     protected Id(String serializedId) {
         this.serializedId = serializedId;
     }
+
+    public String getId() {
+        return this.serializedId;
+    }
 }

@@ -1,7 +1,7 @@
 package seedu.address.model.ids;
 
 /**
- *
+ * Room ID
  */
 public class RoomId extends Id {
 

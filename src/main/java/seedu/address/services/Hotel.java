@@ -7,13 +7,13 @@ import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
+import seedu.address.commons.exceptions.DuplicateRoomException;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
 import seedu.address.model.hotel.Room;
 import seedu.address.model.hotel.person.Person;
 import seedu.address.storage.Storage;
-import seedu.address.commons.exceptions.DuplicateRoomException;
 
 /**
  *

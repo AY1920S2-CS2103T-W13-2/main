@@ -10,7 +10,24 @@ public abstract class Id {
         this.serializedId = serializedId;
     }
 
-    public String getId() {
-        return this.serializedId;
+    public String getSerializedId() {
+        return serializedId;
+    }
+
+    @Override
+    public String toString() {
+        return serializedId;
+    }
+
+    @Override
+    public boolean equals(Object oth) {
+        if (oth == this) {
+            return true;
+        }
+        if (!(oth instanceof Id)) {
+            return false;
+        }
+        Id othId = (Id) oth;
+        return othId.serializedId.equals(serializedId);
     }
 }

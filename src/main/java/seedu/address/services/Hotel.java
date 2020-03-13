@@ -46,7 +46,7 @@ public class Hotel implements Model {
      */
     public void createRoom(String roomId) throws DuplicateRoomException {
         for (Room room: rooms) {
-            if (room.getSerializedId().equals(roomId)) {
+            if (room.getId().equals(roomId)) {
                 throw new DuplicateRoomException();
             }
         }

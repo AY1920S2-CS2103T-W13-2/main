@@ -26,6 +26,6 @@ public class Room {
     }
 
     public String getId() {
-        return roomId.getId();
+        return roomId.getSerializedId();
     }
 }

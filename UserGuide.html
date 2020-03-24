@@ -74,10 +74,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>checkin</code></strong><code>n/ Smith r/101</code> : checks in <code>Smith</code> to room <code>101</code> in the hotel.</p>
+<p><strong><code>checkin</code></strong><code>checkin i/G1231231X rn/101 td/2020-03-14</code> : checks in guest <code>G1231231X</code> to room <code>101</code> in the hotel from current date until <code>2020-03-14</code>.</p>
 </li>
 <li>
-<p><strong><code>checkout</code></strong><code>r/101</code> : checks out guest from room <code>101</code> and removes guest from guest list.</p>
+<p><strong><code>checkout</code></strong><code>checkout i/G1231231X rn/101</code> : checks out guest <code>G1231231X</code> from room <code>101</code> and removes guest from guest list.</p>
 </li>
 <li>
 <p><strong><code>list</code></strong> : lists all guests</p>
@@ -106,13 +106,13 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>checkin n/NAME r/ROOM_NUMBER</code>, <code>NAME</code> is a parameter which can be used as <code>add n/Smith</code>.</p>
+<p>Words in <code>UPPER_CASE</code> are the parameters to be supplied by the user e.g. in <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code>, <code>ID</code> is a parameter which can be used as <code>checkin i/G1231231X</code>.</p>
 </li>
 <li>
 <p>Items in square brackets are optional e.g <code>n/NAME [t/TIER]</code> can be used as <code>n/Smith t/Gold</code> or as <code>n/Smith</code>.</p>
 </li>
 <li>
-<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME r/ROOM_NUMBER</code>, <code>r/ROOM_NUMBER n/NAME</code> is also acceptable.</p>
+<p>Parameters can be in any order e.g. if the command specifies <code>n/NAME rn/ROOM_NUMBER</code>, <code>rn/ROOM_NUMBER n/NAME</code> is also acceptable.</p>
 </li>
 </ul>
 </div>
@@ -136,7 +136,7 @@ Format: <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>checkin n/G1231231X r/101 td/2020-03-14</code></p>
+<p><code>checkin i/G1231231X rn/101 td/2020-03-14</code></p>
 </li>
 </ul>
 </div>
@@ -144,8 +144,8 @@ Format: <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code></p>
 <div class="sect2">
 <h3 id="checking-out-a-guest-code-checkout-code"><a class="link" href="#checking-out-a-guest-code-checkout-code">3.3. Checking out a guest: <code>checkout</code></a></h3>
 <div class="paragraph">
-<p>Checks out a guest to the hotel<br>
-Format: <code>checkout n/NAME r/ROOM_NUMBER</code></p>
+<p>Checks out a guest from the hotel<br>
+Format: <code>checkout i/ID rn/ROOM_NUMBER</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -153,7 +153,7 @@ Format: <code>checkout n/NAME r/ROOM_NUMBER</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>checkout n/Smith r/101</code></p>
+<p><code>checkout i/G1231231X rn/101</code></p>
 </li>
 </ul>
 </div>
@@ -168,7 +168,7 @@ Format: <code>checkout n/NAME r/ROOM_NUMBER</code></p>
 <h3 id="fetching-the-bill-of-a-guest-code-bill-code"><a class="link" href="#fetching-the-bill-of-a-guest-code-bill-code">3.5. Fetching the bill of a guest : <code>bill</code></a></h3>
 <div class="paragraph">
 <p>Retrieves the bill of a guest.<br>
-Format: <code>bill n/NAME [r/ROOM_NUMBER]&#8230;&#8203;</code></p>
+Format: <code>bill i/ID [r/ROOM_NUMBER]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -176,9 +176,6 @@ Format: <code>bill n/NAME [r/ROOM_NUMBER]&#8230;&#8203;</code></p>
 <ul>
 <li>
 <p>Fetches the entire bill tied to a guest&#8217;s name.</p>
-</li>
-<li>
-<p>Name must be entered as an input</p>
 </li>
 </ul>
 </div>
@@ -190,11 +187,8 @@ Format: <code>bill n/NAME [r/ROOM_NUMBER]&#8230;&#8203;</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>bill  n/Smith</code><br>
-Shows the bill for Smith&#8217;s stay up till present moment.</p>
-</li>
-<li>
-<p><code>bill n/Smith r/102</code><br></p>
+<p><code>bill  i/G1231231X</code><br>
+Shows the bill for guest with ID G1231231X&#8217;s stay up till present moment.</p>
 </li>
 </ul>
 </div>
@@ -269,18 +263,28 @@ Format: <code>service n/NAME  p/PRICE [d/DESCRIPTION]&#8230;&#8203;</code></p>
 <h3 id="reservations-code-reserve-code"><a class="link" href="#reservations-code-reserve-code">3.8. Reservations : <code>reserve</code></a></h3>
 <div class="paragraph">
 <p>Makes a reservation for a guest in the hotel<br>
-Format: <code>reserve n/NAME r/ROOM_NUMBER df/FROM_DATE dt/TO_DATE</code></p>
+Format: <code>reserve i/ID rn/ROOM_NUMBER df/FROM_DATE dt/TO_DATE</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Makes a reservation for <code>NAME</code> from <code>FROM_DATE</code> to <code>TO_DATE</code> at <code>ROOM_NUMBER</code>.</p>
+<p>Makes a reservation for <code>ID</code> from <code>FROM_DATE</code> to <code>TO_DATE</code> at <code>ROOM_NUMBER</code>.</p>
 </li>
 </ul>
 </div>
 </div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>reserve i/G1231231X rn/102 df/ 2020-12-12 dt/ 2020-12-30</code></p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
@@ -302,9 +306,6 @@ Format: <code>getroom n/NAME</code></p>
 </div>
 <div class="ulist">
 <ul>
-<li>
-<p><code>reserve r/ 102 df/ 2020-12-12 dt/ 2020-12-30</code><br></p>
-</li>
 <li>
 <p><code>getroom n/ Smith</code><br></p>
 </li>
@@ -418,4 +419,4 @@ e.g. <code>reserve n/White r/102</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-20 11:41:07 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-03-24 13:43:26 UTC</div></div></div></body></html>

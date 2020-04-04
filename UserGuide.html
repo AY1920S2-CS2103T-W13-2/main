@@ -16,20 +16,21 @@
 <ul class="sectlevel2">
 <li><a href="#viewing-help-code-help-code">4.1. Viewing help : <code>help</code></a></li>
 <li><a href="#adding-a-guest-code-addguest-code">4.2. Adding a guest : <code>addguest</code></a></li>
-<li><a href="#checking-in-a-guest-code-checkin-code">4.3. Checking in a guest: <code>checkin</code></a></li>
-<li><a href="#checking-out-a-guest-code-checkout-code">4.4. Checking out a guest: <code>checkout</code></a></li>
-<li><a href="#show-a-list-of-all-the-guests-in-the-hotel-code-list-code">4.5. Show a list of all the guests in the hotel: <code>list</code></a></li>
-<li><a href="#locating-guests-by-name-or-id-code-findguest-code">4.6. Locating guests by name or id: <code>findguest</code></a></li>
-<li><a href="#fetching-the-bill-of-a-guest-code-bill-code">4.7. Fetching the bill of a guest : <code>bill</code></a></li>
-<li><a href="#charging-a-service-code-service-code">4.8. Charging a service : <code>service</code></a></li>
-<li><a href="#making-a-reservation-code-reserve-code">4.9. Making a reservation : <code>reserve</code></a></li>
-<li><a href="#locating-the-room-of-a-guest-code-getroom-code">4.10. Locating the room of a guest : <code>getroom</code></a></li>
-<li><a href="#adding-a-tier-code-addtier-code">4.11. Adding a tier: <code>addtier</code></a></li>
-<li><a href="#setting-the-cost-for-a-room-code-setrcost-code">4.12. Setting the cost for a room : <code>setrcost</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">4.13. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">4.14. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">4.15. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">4.16. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#adding-a-room-code-addroom-code">4.3. Adding a room : <code>addroom</code></a></li>
+<li><a href="#checking-in-a-guest-code-checkin-code">4.4. Checking in a guest: <code>checkin</code></a></li>
+<li><a href="#checking-out-a-guest-code-checkout-code">4.5. Checking out a guest: <code>checkout</code></a></li>
+<li><a href="#show-a-list-of-all-the-guests-in-the-hotel-code-list-code">4.6. Show a list of all the guests in the hotel: <code>list</code></a></li>
+<li><a href="#locating-guests-by-name-or-id-code-findguest-code">4.7. Locating guests by name or id: <code>findguest</code></a></li>
+<li><a href="#fetching-the-bill-of-a-guest-code-bill-code">4.8. Fetching the bill of a guest : <code>bill</code></a></li>
+<li><a href="#charging-a-service-code-service-code">4.9. Charging a service : <code>service</code></a></li>
+<li><a href="#making-a-reservation-code-reserve-code">4.10. Making a reservation : <code>reserve</code></a></li>
+<li><a href="#locating-the-room-of-a-guest-code-getroom-code">4.11. Locating the room of a guest : <code>getroom</code></a></li>
+<li><a href="#adding-a-tier-code-addtier-code">4.12. Adding a tier: <code>addtier</code></a></li>
+<li><a href="#setting-the-cost-for-a-room-code-setrcost-code">4.13. Setting the cost for a room : <code>setrcost</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">4.14. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">4.15. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">4.16. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">4.17. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -75,7 +76,7 @@ Interested? Jump to the <a href="#quick-start">Section 3, &#8220;Quick Start&#82
 <p>Ensure you have Java <code>11</code> or above installed in your Computer.</p>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/releases">here</a>.</p>
+<p>Download the latest <code>main.jar</code> <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for Morpheus.</p>
@@ -97,10 +98,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><strong><code>checkin</code></strong><code>checkin i/G1231231X rn/101 td/2020-03-14</code> : checks in guest <code>G1231231X</code> to room <code>101</code> in the hotel from current date until <code>2020-03-14</code>.</p>
+<p><strong><code>checkin i/G1231231X rn/101 td/2020-03-14</code></strong> : checks in guest <code>G1231231X</code> to room <code>101</code> in the hotel from current date until <code>2020-03-14</code>.</p>
 </li>
 <li>
-<p><strong><code>checkout</code></strong><code>checkout i/G1231231X rn/101</code> : checks out guest <code>G1231231X</code> from room <code>101</code> and removes guest from guest list.</p>
+<p><strong><code>checkout rn/101</code></strong> : checks out the guest staying in room <code>101</code> and removes guest from guest list.</p>
 </li>
 <li>
 <p><strong><code>list</code></strong> : lists all guests</p>
@@ -141,6 +142,12 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <li>
 <p><code>addguest</code> command adds a guest.</p>
 </li>
+<li>
+<p><code>addtier</code> command adds a tier to a room</p>
+</li>
+<li>
+<p><code>setrcost</code> command sets the cost of a room.</p>
+</li>
 </ul>
 </div>
 </li>
@@ -149,13 +156,16 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>checkin</code> and <code>checkout</code> command receives and returns customers.</p>
+<p><code>checkin</code> and <code>checkout</code> commands receives and returns guestss.</p>
 </li>
 <li>
-<p><code>service</code> command charges customers for getting services.</p>
+<p><code>service</code> command charges guests for requesting services.</p>
 </li>
 <li>
 <p><code>reserve</code> command makes a reservation.</p>
+</li>
+<li>
+<p><code>bill</code> command fetches the bill of a guest.</p>
 </li>
 </ul>
 </div>
@@ -168,10 +178,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code>list</code> command shows list of guests</p>
 </li>
 <li>
-<p><code>findguest</code>, <code>locateroom</code> quickly looks up for queries of rooms and quests.</p>
-</li>
-<li>
-<p><code>clear</code> command clears previous responses.</p>
+<p><code>findguest</code>, <code>getroom</code> quickly looks up for queries of rooms and quests.</p>
 </li>
 </ul>
 </div>
@@ -185,6 +192,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 <li>
 <p><code>exit</code> command quits the app.</p>
+</li>
+<li>
+<p><code>clear</code> command clears all entries.</p>
 </li>
 </ul>
 </div>
@@ -232,7 +242,19 @@ Add John Doe with his information into the database.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="checking-in-a-guest-code-checkin-code"><a class="link" href="#checking-in-a-guest-code-checkin-code">4.3. Checking in a guest: <code>checkin</code></a></h3>
+<h3 id="adding-a-room-code-addroom-code"><a class="link" href="#adding-a-room-code-addroom-code">4.3. Adding a room : <code>addroom</code></a></h3>
+<div class="paragraph">
+<p>Create a room in the hotel list.<br>
+Format: <code>addroom rn/ROOM_NUMBER</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:
+* <code>addroom rn/101</code>
+Add Room 101 into the database.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="checking-in-a-guest-code-checkin-code"><a class="link" href="#checking-in-a-guest-code-checkin-code">4.4. Checking in a guest: <code>checkin</code></a></h3>
 <div class="paragraph">
 <p>Checks in a guest to the hotel from the current date until the TO_DATE<br>
 Format: <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code></p>
@@ -249,10 +271,10 @@ Format: <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="checking-out-a-guest-code-checkout-code"><a class="link" href="#checking-out-a-guest-code-checkout-code">4.4. Checking out a guest: <code>checkout</code></a></h3>
+<h3 id="checking-out-a-guest-code-checkout-code"><a class="link" href="#checking-out-a-guest-code-checkout-code">4.5. Checking out a guest: <code>checkout</code></a></h3>
 <div class="paragraph">
 <p>Checks out a guest from the hotel<br>
-Format: <code>checkout i/ID rn/ROOM_NUMBER</code></p>
+Format: <code>checkout rn/ROOM_NUMBER</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -260,19 +282,19 @@ Format: <code>checkout i/ID rn/ROOM_NUMBER</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>checkout i/G1231231X rn/101</code></p>
+<p><code>checkout rn/101</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="show-a-list-of-all-the-guests-in-the-hotel-code-list-code"><a class="link" href="#show-a-list-of-all-the-guests-in-the-hotel-code-list-code">4.5. Show a list of all the guests in the hotel: <code>list</code></a></h3>
+<h3 id="show-a-list-of-all-the-guests-in-the-hotel-code-list-code"><a class="link" href="#show-a-list-of-all-the-guests-in-the-hotel-code-list-code">4.6. Show a list of all the guests in the hotel: <code>list</code></a></h3>
 <div class="paragraph">
 <p>Format: <code>list</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-guests-by-name-or-id-code-findguest-code"><a class="link" href="#locating-guests-by-name-or-id-code-findguest-code">4.6. Locating guests by name or id: <code>findguest</code></a></h3>
+<h3 id="locating-guests-by-name-or-id-code-findguest-code"><a class="link" href="#locating-guests-by-name-or-id-code-findguest-code">4.7. Locating guests by name or id: <code>findguest</code></a></h3>
 <div class="paragraph">
 <p>Finds persons whose names or id match.
 Format: <code>findguest n/NAME &#8230;&#8203; n/NAME i/ID &#8230;&#8203; i/ID</code></p>
@@ -304,7 +326,7 @@ Return person with name Alice or id A10</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="fetching-the-bill-of-a-guest-code-bill-code"><a class="link" href="#fetching-the-bill-of-a-guest-code-bill-code">4.7. Fetching the bill of a guest : <code>bill</code></a></h3>
+<h3 id="fetching-the-bill-of-a-guest-code-bill-code"><a class="link" href="#fetching-the-bill-of-a-guest-code-bill-code">4.8. Fetching the bill of a guest : <code>bill</code></a></h3>
 <div class="paragraph">
 <p>Retrieves the bill of a guest.<br>
 Format: <code>bill i/ID [rn/ROOM_NUMBER]</code></p>
@@ -333,7 +355,7 @@ Shows the bill for guest with ID G1231231X&#8217;s stay up till present moment.<
 </div>
 </div>
 <div class="sect2">
-<h3 id="charging-a-service-code-service-code"><a class="link" href="#charging-a-service-code-service-code">4.8. Charging a service : <code>service</code></a></h3>
+<h3 id="charging-a-service-code-service-code"><a class="link" href="#charging-a-service-code-service-code">4.9. Charging a service : <code>service</code></a></h3>
 <div class="paragraph">
 <p>Adds a service to the guest&#8217;s tab.<br>
 Format: <code>service n/NAME  p/PRICE [d/DESCRIPTION]&#8230;&#8203;</code></p>
@@ -367,7 +389,7 @@ Format: <code>service n/NAME  p/PRICE [d/DESCRIPTION]&#8230;&#8203;</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="making-a-reservation-code-reserve-code"><a class="link" href="#making-a-reservation-code-reserve-code">4.9. Making a reservation : <code>reserve</code></a></h3>
+<h3 id="making-a-reservation-code-reserve-code"><a class="link" href="#making-a-reservation-code-reserve-code">4.10. Making a reservation : <code>reserve</code></a></h3>
 <div class="paragraph">
 <p>Makes a reservation for a guest in the hotel<br>
 Format: <code>reserve i/ID rn/ROOM_NUMBER df/FROM_DATE dt/TO_DATE</code></p>
@@ -395,17 +417,17 @@ Format: <code>reserve i/ID rn/ROOM_NUMBER df/FROM_DATE dt/TO_DATE</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-the-room-of-a-guest-code-getroom-code"><a class="link" href="#locating-the-room-of-a-guest-code-getroom-code">4.10. Locating the room of a guest : <code>getroom</code></a></h3>
+<h3 id="locating-the-room-of-a-guest-code-getroom-code"><a class="link" href="#locating-the-room-of-a-guest-code-getroom-code">4.11. Locating the room of a guest : <code>getroom</code></a></h3>
 <div class="paragraph">
-<p>Retrieves the room number of the guest who made reservations under their name.<br>
-Format: <code>getroom n/NAME</code></p>
+<p>Retrieves the room number of the guest.<br>
+Format: <code>getroom i/ID</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Shows room number of reservations made by <code>NAME</code>.</p>
+<p>Shows room number of reservations made by guest <code>ID</code>.</p>
 </li>
 </ul>
 </div>
@@ -414,7 +436,7 @@ Format: <code>getroom n/NAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>getroom n/ Smith</code><br></p>
+<p><code>getroom i/ID</code><br></p>
 </li>
 </ul>
 </div>
@@ -424,30 +446,30 @@ Format: <code>getroom n/NAME</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code><br>
-<code>checkin n/Smith r/101</code><br>
-Checks Smith in to room 101.</p>
-</li>
-<li>
-<p><code>bill n/Smith</code><br>
-Shows bill incurred by Smith</p>
+<p><code>getroom i/G1231231X</code></p>
 </li>
 </ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-tier-code-addtier-code"><a class="link" href="#adding-a-tier-code-addtier-code">4.11. Adding a tier: <code>addtier</code></a></h3>
+<h3 id="adding-a-tier-code-addtier-code"><a class="link" href="#adding-a-tier-code-addtier-code">4.12. Adding a tier: <code>addtier</code></a></h3>
 <div class="paragraph">
 <p>Add a tier and set this tier to certain rooms<br>
 Format: <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code></p>
 </div>
 <div class="paragraph">
-<p>Examples
-* <code>addtier ti/Gold rn/12E 12F 12T</code>.</p>
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addtier ti/Gold rn/12E 12F 12T</code>.</p>
+</li>
+</ul>
 </div>
 </div>
 <div class="sect2">
-<h3 id="setting-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#setting-the-cost-for-a-room-code-setrcost-code">4.12. Setting the cost for a room : <code>setrcost</code></a></h3>
+<h3 id="setting-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#setting-the-cost-for-a-room-code-setrcost-code">4.13. Setting the cost for a room : <code>setrcost</code></a></h3>
 <div class="paragraph">
 <p>Sets the cost for a room (per night).<br>
 Format: <code>setrcost rn/ROOM_NUMBER c/COST</code></p>
@@ -475,28 +497,28 @@ Format: <code>setrcost rn/ROOM_NUMBER c/COST</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.13. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.14. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
-<p>Clears all entries from the address book.<br>
+<p>Clears all entries from Morpheus.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.14. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.15. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.15. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.16. Saving the data</a></h3>
 <div class="paragraph">
-<p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
+<p>The data of Morpheus is saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">4.16. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">4.17. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -525,12 +547,20 @@ There is no need to save manually.</p>
 e.g. <code>addguest n/John Doe i/G1231322X p/1928310 e/johndoe@gmail.com</code></p>
 </li>
 <li>
+<p><code>Add Room</code> : <code>addroom rn/ROOM_NUMBER</code><br>
+e.g. <code>addroom rn/101</code></p>
+</li>
+<li>
+<p><strong>Add Tier</strong> : <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code><br>
+e.g. <code>addtier ti/Gold rn/12E 12F 12T</code></p>
+</li>
+<li>
 <p><strong>Check in</strong> : <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code><br>
 e.g. <code>checkin i/G1231231X rn/101 td/2020-03-14</code></p>
 </li>
 <li>
-<p><strong>Check out</strong> : <code>checkout i/ID rn/ROOM_NUMBER</code><br>
-e.g. <code>checkout i/G1231231X rn/101</code></p>
+<p><strong>Check out</strong> : <code>checkout rn/ROOM_NUMBER</code><br>
+e.g. <code>checkout rn/101</code></p>
 </li>
 <li>
 <p><strong>List</strong> : <code>list</code></p>
@@ -552,12 +582,12 @@ e.g. <code>service n/Smith p/20.00 d/massage</code></p>
 e.g. <code>reserve i/G1231231X rn/102 df/ 2020-12-12 dt/ 2020-12-30</code></p>
 </li>
 <li>
-<p><strong>Locate Room</strong> : <code>getroom n/NAME</code><br>
-e.g. <code>getroom n/ Smith</code></p>
+<p><strong>Locate Room</strong> : <code>getroom i/ID</code><br>
+e.g. <code>getroom i/ID</code></p>
 </li>
 <li>
-<p><strong>Add Tier</strong> : <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code><br>
-e.g. <code>addtier ti/Gold rn/12E 12F 12T</code></p>
+<p><strong>Set Room Cost</strong> : <code>setrcost rn/ROOM_NUMBER c/COST</code><br>
+e.g. <code>setrcost rn/101 c/50</code></p>
 </li>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
@@ -569,4 +599,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-03 00:51:51 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-04 14:37:02 UTC</div></div></div></body></html>

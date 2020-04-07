@@ -22,7 +22,7 @@
 <li><a href="#show-a-list-of-all-the-guests-in-the-hotel-code-list-code">4.6. Show a list of all the guests in the hotel: <code>list</code></a></li>
 <li><a href="#locating-guests-by-name-or-id-code-findguest-code">4.7. Locating guests by name or id: <code>findguest</code></a></li>
 <li><a href="#fetching-the-bill-of-a-guest-code-bill-code">4.8. Fetching the bill of a guest : <code>bill</code></a></li>
-<li><a href="#charging-a-service-code-service-code">4.9. Charging a service : <code>service</code></a></li>
+<li><a href="#charging-a-service-code-chargeservice-code">4.9. Charging a service : <code>chargeservice</code></a></li>
 <li><a href="#making-a-reservation-code-reserve-code">4.10. Making a reservation : <code>reserve</code></a></li>
 <li><a href="#locating-the-room-of-a-guest-code-getroom-code">4.11. Locating the room of a guest : <code>getroom</code></a></li>
 <li><a href="#adding-a-tier-code-addtier-code">4.12. Adding a tier: <code>addtier</code></a></li>
@@ -157,10 +157,10 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>checkin</code> and <code>checkout</code> commands receives and returns guestss.</p>
+<p><code>checkin</code> and <code>checkout</code> command receives and returns customers.</p>
 </li>
 <li>
-<p><code>service</code> command charges guests for requesting services.</p>
+<p><code>chargeservice</code> command charges customers for getting services.</p>
 </li>
 <li>
 <p><code>reserve</code> command makes a reservation.</p>
@@ -363,20 +363,17 @@ Shows the bill for guest with ID G1231231X&#8217;s stay up till present moment.<
 </div>
 </div>
 <div class="sect2">
-<h3 id="charging-a-service-code-service-code"><a class="link" href="#charging-a-service-code-service-code">4.9. Charging a service : <code>service</code></a></h3>
+<h3 id="charging-a-service-code-chargeservice-code"><a class="link" href="#charging-a-service-code-chargeservice-code">4.9. Charging a service : <code>chargeservice</code></a></h3>
 <div class="paragraph">
-<p>Adds a service to the guest&#8217;s tab.<br>
-Format: <code>service n/NAME  p/PRICE [d/DESCRIPTION]&#8230;&#8203;</code></p>
+<p>Charges a service to the guest&#8217;s tab.<br>
+Format: <code>chargeservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Adds service of <code>PRICE</code> and <code>DESCRIPTION</code> to <code>NAME</code> 's bill.</p>
-</li>
-<li>
-<p>Name and price must be entered as an input</p>
+<p>Charges service for <code>ROOM</code> with <code>COST</code> and <code>DESCRIPTION</code> to <code>NAME</code> 's bill.</p>
 </li>
 </ul>
 </div>
@@ -388,10 +385,7 @@ Format: <code>service n/NAME  p/PRICE [d/DESCRIPTION]&#8230;&#8203;</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>service  n/Smith p/20.00</code><br></p>
-</li>
-<li>
-<p><code>service n/Smith p/20.00 d/massage</code></p>
+<p><code>chargeservice i/G1231231X rn/100 si/WC</code></p>
 </li>
 </ul>
 </div>
@@ -480,11 +474,11 @@ Format: <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code></p>
 <h3 id="adding-an-available-service-code-addservice-code"><a class="link" href="#adding-an-available-service-code-addservice-code">4.13. Adding an available service: <code>addservice</code></a></h3>
 <div class="paragraph">
 <p>Add an available service with id, cost, and description
-Format: <code>addservice i/SERVICE_ID d/DESCRIPTION c/COST</code></p>
+Format: <code>addservice si/SERVICE_ID d/DESCRIPTION c/COST</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:
-* <code>addservice i/WC d/Wash clothes c/100.00</code></p>
+* <code>addservice si/WC d/Wash clothes c/100.00</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -574,6 +568,10 @@ e.g. <code>addroom rn/101</code></p>
 e.g. <code>addtier ti/Gold rn/12E 12F 12T</code></p>
 </li>
 <li>
+<p><strong>Add Service</strong> : <code>addservice si/SERVICE_ID d/DESCRIPTION c/COST</code><br>
+e.g. <code>addservice si/WC d/Wash clothes c/100.00</code></p>
+</li>
+<li>
 <p><strong>Check in</strong> : <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code><br>
 e.g. <code>checkin i/G1231231X rn/101 td/2020-03-14</code></p>
 </li>
@@ -593,12 +591,12 @@ e.g. <code>findguest n/Alice i/A10</code></p>
 e.g. <code>bill i/G1231231X</code></p>
 </li>
 <li>
-<p><strong>Charge Service</strong> : <code>service n/NAME p/PRICE [d/DESCRIPTION]&#8230;&#8203;</code><br>
-e.g. <code>service n/Smith p/20.00 d/massage</code></p>
+<p><strong>Charge Service</strong> : <code>chargeservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code><br>
+e.g. <code>chargeservice i/G1231231X rn/100 si/WC</code></p>
 </li>
 <li>
-<p><strong>Make Reservation</strong> : <code>reserve i/ID rn/ROOM_NUMBER fd/FROM_DATE td/TO_DATE</code><br>
-e.g. <code>reserve i/G1231231X rn/102 td/ 2020-12-12 td/ 2020-12-30</code></p>
+<p><strong>Make Reservation</strong> : <code>reserve i/ID rn/ROOM_NUMBER df/FROM_DATE dt/TO_DATE</code><br>
+e.g. <code>reserve i/G1231231X rn/102 df/ 2020-12-12 dt/ 2020-12-30</code></p>
 </li>
 <li>
 <p><strong>Locate Room</strong> : <code>getroom i/ID</code><br>
@@ -618,4 +616,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 05:47:13 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 07:14:45 UTC</div></div></div></body></html>

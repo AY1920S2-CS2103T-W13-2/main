@@ -25,13 +25,14 @@
 <li><a href="#charging-a-service-code-chargeservice-code">4.9. Charging a service : <code>chargeservice</code></a></li>
 <li><a href="#making-a-reservation-code-reserve-code">4.10. Making a reservation : <code>reserve</code></a></li>
 <li><a href="#locating-the-room-of-a-guest-code-getroom-code">4.11. Locating the room of a guest : <code>getroom</code></a></li>
-<li><a href="#adding-a-tier-code-addtier-code">4.12. Adding a tier: <code>addtier</code></a></li>
-<li><a href="#adding-an-available-service-code-addservice-code">4.13. Adding an available service: <code>addservice</code></a></li>
-<li><a href="#setting-the-cost-for-a-room-code-setrcost-code">4.14. Setting the cost for a room : <code>setrcost</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">4.15. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">4.16. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">4.17. Saving the data</a></li>
-<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">4.18. Encrypting data files <code>[coming in v2.0]</code></a></li>
+<li><a href="#add-a-new-room-code-addroom-code">4.12. Add a new room : <code>addroom</code></a></li>
+<li><a href="#adding-a-tier-code-addtier-code">4.13. Adding a tier: <code>addtier</code></a></li>
+<li><a href="#adding-an-available-service-code-addservice-code">4.14. Adding an available service: <code>addservice</code></a></li>
+<li><a href="#setting-the-cost-for-a-room-code-setrcost-code">4.15. Setting the cost for a room : <code>setrcost</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">4.16. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">4.17. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">4.18. Saving the data</a></li>
+<li><a href="#encrypting-data-files-code-coming-in-v2-0-code">4.19. Encrypting data files <code>[coming in v2.0]</code></a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -454,7 +455,25 @@ Format: <code>getroom i/ID</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-tier-code-addtier-code"><a class="link" href="#adding-a-tier-code-addtier-code">4.12. Adding a tier: <code>addtier</code></a></h3>
+<h3 id="add-a-new-room-code-addroom-code"><a class="link" href="#add-a-new-room-code-addroom-code">4.12. Add a new room : <code>addroom</code></a></h3>
+<div class="paragraph">
+<p>Add a new room with the corresponding tier and cost.<br>
+Format: <code>addroom rn/ROOM_NUMBER c/COST t/Tier</code></p>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addroom rn/101 c/150.00 t/GOLD</code><br>
+Add a gold tier room 101 with the price of $150.00</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-tier-code-addtier-code"><a class="link" href="#adding-a-tier-code-addtier-code">4.13. Adding a tier: <code>addtier</code></a></h3>
 <div class="paragraph">
 <p>Add a tier and set this tier to certain rooms<br>
 Format: <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code></p>
@@ -471,7 +490,7 @@ Format: <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-available-service-code-addservice-code"><a class="link" href="#adding-an-available-service-code-addservice-code">4.13. Adding an available service: <code>addservice</code></a></h3>
+<h3 id="adding-an-available-service-code-addservice-code"><a class="link" href="#adding-an-available-service-code-addservice-code">4.14. Adding an available service: <code>addservice</code></a></h3>
 <div class="paragraph">
 <p>Add an available service with id, cost, and description
 Format: <code>addservice si/SERVICE_ID d/DESCRIPTION c/COST</code></p>
@@ -482,7 +501,7 @@ Format: <code>addservice si/SERVICE_ID d/DESCRIPTION c/COST</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="setting-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#setting-the-cost-for-a-room-code-setrcost-code">4.14. Setting the cost for a room : <code>setrcost</code></a></h3>
+<h3 id="setting-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#setting-the-cost-for-a-room-code-setrcost-code">4.15. Setting the cost for a room : <code>setrcost</code></a></h3>
 <div class="paragraph">
 <p>Sets the cost for a room (per night).<br>
 Format: <code>setrcost rn/ROOM_NUMBER c/COST</code></p>
@@ -510,28 +529,28 @@ Format: <code>setrcost rn/ROOM_NUMBER c/COST</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.15. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.16. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from Morpheus.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.16. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.17. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.17. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.18. Saving the data</a></h3>
 <div class="paragraph">
 <p>The data of Morpheus is saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">4.18. Encrypting data files <code>[coming in v2.0]</code></a></h3>
+<h3 id="encrypting-data-files-code-coming-in-v2-0-code"><a class="link" href="#encrypting-data-files-code-coming-in-v2-0-code">4.19. Encrypting data files <code>[coming in v2.0]</code></a></h3>
 <div class="paragraph">
 <p><em>{explain how the user can enable/disable data encryption}</em></p>
 </div>
@@ -616,4 +635,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 07:14:45 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-07 15:56:54 UTC</div></div></div></body></html>

@@ -88,27 +88,6 @@ public class Person {
         return bills;
     }
 
-    /**
-     * Adds {@code service} to bill of room {@code roomID}
-     */
-    public void addToBill(RoomId roomId, AvailableService service) {
-        boolean billExists = false;
-
-        for (Bill bill : bills) {
-            if (bill.getRoomId().equals(roomId)) {
-                bill.addChargeable(service);
-                billExists = true;
-                break;
-            }
-        }
-
-        if (billExists == false) {
-            Bill newBill = new Bill(roomId);
-            newBill.addChargeable(service);
-            bills.add(newBill);
-        }
-    }
-
     public Remark getRemark() {
         return remark;
     }

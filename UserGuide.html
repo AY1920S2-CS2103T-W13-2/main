@@ -23,7 +23,7 @@
 <li><a href="#show-a-list-of-all-the-guests-in-the-hotel-code-list-code">4.7. Show a list of all the guests in the hotel: <code>list</code></a></li>
 <li><a href="#locating-guests-by-name-or-id-code-findguest-code">4.8. Locating guests by name or id: <code>findguest</code></a></li>
 <li><a href="#finding-bookings-by-name-id-or-room-number-code-findbooking-code">4.9. Finding bookings by name, id or room number: <code>findbooking</code></a></li>
-<li><a href="#fetching-the-bill-of-a-guest-code-bill-code">4.10. Fetching the bill of a guest : <code>bill</code></a></li>
+<li><a href="#fetching-the-bill-of-a-guest-code-fetchbill-code">4.10. Fetching the bill of a guest : <code>fetchbill</code></a></li>
 <li><a href="#charging-a-service-code-chargeservice-code">4.11. Charging a service : <code>chargeservice</code></a></li>
 <li><a href="#making-a-reservation-code-reserve-code">4.12. Making a reservation : <code>reserve</code></a></li>
 <li><a href="#locating-the-room-of-a-guest-code-getroom-code">4.13. Locating the room of a guest : <code>getroom</code></a></li>
@@ -170,7 +170,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code>reserve</code> command makes a reservation.</p>
 </li>
 <li>
-<p><code>bill</code> command fetches the bill of a guest.</p>
+<p><code>fetchbill</code> command fetches the bill of a guest.</p>
 </li>
 </ul>
 </div>
@@ -382,10 +382,10 @@ Returns booking of ALICE or at room 001.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="fetching-the-bill-of-a-guest-code-bill-code"><a class="link" href="#fetching-the-bill-of-a-guest-code-bill-code">4.10. Fetching the bill of a guest : <code>bill</code></a></h3>
+<h3 id="fetching-the-bill-of-a-guest-code-fetchbill-code"><a class="link" href="#fetching-the-bill-of-a-guest-code-fetchbill-code">4.10. Fetching the bill of a guest : <code>fetchbill</code></a></h3>
 <div class="paragraph">
 <p>Retrieves the bill of a guest.<br>
-Format: <code>bill i/ID [rn/ROOM_NUMBER]</code></p>
+Format: <code>fetchbill i/ID [rn/ROOM_NUMBER]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -404,7 +404,7 @@ Format: <code>bill i/ID [rn/ROOM_NUMBER]</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>bill  i/G1231231X</code><br>
+<p><code>fetchbill  i/G1231231X</code><br>
 Shows the bill for guest with ID G1231231X&#8217;s stay up till present moment.</p>
 </li>
 </ul>
@@ -666,8 +666,8 @@ e.g. <code>checkout rn/101</code></p>
 e.g. <code>findguest n/Alice i/A10</code></p>
 </li>
 <li>
-<p><strong>Fetch Bill</strong> : <code>bill i/ID [rn/ROOM_NUMBER]</code><br>
-e.g. <code>bill i/G1231231X</code></p>
+<p><strong>Fetch Bill</strong> : <code>fetchbill i/ID [rn/ROOM_NUMBER]</code><br>
+e.g. <code>fetchbill i/G1231231X</code></p>
 </li>
 <li>
 <p><strong>Charge Service</strong> : <code>chargeservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code><br>
@@ -695,4 +695,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-10 23:34:30 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 08:12:14 UTC</div></div></div></body></html>

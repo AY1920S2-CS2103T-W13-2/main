@@ -13,6 +13,7 @@ import java.util.function.Predicate;
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.hotel.Stay;
+import seedu.address.model.hotel.bill.Bill;
 import seedu.address.model.hotel.person.Person;
 import seedu.address.model.hotel.room.Room;
 import seedu.address.model.ids.PersonId;
@@ -40,7 +41,7 @@ public class CheckInCommand extends Command {
         + "or "
         + PREFIX_BOOKINGID + "BOOKING_ID";
 
-    public static final String MESSAGE_SUCCESS = "Room %1$s is booked by %2$s";
+    public static final String MESSAGE_SUCCESS = "Checked in %2$s into room %1$s";
     public static final String MESSAGE_ROOM_OCCUPIED = "Room %1$s is occupied";
     public static final String MESSAGE_ROOM_NOT_EXISTS = "Room %1$s does not exist.";
     public static final String MESSAGE_PERSON_NOT_EXISTS = "Guest (ID: %1$s) does not exist.";
@@ -93,6 +94,14 @@ public class CheckInCommand extends Command {
         model.checkIn(stay);
         Predicate<Room> predicate = thisRoom -> stay.getRoom().isSameRoom(thisRoom);
         model.updateFilteredRoomList(predicate);
+
+        Optional<Bill> bill = model.findBill(roomId);
+
+        if (bill.isEmpty()) {
+            model.addBill(new Bill(personId, roomId));
+        }
+
+        model.chargeRoomCost(roomId, room.get().getRoomCost(), stay);
 
         return new CommandResult(String.format(MESSAGE_SUCCESS, roomId, personId), "room");
     }

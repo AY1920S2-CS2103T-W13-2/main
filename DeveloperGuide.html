@@ -49,13 +49,13 @@
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#product-survey">Appendix F: Product Survey</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
-<li><a href="#launch-and-shutdown">G.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">G.2. Deleting a person</a></li>
-<li><a href="#saving-data">G.3. Saving data</a></li>
-<li><a href="#reserving-a-room">G.4. Reserving a room</a></li>
+<li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
+<li><a href="#deleting-a-person">F.2. Deleting a person</a></li>
+<li><a href="#saving-data">F.3. Saving data</a></li>
+<li><a href="#reserving-a-room">F.4. Reserving a room</a></li>
+<li><a href="#checking-in-and-out-guests">F.5. Checking in and out guests</a></li>
 </ul>
 </li>
 </ul>
@@ -107,16 +107,22 @@ The intended audience is the developers, designers and software testers who wish
 <div class="title">Figure 2. Architecture Diagram</div>
 </div>
 <div class="paragraph">
-<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App.
-<strong>Morpheus</strong> closely follows the <strong>Command Result </strong> pattern of software.
-This is a quick representation of how the Command Result pattern works:
+<p>The <strong><em>Architecture Diagram</em></strong> given above explains the high-level design of the App.</p>
+</div>
+<div class="paragraph">
+<p><strong>Morpheus</strong> closely follows the <strong>Command Pattern </strong> design of software.<br>
+This is a quick representation of how the Command Pattern works:<br>
 <em>Client &#8594; Invoker &#8594; CommandQueue &#8594; ExecuteCommand</em></p>
+</div>
+<div class="paragraph">
+<p>In this case, the client is the application which creates and adds a command object to the invoker.
+The invoker then executes the command objects.</p>
 </div>
 <div class="paragraph">
 <p>Given below is a quick overview of the components in the architecture of the software.</p>
 </div>
 <div class="paragraph">
-<p><a href="#Design-Main"><strong><code>Main</code></strong></a> has two classes called <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for,</p>
+<p><a href="#Design-Main"><strong><code>Main</code></strong></a> has two classes called <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/tree/master/src/main/java/seedu/address/Main.java"><code>Main</code></a> and <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/tree/master/src/main/java/seedu/address/MainApp.java"><code>MainApp</code></a>. It is responsible for:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -387,15 +393,49 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="paragraph">
 <p>The following steps show how to set up a hotel:</p>
 </div>
+<div class="sect3">
+<h4 id="addguestcommand"><a class="link" href="#addguestcommand">4.1.1. AddGuestCommand</a></h4>
+<div class="sect4">
+<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
+<div class="paragraph">
+<p>This command adds a guest into the hotel using their name, guest ID, phone and email.</p>
+</div>
+<div class="paragraph">
+<p>The following steps show how the add guest feature works:</p>
+</div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Add rooms using <code>AddRoomCommand</code> to add rooms with names.</p>
+<p>The <code>addguest</code> command entered by the user is parsed and the different fields are tokenized.</p>
 </li>
 <li>
-<p>Add tiers using <code>AddTierCommand</code>, and attach rooms with tiers.</p>
+<p>The command is then executed by creating a new Guest object using the fields entered and adding the guest object into the Hotel.</p>
 </li>
 </ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="addroomcommand"><a class="link" href="#addroomcommand">4.1.2. AddRoomCommand</a></h4>
+<div class="sect4">
+<h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
+<div class="paragraph">
+<p>This command adds a room into the hotel using the room number, tier and the cost of the room.</p>
+</div>
+<div class="paragraph">
+<p>The following steps show how the add room feature works:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>addroom</code> command entered by the user is parsed and the different fields are tokenized.</p>
+</li>
+<li>
+<p>A new room object is created using the tokenized arguments and it is added into the hotel.</p>
+</li>
+</ol>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -403,7 +443,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect3">
 <h4 id="findguestcommand"><a class="link" href="#findguestcommand">4.2.1. FindGuestCommand</a></h4>
 <div class="sect4">
-<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
+<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
 <div class="paragraph">
 <p>Currently this command only support searching for full name or/and id number.</p>
 </div>
@@ -513,7 +553,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect3">
 <h4 id="setroomcost-command"><a class="link" href="#setroomcost-command">4.3.1. SetRoomCost Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
+<h5 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the SetRoomCost command is implemented:</p>
 </div>
@@ -577,7 +617,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect3">
 <h4 id="addservice-command"><a class="link" href="#addservice-command">4.3.2. AddService Command</a></h4>
 <div class="sect4">
-<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
+<h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
 
 </div>
 <div class="sect4">
@@ -588,7 +628,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect3">
 <h4 id="chargeservice-command-implementation"><a class="link" href="#chargeservice-command-implementation">4.3.3. ChargeService Command Implementation</a></h4>
 <div class="sect4">
-<h5 id="implementation-5"><a class="link" href="#implementation-5">Implementation</a></h5>
+<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
 
 </div>
 <div class="sect4">
@@ -599,7 +639,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect3">
 <h4 id="removechargedservice-command-implementation"><a class="link" href="#removechargedservice-command-implementation">4.3.4. RemoveChargedService Command Implementation</a></h4>
 <div class="sect4">
-<h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
+<h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
 
 </div>
 <div class="sect4">
@@ -610,7 +650,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect3">
 <h4 id="applydiscount-command-implementation"><a class="link" href="#applydiscount-command-implementation">4.3.5. ApplyDiscount Command Implementation</a></h4>
 <div class="sect4">
-<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
+<h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
 
 </div>
 <div class="sect4">
@@ -621,7 +661,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect3">
 <h4 id="fetchbill-command-implementation"><a class="link" href="#fetchbill-command-implementation">4.3.6. FetchBill Command Implementation</a></h4>
 <div class="sect4">
-<h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
+<h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
 
 </div>
 <div class="sect4">
@@ -892,9 +932,6 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </tr>
 </tbody>
 </table>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -1022,9 +1059,6 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </li>
 </ul>
 </div>
-<div class="paragraph">
-<p><em>{More to be added}</em></p>
-</div>
 </div>
 </div>
 </div>
@@ -1079,44 +1113,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect1">
-<h2 id="product-survey"><a class="link" href="#product-survey">Appendix F: Product Survey</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Product Name</strong></p>
-</div>
-<div class="paragraph">
-<p>Author: &#8230;&#8203;</p>
-</div>
-<div class="paragraph">
-<p>Pros:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Cons:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-<li>
-<p>&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix G: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
@@ -1134,7 +1131,7 @@ These instructions only provide a starting point for testers to work on; testers
 </table>
 </div>
 <div class="sect2">
-<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">G.1. Launch and Shutdown</a></h3>
+<h3 id="launch-and-shutdown"><a class="link" href="#launch-and-shutdown">F.1. Launch and Shutdown</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1167,12 +1164,9 @@ Expected: The most recent window size and location is retained.</p>
 </li>
 </ol>
 </div>
-<div class="paragraph">
-<p><em>{ more test cases &#8230;&#8203; }</em></p>
-</div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">G.2. Deleting a person</a></h3>
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.2. Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1201,7 +1195,7 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">G.3. Saving data</a></h3>
+<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1226,7 +1220,7 @@ Expected: Morpheus will restart with an empty addressbook and hotel.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="reserving-a-room"><a class="link" href="#reserving-a-room">G.4. Reserving a room</a></h3>
+<h3 id="reserving-a-room"><a class="link" href="#reserving-a-room">F.4. Reserving a room</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1242,7 +1236,7 @@ Expected: Room number <code>001</code> is reserved by person <code>I000000</code
 </li>
 <li>
 <p>Test case: <code>reserve i/B000000 rn/001 fd/2020-12-13 td/2020-12-23</code><br>
-Expected: There is a clash in booking dates for the same room. Error details shown in the status message.</p>
+Expected: There is a clash in booking dates for the same room. Error details shown in the result display box.</p>
 </li>
 <li>
 <p>Test case: <code>reserve i/Bzagda rn/001 fd/2020-12-13 td/2020-12-23</code>
@@ -1254,5 +1248,30 @@ Expected: No such person found. No booking made. Error details shown in the stat
 </ol>
 </div>
 </div>
+<div class="sect2">
+<h3 id="checking-in-and-out-guests"><a class="link" href="#checking-in-and-out-guests">F.5. Checking in and out guests</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with invalid check-ins and check-outs</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookings by using the command <code>switch booking</code></p>
+</li>
+<li>
+<p>Test case: <code>checkin i/i000000 rn/001 td/2020-12-24</code><br>
+Expected: Guest <code>i000000</code> is checked into room <code>001</code></p>
+</li>
+<li>
+<p>Test case: <code>checkin i/B000000 rn/5602 td/2020-12-23</code><br>
+Expected: There is no such room. Error message shown in result display box.</p>
+</li>
+</ol>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 18:54:02 UTC</div></div></div></body></html>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 18:59:29 UTC</div></div></div></body></html>

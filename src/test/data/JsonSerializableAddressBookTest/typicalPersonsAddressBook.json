@@ -6,48 +6,48 @@
     "phone" : "94351253",
     "email" : "alice@example.com",
     "remark" : "",
-    "tagged" : [ "friends" ]
+    "tagged" : "VVIP"
   }, {
     "name" : "Benson Meier",
     "personId" : "B000000",
     "phone" : "98765432",
     "email" : "johnd@example.com",
     "remark" : "",
-    "tagged" : [ "owesMoney", "friends" ]
+    "tagged" : "VVIP"
   }, {
     "name" : "Carl Kurz",
     "personId" : "C000000",
     "phone" : "95352563",
     "email" : "heinz@example.com",
     "remark" : "",
-    "tagged" : [ ]
+    "tagged" : "VVIP"
   }, {
     "name" : "Daniel Meier",
     "personId" : "D000000",
     "phone" : "87652533",
     "email" : "cornelia@example.com",
     "remark" : "",
-    "tagged" : [ "friends" ]
+    "tagged" : "VVIP"
   }, {
     "name" : "Elle Meyer",
     "personId" : "E000000",
     "phone" : "9482224",
     "email" : "werner@example.com",
     "remark" : "",
-    "tagged" : [ ]
+    "tagged" : "VVIP"
   }, {
     "name" : "Fiona Kunz",
     "personId" : "F000000",
     "phone" : "9482427",
     "email" : "lydia@example.com",
     "remark" : "",
-    "tagged" : [ ]
+    "tagged" : "VVIP"
   }, {
     "name" : "George Best",
     "personId" : "G000000",
     "phone" : "9482442",
     "email" : "anna@example.com",
     "remark" : "",
-    "tagged" : [ ]
+    "tagged" : "VVIP"
   } ]
 }

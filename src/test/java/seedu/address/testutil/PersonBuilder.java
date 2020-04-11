@@ -1,8 +1,5 @@
 package seedu.address.testutil;
 
-import java.util.HashSet;
-import java.util.Set;
-
 import seedu.address.model.hotel.person.Email;
 import seedu.address.model.hotel.person.Name;
 import seedu.address.model.hotel.person.Person;
@@ -10,7 +7,6 @@ import seedu.address.model.hotel.person.Phone;
 import seedu.address.model.hotel.person.Remark;
 import seedu.address.model.ids.PersonId;
 import seedu.address.model.tag.Tag;
-import seedu.address.model.util.SampleDataUtil;
 
 /**
  * A utility class to help with building Person objects.
@@ -22,13 +18,14 @@ public class PersonBuilder {
     public static final String DEFAULT_EMAIL = "alice@gmail.com";
     public static final String DEFAULT_ID = "A000000";
     public static final String DEFAULT_REMARK = "She likes aardvarks.";
+    public static final String DEFAULT_TAG = "VVIP";
 
     private Name name;
     private Phone phone;
     private Email email;
     private PersonId personId;
     private Remark remark;
-    private Set<Tag> tags;
+    private Tag tag;
 
     public PersonBuilder() {
         name = new Name(DEFAULT_NAME);
@@ -36,7 +33,7 @@ public class PersonBuilder {
         email = new Email(DEFAULT_EMAIL);
         personId = new PersonId(DEFAULT_ID);
         remark = new Remark(DEFAULT_REMARK);
-        tags = new HashSet<>();
+        tag = new Tag(DEFAULT_TAG);
     }
 
     /**
@@ -48,7 +45,7 @@ public class PersonBuilder {
         email = personToCopy.getEmail();
         personId = personToCopy.getPersonId();
         remark = personToCopy.getRemark();
-        tags = new HashSet<>(personToCopy.getTags());
+        tag = personToCopy.getTags();
     }
 
     /**
@@ -60,10 +57,10 @@ public class PersonBuilder {
     }
 
     /**
-     * Parses the {@code tags} into a {@code Set<Tag>} and set it to the {@code Person} that we are building.
+     * Parses the {@code tag} into a {@code Tag>} and set it to the {@code Person} that we are building.
      */
-    public PersonBuilder withTags(String ... tags) {
-        this.tags = SampleDataUtil.getTagSet(tags);
+    public PersonBuilder withTags(String tag) {
+        this.tag = new Tag(tag);
         return this;
     }
 
@@ -102,7 +99,7 @@ public class PersonBuilder {
 
 
     public Person build() {
-        return new Person(name, personId, phone, email, remark, tags);
+        return new Person(name, personId, phone, email, remark, tag);
     }
 
 }

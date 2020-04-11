@@ -3,10 +3,7 @@ package seedu.address.model.hotel.person;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.Objects;
-import java.util.Set;
 
 import seedu.address.model.hotel.bill.AvailableService;
 import seedu.address.model.hotel.bill.Bill;
@@ -29,32 +26,32 @@ public class Person {
     // Data fields
     //private final Address address;
     private final Remark remark;
-    private final Set<Tag> tags = new HashSet<>();
+    private Tag tag;
     private ArrayList<Bill> bills = new ArrayList<>();
 
     /**
      * Old constructor
      */
-    public Person(Name name, Phone phone, Email email, Remark remark, Set<Tag> tags) {
-        requireAllNonNull(name, phone, email, tags);
+    public Person(Name name, Phone phone, Email email, Remark remark, Tag tag) {
+        requireAllNonNull(name, phone, email, tag);
         this.name = name;
         this.phone = phone;
         this.email = email;
         this.personId = new PersonId("A000000");
         this.remark = remark;
-        this.tags.addAll(tags);
+        this.tag = tag;
     }
     /**
      * Every field must be present and not null.
      */
-    public Person(Name name, PersonId personId, Phone phone, Email email, Remark remark, Set<Tag> tags) {
-        requireAllNonNull(name, personId, phone, email, tags);
+    public Person(Name name, PersonId personId, Phone phone, Email email, Remark remark, Tag tag) {
+        requireAllNonNull(name, personId, phone, email, tag);
         this.name = name;
         this.personId = personId;
         this.phone = phone;
         this.email = email;
         this.remark = remark;
-        this.tags.addAll(tags);
+        this.tag = tag;
     }
 
 
@@ -112,19 +109,12 @@ public class Person {
         }
     }
 
-    /*public Address getAddress() {
-        return address;
-    }*/
-
     public Remark getRemark() {
         return remark;
     }
-    /**
-     * Returns an immutable tag set, which throws {@code UnsupportedOperationException}
-     * if modification is attempted.
-     */
-    public Set<Tag> getTags() {
-        return Collections.unmodifiableSet(tags);
+
+    public Tag getTags() {
+        return tag;
     }
 
     /**
@@ -166,7 +156,7 @@ public class Person {
     @Override
     public int hashCode() {
         // use this method for custom fields hashing instead of implementing your own
-        return Objects.hash(name, personId, phone, email, tags);
+        return Objects.hash(name, personId, phone, email, tag);
     }
 
     @Override
@@ -181,8 +171,8 @@ public class Person {
                 .append(getEmail())
                 .append(" Remark: ")
                 .append(getRemark())
-                .append(" Tags: ");
-        getTags().forEach(builder::append);
+                .append(" Tags: ")
+                .append(getTags());
         return builder.toString();
     }
 

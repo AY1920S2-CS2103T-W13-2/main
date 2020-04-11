@@ -89,7 +89,6 @@ Features can be divided into 4 groups of command
 *Command Format*
 
 * Words in `UPPER_CASE` are the parameters to be supplied by the user e.g. in `checkin i/ID rn/ROOM_NUMBER td/TO_DATE`, `ID` is a parameter which can be used as `checkin i/G1231231X`.
-* Items in square brackets are optional e.g `n/NAME [t/TIER]` can be used as `n/Smith t/Gold` or as `n/Smith`.
 * Parameters can be in any order e.g. if the command specifies `n/NAME rn/ROOM_NUMBER`, `rn/ROOM_NUMBER n/NAME` is also acceptable.
 ====
 
@@ -101,13 +100,14 @@ Format: `help`
 === Adding a guest : `addguest`
 
 Create a guest in the hotel list. +
-Format: `addguest n/NAME i/ID p/PHONE_NUMBER e/EMAIL [t/TAG]...`
+Format: `addguest n/NAME i/ID p/PHONE_NUMBER e/EMAIL t/TAG`
 
 Examples:
-* `addguest n/John Doe i/G1231231X p/1928310 e/johndoe@gmail.com`
-Add John Doe with his information into the database.
+* `addguest n/John Doe i/G1231231X p/1928310 e/johndoe@gmail.com t/Member`
+Add John Doe with his information into the database and sets his status to `Member`.
 
 * `addguest n/Sallly Smith i/G1231232X p/512685123 e/sallysmith@gmail.com t/VIP`
+Add Sally Smith with her information into the database and sets her status to `VIP`.
 //end::addguest[]
 
 === Adding a room : `addroom`
@@ -312,8 +312,8 @@ _{explain how the user can enable/disable data encryption}_
 == Command Summary
 
 * *Help* : `help`
-* *Add Guest* : `addguest n/NAME i/ID p/PHONE_NUMBER e/EMAIL` +
-e.g. `addguest n/John Doe i/G1231231X p/1928310 e/johndoe@gmail.com`
+* *Add Guest* : `addguest n/NAME i/ID p/PHONE_NUMBER e/EMAIL t/TAG` +
+e.g. `addguest n/John Doe i/G1231231X p/1928310 e/johndoe@gmail.com t/Member`
 * `Add Room` : `addroom rn/ROOM_NUMBER` +
 e.g. `addroom rn/101`
 * *Add Tier* : `addtier ti/TIER_NAME rn/ROOM_NUMBERS` +

@@ -5,35 +5,56 @@
     "phone" : "87438807",
     "email" : "alexyeoh@example.com",
     "remark" : "",
-    "tagged" : [ "friends" ]
+    "tagged" : "VIP"
   }, {
     "name" : "Bernice Yu",
     "personId" : "B000000",
     "phone" : "99272758",
     "email" : "berniceyu@example.com",
     "remark" : "",
-    "tagged" : [ "colleagues", "friends" ]
+    "tagged" : "VIP"
   }, {
     "name" : "Charlotte Oliveiro",
     "personId" : "C000000",
     "phone" : "93210283",
     "email" : "charlotte@example.com",
     "remark" : "",
-    "tagged" : [ "neighbours" ]
+    "tagged" : "VVIP"
   }, {
     "name" : "Irfan Ibrahim",
     "personId" : "I000000",
     "phone" : "92492021",
     "email" : "irfan@example.com",
     "remark" : "",
-    "tagged" : [ "classmates" ]
+    "tagged" : "VIP"
   }, {
     "name" : "Roy Balakrishnan",
     "personId" : "R000000",
     "phone" : "92624417",
     "email" : "royb@example.com",
     "remark" : "",
-    "tagged" : [ "colleagues" ]
+    "tagged" : "VIP"
+  }, {
+    "name" : "Harry",
+    "personId" : "H000000",
+    "phone" : "01234567",
+    "email" : "harry@email.com",
+    "remark" : "",
+    "tagged" : "VIP"
+  }, {
+    "name" : "Lady",
+    "personId" : "L000000",
+    "phone" : "12345678",
+    "email" : "lady@email.com",
+    "remark" : "",
+    "tagged" : "VIP"
+  }, {
+    "name" : "Polly",
+    "personId" : "P000000",
+    "phone" : "12428317017",
+    "email" : "polly@email.com",
+    "remark" : "",
+    "tagged" : "Member"
   } ]
 }
 

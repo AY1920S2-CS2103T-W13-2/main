@@ -39,6 +39,10 @@
     "tier" : "GOLD",
     "cost" : "150.00",
     "number" : "313"
+  }, {
+    "tier" : "GOLD",
+    "cost" : "200.00",
+    "number" : "200"
   } ],
   "bookings" : [ {
     "room" : "101",
@@ -60,7 +64,7 @@
     "room" : "002",
     "payeeName" : "Bernice Yu",
     "payeeId" : "B000000",
-    "uuid" : "73660b11-0fdc-4a22-9df0-1eb66cc16fc5",
+    "uuid" : "fd036c56-6277-48b3-bdc4-899d4e3e53cf",
     "description" : "",
     "timeFrom" : "2020-04-10T12:00",
     "timeTo" : "2020-04-12T12:00"
@@ -68,7 +72,7 @@
     "room" : "006",
     "payeeName" : "Alex Yeoh",
     "payeeId" : "A000000",
-    "uuid" : "2f1e8bf1-6c31-4862-b0bc-73a3705d7943",
+    "uuid" : "9b5b259c-3aa0-4b4c-a700-c6200c59c3ca",
     "description" : "",
     "timeFrom" : "2020-04-11T12:00",
     "timeTo" : "2020-04-13T12:00"

@@ -233,7 +233,19 @@ The following class plays an important role at the architecture level:</p>
 <li>
 <p>Listens for changes to <code>Model</code> data so that the UI can be updated with the modified data.</p>
 </li>
+<li>
+<p>Receive command result to change view accordingly.</p>
+</li>
 </ul>
+</div>
+<div class="paragraph">
+<p>Below is diagram for how UI extract command result for changing view.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/commandSwitchUi.png" alt="commandSwitchUi">
+</div>
+<div class="title">Figure 5. Command work flow for MainWindow</div>
 </div>
 </div>
 <div class="sect2">
@@ -242,7 +254,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/LogicClassDiagram.png" alt="LogicClassDiagram">
 </div>
-<div class="title">Figure 5. Structure of the Logic Component</div>
+<div class="title">Figure 6. Structure of the Logic Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> :
@@ -274,7 +286,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/LogicSequenceDiagram.png" alt="LogicSequenceDiagram">
 </div>
-<div class="title">Figure 6. Interactions Inside the Logic Component for the <code>deleteroom</code> Command</div>
+<div class="title">Figure 7. Interactions Inside the Logic Component for the <code>deleteroom</code> Command</div>
 </div>
 </div>
 <div class="sect2">
@@ -283,7 +295,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="content">
 <img src="images/ModelDiagram.png" alt="ModelDiagram">
 </div>
-<div class="title">Figure 7. Structure of the Model Component</div>
+<div class="title">Figure 8. Structure of the Model Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/tree/master/src/main/java/seedu/address/model/Model.java"><code>Model.java</code></a></p>
@@ -334,7 +346,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/StorageDiagram.png" alt="StorageDiagram">
 </div>
-<div class="title">Figure 8. Structure of the Storage Component</div>
+<div class="title">Figure 9. Structure of the Storage Component</div>
 </div>
 <div class="paragraph">
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
@@ -389,19 +401,33 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect2">
 <h3 id="search-feature"><a class="link" href="#search-feature">4.2. Search feature</a></h3>
 <div class="sect3">
-<h4 id="implementation-2"><a class="link" href="#implementation-2">4.2.1. Implementation</a></h4>
+<h4 id="findguestcommand"><a class="link" href="#findguestcommand">4.2.1. FindGuestCommand</a></h4>
+<div class="sect4">
+<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
 <div class="paragraph">
-<p>The following steps show how the search feature works:</p>
+<p>Currently this command only support searching for full name or/and id number.</p>
+</div>
+<div class="paragraph">
+<p>The following steps show how the search guest feature works:</p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>The command from the user is parsed into a list of pattern contained in the search command.</p>
+<p>The search command from the user is parsed into a list of pattern contained in the search command.</p>
 </li>
 <li>
-<p>The command executes and filters the guest list based on the stored given pattern.</p>
+<p>The command then executes and filters the guest list based on the patterns.</p>
 </li>
 </ol>
+</div>
+<div class="paragraph">
+<p>The diagram below show how the search command store its pattern.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/FindGuestCommand.png" alt="FindGuestCommand">
+</div>
+<div class="title">Figure 10. Class diagram for FindGuestCommand</div>
 </div>
 <div class="paragraph">
 <p>The diagram below shows the execution of the command:</p>
@@ -410,12 +436,42 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/SearchWorkflow.png" alt="SearchWorkflow">
 </div>
-<div class="title">Figure 9. Activity Diagram of Search Feature</div>
+<div class="title">Figure 11. Activity Diagram of Search Feature</div>
 </div>
 </div>
-<div class="sect3">
-<h4 id="design-considerations"><a class="link" href="#design-considerations">4.2.2. Design Considerations</a></h4>
-
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Store pattern as list of name and id.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simpler to test and understand.</p>
+</li>
+<li>
+<p>Cons: Difficult to extend the implementation.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store pattern as a combination of Predicate.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easy to implement and add more complicated pattern.</p>
+</li>
+<li>
+<p>Cons: Harder to test, more prone to error.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -452,7 +508,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/BillingActivityDiagram.png" alt="BillingActivityDiagram">
 </div>
-<div class="title">Figure 10. Activity Diagram of Billing Feature</div>
+<div class="title">Figure 12. Activity Diagram of Billing Feature</div>
 </div>
 <div class="sect3">
 <h4 id="setroomcost-command"><a class="link" href="#setroomcost-command">4.3.1. SetRoomCost Command</a></h4>
@@ -481,7 +537,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/SetRoomCostSequenceDiagram.png" alt="SetRoomCostSequenceDiagram">
 </div>
-<div class="title">Figure 11. Sequence Diagram of SetRooomCost Command</div>
+<div class="title">Figure 13. Sequence Diagram of SetRooomCost Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -851,7 +907,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/UseCaseDiagram.png" alt="UseCaseDiagram">
 </div>
-<div class="title">Figure 12. Use Case Diagram</div>
+<div class="title">Figure 14. Use Case Diagram</div>
 </div>
 <h3 id="use-cases-example" class="discrete">Use cases example:</h3>
 <div class="sect2">
@@ -1199,4 +1255,4 @@ Expected: No such person found. No booking made. Error details shown in the stat
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 12:30:19 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 13:59:13 UTC</div></div></div></body></html>

@@ -22,23 +22,24 @@
 <li><a href="#switching-between-tabs-code-switch-code">4.2. Switching between tabs : <code>switch</code></a></li>
 <li><a href="#adding-a-guest-code-addguest-code">4.3. Adding a guest : <code>addguest</code></a></li>
 <li><a href="#adding-a-room-code-addroom-code">4.4. Adding a room : <code>addroom</code></a></li>
-<li><a href="#deleting-a-room-code-deleteroom-code">4.5. Deleting a room : <code>deleteroom</code></a></li>
-<li><a href="#adding-a-tier-to-a-room-code-addtier-code">4.6. Adding a tier to a room: <code>addtier</code></a></li>
-<li><a href="#adding-an-available-service-code-addservice-code">4.7. Adding an available service: <code>addservice</code></a></li>
-<li><a href="#checking-in-a-guest-code-checkin-code">4.8. Checking in a guest: <code>checkin</code></a></li>
-<li><a href="#checking-out-a-guest-code-checkout-code">4.9. Checking out a guest: <code>checkout</code></a></li>
-<li><a href="#finding-guests-code-findguest-code">4.10. Finding guests: <code>findguest</code></a></li>
-<li><a href="#finding-bookings-code-findbooking-code">4.11. Finding bookings: <code>findbooking</code></a></li>
-<li><a href="#fetching-bill-of-a-guest-code-fetchbill-code">4.12. Fetching bill of a guest : <code>fetchbill</code></a></li>
-<li><a href="#charging-a-service-code-chargeservice-code">4.13. Charging a service : <code>chargeservice</code></a></li>
-<li><a href="#making-a-reservation-code-reserve-code">4.14. Making a reservation : <code>reserve</code></a></li>
-<li><a href="#locating-a-guest-s-room-code-getroom-code">4.15. Locating a guest&#8217;s room : <code>getroom</code></a></li>
-<li><a href="#deleting-an-available-service-code-deleteservice-code">4.16. Deleting an available service: <code>deleteservice</code></a></li>
-<li><a href="#deleting-a-service-from-a-bill-code-deletecservice-code">4.17. Deleting a service from a bill : <code>deletecservice</code></a></li>
-<li><a href="#setting-the-cost-for-a-room-code-setrcost-code">4.18. Setting the cost for a room : <code>setrcost</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">4.19. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">4.20. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">4.21. Saving the data</a></li>
+<li><a href="#adding-a-tier-to-a-room-code-addtier-code">4.5. Adding a tier to a room: <code>addtier</code></a></li>
+<li><a href="#adding-an-available-service-code-addservice-code">4.6. Adding an available service: <code>addservice</code></a></li>
+<li><a href="#setting-the-cost-for-a-room-code-setrcost-code">4.7. Setting the cost for a room : <code>setrcost</code></a></li>
+<li><a href="#making-a-reservation-code-reserve-code">4.8. Making a reservation : <code>reserve</code></a></li>
+<li><a href="#checking-in-a-guest-code-checkin-code">4.9. Checking in a guest: <code>checkin</code></a></li>
+<li><a href="#checking-out-a-guest-code-checkout-code">4.10. Checking out a guest: <code>checkout</code></a></li>
+<li><a href="#charging-a-service-code-chargeservice-code">4.11. Charging a service : <code>chargeservice</code></a></li>
+<li><a href="#deleting-a-service-from-a-bill-code-deletecservice-code">4.12. Deleting a service from a bill : <code>deletecservice</code></a></li>
+<li><a href="#fetching-bill-of-a-guest-code-fetchbill-code">4.13. Fetching bill of a guest : <code>fetchbill</code></a></li>
+<li><a href="#finding-guests-code-findguest-code">4.14. Finding guests: <code>findguest</code></a></li>
+<li><a href="#finding-bookings-code-findbooking-code">4.15. Finding bookings: <code>findbooking</code></a></li>
+<li><a href="#locating-a-guest-s-room-code-getroom-code">4.16. Locating a guest&#8217;s room : <code>getroom</code></a></li>
+<li><a href="#deleting-a-guest-code-delete-code">4.17. Deleting a guest : <code>delete</code></a></li>
+<li><a href="#deleting-a-room-code-deleteroom-code">4.18. Deleting a room : <code>deleteroom</code></a></li>
+<li><a href="#deleting-an-available-service-code-deleteservice-code">4.19. Deleting an available service: <code>deleteservice</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">4.20. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">4.21. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">4.22. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -204,7 +205,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><span class="underline">Overview Of Features</span></strong></p>
 </div>
 <div class="paragraph">
-<p>Features can be divided into 4 groups of commands</p>
+<p>Features can be divided into 5 groups of commands</p>
 </div>
 <div class="ulist">
 <ul>
@@ -213,13 +214,16 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>addroom</code> command adds a room into hotel.</p>
-</li>
-<li>
 <p><code>addguest</code> command adds a guest.</p>
 </li>
 <li>
+<p><code>addroom</code> command adds a room into hotel.</p>
+</li>
+<li>
 <p><code>addtier</code> command adds a tier to a room</p>
+</li>
+<li>
+<p><code>addservice</code> command adds an available service to the hotel.</p>
 </li>
 <li>
 <p><code>setrcost</code> command sets the cost of a room.</p>
@@ -232,6 +236,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
+<p><code>reserve</code> command makes a reservation.</p>
+</li>
+<li>
 <p><code>checkin</code> and <code>checkout</code> command receives and returns customers.</p>
 </li>
 <li>
@@ -239,9 +246,6 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 <li>
 <p><code>deletecservice</code> command removes a charged service from the bill of customers.</p>
-</li>
-<li>
-<p><code>reserve</code> command makes a reservation.</p>
 </li>
 <li>
 <p><code>fetchbill</code> command fetches the bill of a guest.</p>
@@ -254,10 +258,20 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>list</code> command shows list of guests</p>
+<p><code>findguest</code>, <code>getroom</code> , <code>findbooking</code> quickly looks up guests, rooms and bookings.</p>
+</li>
+</ul>
+</div>
 </li>
 <li>
-<p><code>findguest</code>, <code>getroom</code> quickly looks up for queries of rooms and quests.</p>
+<p>Deletion commands</p>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete</code> command deletes a guest from the hotel database.</p>
+</li>
+<li>
+<p><code>deleteservice</code> and <code>deletebooking</code> commands removes available services and bookings from the hotel database.</p>
 </li>
 </ul>
 </div>
@@ -288,7 +302,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="exampleblock">
 <div class="content">
 <div class="paragraph">
-<p><strong><span class="underline">Command Format</span></strong></p>
+<p><strong><span class="underline">Command Format:</span></strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -325,15 +339,15 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><code>p/</code> : Guest phone</p>
 </li>
 <li>
-<p>`e/' : Guest email</p>
+<p><code>e/</code> : Guest email</p>
 </li>
 <li>
-<p>'t/' : Guest tag</p>
+<p><code>t/</code> : Guest tag</p>
 </li>
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Rooms and Bookings</strong><br></p>
+<p><strong>Rooms and Bookings and Services</strong><br></p>
 </div>
 <div class="ulist">
 <ul>
@@ -355,13 +369,6 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <li>
 <p><code>c/</code>  : Cost</p>
 </li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Services</strong><br></p>
-</div>
-<div class="ulist">
-<ul>
 <li>
 <p><code>si/</code> : Service ID</p>
 </li>
@@ -378,7 +385,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>If you need to view help, use the command <code>help</code> .</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p><strong>Format:</strong>: <code>help</code></p>
 </div>
 </div>
 <div class="sect2">
@@ -387,7 +394,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p>If you want to switch to a new tab and view all the data on the specified tab, use the command <code>switch</code> .</p>
 </div>
 <div class="paragraph">
-<p>Format: <code>switch TAB_NAME</code></p>
+<p><strong>Format:</strong>: <code>switch TAB_NAME</code></p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -402,7 +409,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -412,29 +419,19 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Switches to and shows all entries on guest tab.</p>
+<p><strong>Result:</strong> Switches to and shows all entries on guest tab.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="adding-a-guest-code-addguest-code"><a class="link" href="#adding-a-guest-code-addguest-code">4.3. Adding a guest : <code>addguest</code></a></h3>
 <div class="paragraph">
-<p>If you want to add a guest in the hotel list, use the command <code>addguest</code><br></p>
+<p>If you want to add a guest to the hotel database, use the command <code>addguest</code><br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addguest n/NAME i/ID p/PHONE_NUMBER e/EMAIL [t/TAG]&#8230;&#8203;</code></p>
+<p><strong>Format:</strong> <code>addguest n/NAME i/ID p/PHONE_NUMBER e/EMAIL [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>addguest n/John Doe i/G1231231X p/1928310 e/johndoe@gmail.com</code><br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Result: Add John Doe with his information into the database.</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -444,7 +441,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Adds Sally Smith with her information into the hotel database.</p>
+<p><strong>Result:</strong> Adds Sally Smith with her information into the hotel database.</p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -465,10 +462,10 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 <p>If you want to add a room to the hotel database, use the command <code>addroom</code><br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addroom rn/ROOM_NUMBER ti/TIER c/COST</code></p>
+<p><strong>Format:</strong> <code>addroom rn/ROOM_NUMBER ti/TIER c/COST</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -478,41 +475,19 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Add room <code>101</code> into the database.</p>
+<p><strong>Result:</strong> Add room <code>101</code> into the database.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-room-code-deleteroom-code"><a class="link" href="#deleting-a-room-code-deleteroom-code">4.5. Deleting a room : <code>deleteroom</code></a></h3>
-<div class="paragraph">
-<p>If you want to delete a room from the hotel, use the command <code>deleteroom</code>.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deleteroom rn/ROOM_NUMBER</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>deleteroom rn/101</code><br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Result: Deletes room <code>101</code> into the database.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="adding-a-tier-to-a-room-code-addtier-code"><a class="link" href="#adding-a-tier-to-a-room-code-addtier-code">4.6. Adding a tier to a room: <code>addtier</code></a></h3>
+<h3 id="adding-a-tier-to-a-room-code-addtier-code"><a class="link" href="#adding-a-tier-to-a-room-code-addtier-code">4.5. Adding a tier to a room: <code>addtier</code></a></h3>
 <div class="paragraph">
 <p>If you want to add a tier and set this tier for certain rooms, use the command <code>addtier</code><br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code></p>
+<p><strong>Format:</strong> <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -522,19 +497,19 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Sets the tier for rooms <code>001</code>, <code>002</code>, and <code>003</code> to <code>GOLD</code>.</p>
+<p><strong>Result:</strong> Sets the tier for rooms <code>001</code>, <code>002</code>, and <code>003</code> to <code>GOLD</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-an-available-service-code-addservice-code"><a class="link" href="#adding-an-available-service-code-addservice-code">4.7. Adding an available service: <code>addservice</code></a></h3>
+<h3 id="adding-an-available-service-code-addservice-code"><a class="link" href="#adding-an-available-service-code-addservice-code">4.6. Adding an available service: <code>addservice</code></a></h3>
 <div class="paragraph">
 <p>If you want to add an available service to the database, use the command <code>addservice</code><br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>addservice si/SERVICE_ID d/DESCRIPTION c/COST</code></p>
+<p><strong>Format:</strong> <code>addservice si/SERVICE_ID d/DESCRIPTION c/COST</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -544,19 +519,75 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Adds a service with id <code>WC</code>, description <code>Wash clothes</code> and cost <code>100.00</code>.</p>
+<p><strong>Result:</strong> Adds a service with id <code>WC</code>, description <code>Wash clothes</code> and cost <code>100.00</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="checking-in-a-guest-code-checkin-code"><a class="link" href="#checking-in-a-guest-code-checkin-code">4.8. Checking in a guest: <code>checkin</code></a></h3>
+<h3 id="setting-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#setting-the-cost-for-a-room-code-setrcost-code">4.7. Setting the cost for a room : <code>setrcost</code></a></h3>
+<div class="paragraph">
+<p>If you want to set the cost for a room (per night), use the command <code>setrcost</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>setrcost rn/ROOM_NUMBER c/COST</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>setrcost  rn/101 c/50.00</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Sets the cost for <code>101</code> as <code>50.00</code> per night.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="making-a-reservation-code-reserve-code"><a class="link" href="#making-a-reservation-code-reserve-code">4.8. Making a reservation : <code>reserve</code></a></h3>
+<div class="paragraph">
+<p>If you want to make a reservation for a guest in the hotel, use the command <code>reserve</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>reserve i/ID rn/ROOM_NUMBER fd/FROM_DATE td/TO_DATE</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>reserve i/G1231231X rn/102 fd/ 2020-12-12 td/ 2020-12-30</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Reserves room <code>102</code> for guest with the ID <code>G1231231X</code> from <code>2020-12-12</code> to <code>2020-12-30</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="checking-in-a-guest-code-checkin-code"><a class="link" href="#checking-in-a-guest-code-checkin-code">4.9. Checking in a guest: <code>checkin</code></a></h3>
 <div class="paragraph">
 <p>If you want to check in a guest to the hotel from the current date until the an end-date, use the command <code>checkin</code><br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code></p>
+<p><strong>Format:</strong> <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code></p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-important" title="Important"></i>
+</td>
+<td class="content">
+A reservation in the guest&#8217;s ID must exist before checking the guest in.
+</td>
+</tr>
+</table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -566,19 +597,19 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Checks in guest with ID <code>G1231231X</code> to room <code>101</code> until <code>2020-12-14</code>.</p>
+<p><strong>Result:</strong> Checks in guest with ID <code>G1231231X</code> to room <code>101</code> until <code>2020-12-14</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="checking-out-a-guest-code-checkout-code"><a class="link" href="#checking-out-a-guest-code-checkout-code">4.9. Checking out a guest: <code>checkout</code></a></h3>
+<h3 id="checking-out-a-guest-code-checkout-code"><a class="link" href="#checking-out-a-guest-code-checkout-code">4.10. Checking out a guest: <code>checkout</code></a></h3>
 <div class="paragraph">
 <p>If you want to check out a guest from the hotel, use the command <code>checkout</code><br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>checkout rn/ROOM_NUMBER</code></p>
+<p><strong>Format:</strong> <code>checkout rn/ROOM_NUMBER</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -588,16 +619,82 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Checks out the guest from room <code>101</code>.</p>
+<p><strong>Result:</strong> Checks out the guest from room <code>101</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="finding-guests-code-findguest-code"><a class="link" href="#finding-guests-code-findguest-code">4.10. Finding guests: <code>findguest</code></a></h3>
+<h3 id="charging-a-service-code-chargeservice-code"><a class="link" href="#charging-a-service-code-chargeservice-code">4.11. Charging a service : <code>chargeservice</code></a></h3>
+<div class="paragraph">
+<p>If you want to charges a service to the guest&#8217;s tab, use the command <code>chargeservice</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>chargeservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>chargeservice i/G1231231X rn/100.00 si/WC</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Charges service with the ID <code>WC</code> for room <code>100</code> to the guest with ID <code>G1231231X</code> 's bill.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-service-from-a-bill-code-deletecservice-code"><a class="link" href="#deleting-a-service-from-a-bill-code-deletecservice-code">4.12. Deleting a service from a bill : <code>deletecservice</code></a></h3>
+<div class="paragraph">
+<p>If you want to remove a charged service from the guest&#8217;s bill.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>deletecservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deletecservice i/G1231231X rn/100 si/WC</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Removes service with ID <code>WC</code> from guest with ID <code>G1231231X</code> 's bill for <code>100</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fetching-bill-of-a-guest-code-fetchbill-code"><a class="link" href="#fetching-bill-of-a-guest-code-fetchbill-code">4.13. Fetching bill of a guest : <code>fetchbill</code></a></h3>
+<div class="paragraph">
+<p>If you want to retrieve the bill of a guest, use the command <code>fetchbill</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>fetchbill i/ID [rn/ROOM_NUMBER]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>fetchbill  i/G1231231X</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Shows the entire bill, consisting of all costs incurred, for guest with ID <code>G1231231X</code> 's stay up till present moment.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-guests-code-findguest-code"><a class="link" href="#finding-guests-code-findguest-code">4.14. Finding guests: <code>findguest</code></a></h3>
 <div class="paragraph">
 <p>If you want to find guests using their names or id, use the commmand <code>findguest</code>.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>findguest [n/NAME] &#8230;&#8203; [n/NAME] [i/ID] &#8230;&#8203; [i/ID]</code></p>
+<p><strong>Format:</strong> <code>findguest [n/NAME] &#8230;&#8203; [n/NAME] [i/ID] &#8230;&#8203; [i/ID]</code></p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -614,7 +711,7 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -624,16 +721,16 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Shows persons with name: <code>John Doe</code> or ID: <code>A10</code></p>
+<p><strong>Result:</strong> Shows persons with name: <code>John Doe</code> or ID: <code>A10</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="finding-bookings-code-findbooking-code"><a class="link" href="#finding-bookings-code-findbooking-code">4.11. Finding bookings: <code>findbooking</code></a></h3>
+<h3 id="finding-bookings-code-findbooking-code"><a class="link" href="#finding-bookings-code-findbooking-code">4.15. Finding bookings: <code>findbooking</code></a></h3>
 <div class="paragraph">
 <p>If you want to find bookings using the guest&#8217;s name, guest&#8217;s ID or by room number, use the command <code>findbooking</code>.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>findbooking n/NAME &#8230;&#8203; n/NAME i/ID &#8230;&#8203; i/ID rn/ROOM_NUMBER &#8230;&#8203; rn/ROOM_NUMBER</code></p>
+<p><strong>Format:</strong> <code>findbooking n/NAME &#8230;&#8203; n/NAME i/ID &#8230;&#8203; i/ID rn/ROOM_NUMBER &#8230;&#8203; rn/ROOM_NUMBER</code></p>
 </div>
 <div class="admonitionblock important">
 <table>
@@ -649,7 +746,7 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </table>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -659,85 +756,19 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Shows booking of <code>Alice</code> or of room <code>001</code>.</p>
+<p><strong>Result:</strong> Shows booking of <code>Alice</code> or of room <code>001</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="fetching-bill-of-a-guest-code-fetchbill-code"><a class="link" href="#fetching-bill-of-a-guest-code-fetchbill-code">4.12. Fetching bill of a guest : <code>fetchbill</code></a></h3>
-<div class="paragraph">
-<p>If you want to retrieve the bill of a guest, use the command <code>fetchbill</code><br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>fetchbill i/ID [rn/ROOM_NUMBER]</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>fetchbill  i/G1231231X</code><br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Result: Shows the entire bill, consisting of all costs incurred, for guest with ID <code>G1231231X</code> 's stay up till present moment.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="charging-a-service-code-chargeservice-code"><a class="link" href="#charging-a-service-code-chargeservice-code">4.13. Charging a service : <code>chargeservice</code></a></h3>
-<div class="paragraph">
-<p>If you want to charges a service to the guest&#8217;s tab, use the command <code>chargeservice</code><br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>chargeservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>chargeservice i/G1231231X rn/100.00 si/WC</code><br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Result: Charges service with the ID <code>WC</code> for room <code>100</code> to the guest with ID <code>G1231231X</code> 's bill.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="making-a-reservation-code-reserve-code"><a class="link" href="#making-a-reservation-code-reserve-code">4.14. Making a reservation : <code>reserve</code></a></h3>
-<div class="paragraph">
-<p>If you want to make a reservation for a guest in the hotel, use the command <code>reserve</code><br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>reserve i/ID rn/ROOM_NUMBER fd/FROM_DATE td/TO_DATE</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>reserve i/G1231231X rn/102 fd/ 2020-12-12 td/ 2020-12-30</code><br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Result: Reserves room <code>102</code> for guest with the ID <code>G1231231X</code> from <code>2020-12-12</code> to <code>2020-12-30</code>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="locating-a-guest-s-room-code-getroom-code"><a class="link" href="#locating-a-guest-s-room-code-getroom-code">4.15. Locating a guest&#8217;s room : <code>getroom</code></a></h3>
+<h3 id="locating-a-guest-s-room-code-getroom-code"><a class="link" href="#locating-a-guest-s-room-code-getroom-code">4.16. Locating a guest&#8217;s room : <code>getroom</code></a></h3>
 <div class="paragraph">
 <p>If you want to retrieve the room number related to a guest&#8217;s reservation, use the command <code>getroom</code>.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>getroom i/ID</code></p>
+<p><strong>Format:</strong> <code>getroom i/ID</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -747,19 +778,63 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Shows the room booked by the guest with ID <code>G12311231X</code></p>
+<p><strong>Result:</strong> Shows the room booked by the guest with ID <code>G12311231X</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-available-service-code-deleteservice-code"><a class="link" href="#deleting-an-available-service-code-deleteservice-code">4.16. Deleting an available service: <code>deleteservice</code></a></h3>
+<h3 id="deleting-a-guest-code-delete-code"><a class="link" href="#deleting-a-guest-code-delete-code">4.17. Deleting a guest : <code>delete</code></a></h3>
 <div class="paragraph">
-<p>If you want to delete an available service using the service&#8217;s ID, use the command <code>deleteservice</code><br></p>
+<p>If you want to delete a guest&#8217;s details from the hotel database, use the command <code>delete</code>.<br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>deleteservice si/SERVICE_ID</code></p>
+<p>Format: <code>delete INDEX</code></p>
 </div>
 <div class="paragraph">
-<p>Examples:</p>
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>delete 1</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Deletes the first guest on the list.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-room-code-deleteroom-code"><a class="link" href="#deleting-a-room-code-deleteroom-code">4.18. Deleting a room : <code>deleteroom</code></a></h3>
+<div class="paragraph">
+<p>If you want to delete a room from the hotel, use the command <code>deleteroom</code>.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>deleteroom rn/ROOM_NUMBER</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deleteroom rn/101</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Deletes room <code>101</code> into the database.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-an-available-service-code-deleteservice-code"><a class="link" href="#deleting-an-available-service-code-deleteservice-code">4.19. Deleting an available service: <code>deleteservice</code></a></h3>
+<div class="paragraph">
+<p>If you want to delete an available service from the hotel database using the service&#8217;s ID, use the command <code>deleteservice</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>deleteservice si/SERVICE_ID</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
 </div>
 <div class="ulist">
 <ul>
@@ -769,73 +844,29 @@ You may use <code>t/TAG</code> to specify the status of the guest in the hotel! 
 </ul>
 </div>
 <div class="paragraph">
-<p>Result: Deletes a service with service ID <code>WC</code>.</p>
+<p><strong>Result:</strong> Deletes a service with service ID <code>WC</code>.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-service-from-a-bill-code-deletecservice-code"><a class="link" href="#deleting-a-service-from-a-bill-code-deletecservice-code">4.17. Deleting a service from a bill : <code>deletecservice</code></a></h3>
-<div class="paragraph">
-<p>If you want to remove a charged service from the guest&#8217;s bill.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>deletecservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>deletecservice i/G1231231X rn/100 si/WC</code><br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Result: Removes service with ID <code>WC</code> from guest with ID <code>G1231231X</code> 's bill for <code>100</code>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="setting-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#setting-the-cost-for-a-room-code-setrcost-code">4.18. Setting the cost for a room : <code>setrcost</code></a></h3>
-<div class="paragraph">
-<p>If you want to set the cost for a room (per night), use the command <code>setrcost</code><br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>setrcost rn/ROOM_NUMBER c/COST</code></p>
-</div>
-<div class="paragraph">
-<p>Examples:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>setrcost  rn/101 c/50.00</code><br></p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Result: Sets the cost for <code>101</code> as <code>50.00</code> per night.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.19. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.20. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>If you want to clear all data from Morpheus, use the command <code>clear</code><br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>clear</code></p>
+<p><strong>Format:</strong> <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.20. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.21. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
-<p>Result: If you want to exit the program, use the command <code>exit</code><br></p>
+<p><strong>Result:</strong> If you want to exit the program, use the command <code>exit</code><br></p>
 </div>
 <div class="paragraph">
-<p>Format: <code>exit</code></p>
+<p><strong>Format:</strong> <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.21. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.22. Saving the data</a></h3>
 <div class="paragraph">
 <p>The data of Morpheus is saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -888,9 +919,6 @@ e.g. <code>checkin i/G1231231X rn/101 td/2020-03-14</code></p>
 e.g. <code>checkout rn/101</code></p>
 </li>
 <li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
 <p><strong>Find Guest</strong> : <code>findguest n/NAME …​ n/NAME i/ID …​ i/ID</code><br>
 e.g. <code>findguest n/Alice i/A10</code></p>
 </li>
@@ -928,4 +956,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 05:53:12 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 07:07:44 UTC</div></div></div></body></html>

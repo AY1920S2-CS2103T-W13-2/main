@@ -30,16 +30,17 @@
 <li><a href="#if-you-want-to-find-bookings-by-name-id-or-room-number-code-findbooking-code">4.10. If you want to find bookings by name, id or room number: <code>findbooking</code></a></li>
 <li><a href="#if-you-want-to-fetch-the-bill-of-a-guest-code-fetchbill-code">4.11. If you want to fetch the bill of a guest : <code>fetchbill</code></a></li>
 <li><a href="#if-you-need-to-charge-a-service-code-chargeservice-code">4.12. If you need to charge a service : <code>chargeservice</code></a></li>
-<li><a href="#if-you-want-to-make-a-reservation-code-reserve-code">4.13. If you want to make a reservation : <code>reserve</code></a></li>
-<li><a href="#if-you-want-to-locate-the-room-of-a-guest-code-getroom-code">4.14. If you want to locate the room of a guest : <code>getroom</code></a></li>
-<li><a href="#if-you-want-to-add-a-new-room-code-addroom-code">4.15. If you want to add a new room : <code>addroom</code></a></li>
-<li><a href="#if-you-want-to-add-a-tier-to-a-room-code-addtier-code">4.16. If you want to add a tier to a room: <code>addtier</code></a></li>
-<li><a href="#if-you-want-to-add-an-available-service-code-addservice-code">4.17. If you want to add an available service: <code>addservice</code></a></li>
-<li><a href="#if-you-want-to-delete-an-available-service-code-deleteservice-code">4.18. If you want to delete an available service: <code>deleteservice</code></a></li>
-<li><a href="#if-you-want-to-set-the-cost-for-a-room-code-setrcost-code">4.19. If you want to set the cost for a room : <code>setrcost</code></a></li>
-<li><a href="#if-you-need-to-clear-all-entries-code-clear-code">4.20. If you need to clear all entries : <code>clear</code></a></li>
-<li><a href="#to-exit-the-program-code-exit-code">4.21. To exit the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">4.22. Saving the data</a></li>
+<li><a href="#if-you-need-to-delete-a-service-from-a-bill-code-deletecservice-code">4.13. If you need to delete a service from a bill : <code>deletecservice</code></a></li>
+<li><a href="#if-you-want-to-make-a-reservation-code-reserve-code">4.14. If you want to make a reservation : <code>reserve</code></a></li>
+<li><a href="#if-you-want-to-locate-the-room-of-a-guest-code-getroom-code">4.15. If you want to locate the room of a guest : <code>getroom</code></a></li>
+<li><a href="#if-you-want-to-add-a-new-room-code-addroom-code">4.16. If you want to add a new room : <code>addroom</code></a></li>
+<li><a href="#if-you-want-to-add-a-tier-to-a-room-code-addtier-code">4.17. If you want to add a tier to a room: <code>addtier</code></a></li>
+<li><a href="#if-you-want-to-add-an-available-service-code-addservice-code">4.18. If you want to add an available service: <code>addservice</code></a></li>
+<li><a href="#if-you-want-to-delete-an-available-service-code-deleteservice-code">4.19. If you want to delete an available service: <code>deleteservice</code></a></li>
+<li><a href="#if-you-want-to-set-the-cost-for-a-room-code-setrcost-code">4.20. If you want to set the cost for a room : <code>setrcost</code></a></li>
+<li><a href="#if-you-need-to-clear-all-entries-code-clear-code">4.21. If you need to clear all entries : <code>clear</code></a></li>
+<li><a href="#to-exit-the-program-code-exit-code">4.22. To exit the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">4.23. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -210,6 +211,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </li>
 <li>
 <p><code>chargeservice</code> command charges customers for getting services.</p>
+</li>
+<li>
+<p><code>deletecservice</code> command removes a charged service from the bill of customers.</p>
 </li>
 <li>
 <p><code>reserve</code> command makes a reservation.</p>
@@ -492,7 +496,7 @@ Format: <code>chargeservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
 <div class="ulist">
 <ul>
 <li>
-<p>Charges service for <code>ROOM</code> with <code>COST</code> and <code>DESCRIPTION</code> to <code>NAME</code> 's bill.</p>
+<p>Charges service to <code>PERSON_ID</code> 's bill for <code>ROOM_NUMBER</code>.</p>
 </li>
 </ul>
 </div>
@@ -510,7 +514,35 @@ Format: <code>chargeservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="if-you-want-to-make-a-reservation-code-reserve-code"><a class="link" href="#if-you-want-to-make-a-reservation-code-reserve-code">4.13. If you want to make a reservation : <code>reserve</code></a></h3>
+<h3 id="if-you-need-to-delete-a-service-from-a-bill-code-deletecservice-code"><a class="link" href="#if-you-need-to-delete-a-service-from-a-bill-code-deletecservice-code">4.13. If you need to delete a service from a bill : <code>deletecservice</code></a></h3>
+<div class="paragraph">
+<p>Removes a charged service from the guest&#8217;s tab.<br>
+Format: <code>deletecservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Removes service from <code>PERSON_ID</code> 's bill for <code>ROOOM_NUMBER</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deletecservice i/G1231231X rn/100 si/WC</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="if-you-want-to-make-a-reservation-code-reserve-code"><a class="link" href="#if-you-want-to-make-a-reservation-code-reserve-code">4.14. If you want to make a reservation : <code>reserve</code></a></h3>
 <div class="paragraph">
 <p>Makes a reservation for a guest in the hotel<br>
 Format: <code>reserve i/ID rn/ROOM_NUMBER fd/FROM_DATE td/TO_DATE</code></p>
@@ -538,7 +570,7 @@ Format: <code>reserve i/ID rn/ROOM_NUMBER fd/FROM_DATE td/TO_DATE</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="if-you-want-to-locate-the-room-of-a-guest-code-getroom-code"><a class="link" href="#if-you-want-to-locate-the-room-of-a-guest-code-getroom-code">4.14. If you want to locate the room of a guest : <code>getroom</code></a></h3>
+<h3 id="if-you-want-to-locate-the-room-of-a-guest-code-getroom-code"><a class="link" href="#if-you-want-to-locate-the-room-of-a-guest-code-getroom-code">4.15. If you want to locate the room of a guest : <code>getroom</code></a></h3>
 <div class="paragraph">
 <p>The command <code>getroom</code> retrieves the room number of the guest.<br>
 Format: <code>getroom i/ID</code></p>
@@ -573,7 +605,7 @@ Format: <code>getroom i/ID</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="if-you-want-to-add-a-new-room-code-addroom-code"><a class="link" href="#if-you-want-to-add-a-new-room-code-addroom-code">4.15. If you want to add a new room : <code>addroom</code></a></h3>
+<h3 id="if-you-want-to-add-a-new-room-code-addroom-code"><a class="link" href="#if-you-want-to-add-a-new-room-code-addroom-code">4.16. If you want to add a new room : <code>addroom</code></a></h3>
 <div class="paragraph">
 <p>Add a new room with the corresponding tier and cost.<br>
 Format: <code>addroom rn/ROOM_NUMBER c/COST t/Tier</code></p>
@@ -591,7 +623,7 @@ Add a gold tier room 101 with the price of $150.00</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="if-you-want-to-add-a-tier-to-a-room-code-addtier-code"><a class="link" href="#if-you-want-to-add-a-tier-to-a-room-code-addtier-code">4.16. If you want to add a tier to a room: <code>addtier</code></a></h3>
+<h3 id="if-you-want-to-add-a-tier-to-a-room-code-addtier-code"><a class="link" href="#if-you-want-to-add-a-tier-to-a-room-code-addtier-code">4.17. If you want to add a tier to a room: <code>addtier</code></a></h3>
 <div class="paragraph">
 <p>Add a tier and set this tier to certain rooms<br>
 Format: <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code></p>
@@ -608,7 +640,7 @@ Format: <code>addtier ti/TIER_NAME rn/ROOM_NUMBERS</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="if-you-want-to-add-an-available-service-code-addservice-code"><a class="link" href="#if-you-want-to-add-an-available-service-code-addservice-code">4.17. If you want to add an available service: <code>addservice</code></a></h3>
+<h3 id="if-you-want-to-add-an-available-service-code-addservice-code"><a class="link" href="#if-you-want-to-add-an-available-service-code-addservice-code">4.18. If you want to add an available service: <code>addservice</code></a></h3>
 <div class="paragraph">
 <p>Add an available service with id, cost, and description
 Format: <code>addservice si/SERVICE_ID d/DESCRIPTION c/COST</code></p>
@@ -620,7 +652,7 @@ Adds a service with id WC, description Wash clothes and costs 100.00.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="if-you-want-to-delete-an-available-service-code-deleteservice-code"><a class="link" href="#if-you-want-to-delete-an-available-service-code-deleteservice-code">4.18. If you want to delete an available service: <code>deleteservice</code></a></h3>
+<h3 id="if-you-want-to-delete-an-available-service-code-deleteservice-code"><a class="link" href="#if-you-want-to-delete-an-available-service-code-deleteservice-code">4.19. If you want to delete an available service: <code>deleteservice</code></a></h3>
 <div class="paragraph">
 <p>Delete an available service with id
 Format: <code>deleteservice si/SERVICE_ID</code></p>
@@ -632,7 +664,7 @@ Deletes a service with service id WC.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="if-you-want-to-set-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#if-you-want-to-set-the-cost-for-a-room-code-setrcost-code">4.19. If you want to set the cost for a room : <code>setrcost</code></a></h3>
+<h3 id="if-you-want-to-set-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#if-you-want-to-set-the-cost-for-a-room-code-setrcost-code">4.20. If you want to set the cost for a room : <code>setrcost</code></a></h3>
 <div class="paragraph">
 <p>Sets the cost for a room (per night).<br>
 Format: <code>setrcost rn/ROOM_NUMBER c/COST</code></p>
@@ -660,21 +692,21 @@ Format: <code>setrcost rn/ROOM_NUMBER c/COST</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="if-you-need-to-clear-all-entries-code-clear-code"><a class="link" href="#if-you-need-to-clear-all-entries-code-clear-code">4.20. If you need to clear all entries : <code>clear</code></a></h3>
+<h3 id="if-you-need-to-clear-all-entries-code-clear-code"><a class="link" href="#if-you-need-to-clear-all-entries-code-clear-code">4.21. If you need to clear all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from Morpheus.<br>
 Format: <code>clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="to-exit-the-program-code-exit-code"><a class="link" href="#to-exit-the-program-code-exit-code">4.21. To exit the program : <code>exit</code></a></h3>
+<h3 id="to-exit-the-program-code-exit-code"><a class="link" href="#to-exit-the-program-code-exit-code">4.22. To exit the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.22. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.23. Saving the data</a></h3>
 <div class="paragraph">
 <p>The data of Morpheus is saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -742,6 +774,10 @@ e.g. <code>fetchbill i/G1231231X</code></p>
 e.g. <code>chargeservice i/G1231231X rn/100 si/WC</code></p>
 </li>
 <li>
+<p><strong>Delete Charged Service</strong> : <code>deleteceservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code><br>
+e.g. <code>deletecservice i/G1231231X rn/100 si/WC</code></p>
+</li>
+<li>
 <p><strong>Make Reservation</strong> : <code>reserve i/ID rn/ROOM_NUMBER df/FROM_DATE dt/TO_DATE</code><br>
 e.g. <code>reserve i/G1231231X rn/102 df/ 2020-12-12 dt/ 2020-12-30</code></p>
 </li>
@@ -763,4 +799,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-11 21:17:34 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 00:36:34 UTC</div></div></div></body></html>

@@ -336,6 +336,9 @@ The diagram below shows the execution of the command:
 .Activity Diagram of Search Feature
 image::SearchWorkflow.png[]
 
+=== FindRoomCommand
+=== FindBookingCommand
+
 ===== Design Considerations
 * **Alternative 1 (current choice):** Store pattern as list of name and id.
 ** Pros: Simpler to test and understand.

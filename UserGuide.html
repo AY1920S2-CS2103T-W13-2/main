@@ -30,7 +30,7 @@
 <li><a href="#extend-a-stay-for-a-guest-code-extend-code">4.10. Extend a stay for a guest: <code>extend</code></a></li>
 <li><a href="#charging-a-service-code-chargeservice-code">4.11. Charging a service : <code>chargeservice</code></a></li>
 <li><a href="#finding-bookings-code-findbooking-code">4.12. Finding bookings: <code>findbooking</code></a></li>
-<li><a href="#locating-a-guest-s-room-code-getroom-code">4.13. Locating a guest&#8217;s room : <code>getroom</code></a></li>
+<li><a href="#locating-a-guest-s-room-code-findroom-code">4.13. Locating a guest&#8217;s room : <code>findroom</code></a></li>
 <li><a href="#deleting-a-guest-code-delete-code">4.14. Deleting a guest : <code>delete</code></a></li>
 <li><a href="#deleting-a-room-code-deleteroom-code">4.15. Deleting a room : <code>deleteroom</code></a></li>
 <li><a href="#deleting-an-available-service-code-deleteservice-code">4.16. Deleting an available service: <code>deleteservice</code></a></li>
@@ -105,11 +105,11 @@ This is a useful tip to help optimize your experience using Morpheus.
 </tr>
 </table>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 This is important information you need to take note of!
@@ -255,7 +255,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="ulist">
 <ul>
 <li>
-<p><code>findguest</code>, <code>getroom</code> , <code>findbooking</code> quickly looks up guests, rooms and bookings.</p>
+<p><code>findguest</code>, <code>findroom</code> , <code>findbooking</code> quickly looks up guests, rooms and bookings.</p>
 </li>
 </ul>
 </div>
@@ -393,11 +393,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="paragraph">
 <p><strong>Format:</strong>: <code>switch TAB_NAME</code></p>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 <strong><code>TAB_NAME</code></strong> must be one of <code>welcome</code>, <code>guest</code>, <code>room</code>, <code>booking</code>, <code>service</code>, <code>bill</code>
@@ -427,11 +427,11 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <div class="paragraph">
 <p><strong>Format:</strong> <code>addguest n/NAME i/ID p/PHONE_NUMBER e/EMAIL [t/TAG]&#8230;&#8203;</code></p>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 - You may use <code>t/TAG</code> to specify the status of the guest in the hotel! E.g. <code>t/VIP</code><br>
@@ -569,11 +569,11 @@ If you want to make a reservation for a guest in the hotel, use the command <cod
 <div class="paragraph">
 <p><strong>Format:</strong> <code>checkin i/ID rn/ROOM_NUMBER td/TO_DATE</code></p>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 A reservation in the guest&#8217;s ID must exist before checking the guest in.
@@ -638,11 +638,11 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 <div class="paragraph">
 <p>Result: Extend the stay of room 101 until 20th April 2020.</p>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 - Room must be checked in before it can be extended.<br>
@@ -714,11 +714,11 @@ If you want to find guests using their names or id, use the commmand <code>findg
 <div class="paragraph">
 <p><strong>Format:</strong> <code>findguest [n/NAME] &#8230;&#8203; [n/NAME] [i/ID] &#8230;&#8203; [i/ID]</code></p>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 - Name must be an exact match.<br>
@@ -734,7 +734,7 @@ If you want to find guests using their names or id, use the commmand <code>findg
 <div class="ulist">
 <ul>
 <li>
-<p><code>findguest n/John Doe i/A10</code><br></p>
+<p><code>findguest i/A0000000 i/B0000000 n/Alice</code><br></p>
 </li>
 </ul>
 </div>
@@ -748,13 +748,13 @@ If you want to find guests using their names or id, use the commmand <code>findg
 <p>If you want to find bookings using the guest&#8217;s name, guest&#8217;s ID or by room number, use the command <code>findbooking</code>.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Format:</strong> <code>findbooking n/NAME &#8230;&#8203; n/NAME i/ID &#8230;&#8203; i/ID rn/ROOM_NUMBER &#8230;&#8203; rn/ROOM_NUMBER</code></p>
+<p><strong>Format:</strong> <code>findbooking [n/NAME] &#8230;&#8203; [n/NAME] [i/ID] &#8230;&#8203; [i/ID] [rn/ROOM_NUMBER] &#8230;&#8203; [rn/ROOM_NUMBER]</code></p>
 </div>
-<div class="admonitionblock important">
+<div class="admonitionblock note">
 <table>
 <tr>
 <td class="icon">
-<i class="fa icon-important" title="Important"></i>
+<i class="fa icon-note" title="Note"></i>
 </td>
 <td class="content">
 - The order of the keywords does not matter. e.g. <code>n/Alice i/A10</code> is same as <code>i/A10 n/Alice</code><br>
@@ -778,12 +778,12 @@ If you want to find guests using their names or id, use the commmand <code>findg
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-a-guest-s-room-code-getroom-code"><a class="link" href="#locating-a-guest-s-room-code-getroom-code">4.13. Locating a guest&#8217;s room : <code>getroom</code></a></h3>
+<h3 id="locating-a-guest-s-room-code-findroom-code"><a class="link" href="#locating-a-guest-s-room-code-findroom-code">4.13. Locating a guest&#8217;s room : <code>findroom</code></a></h3>
 <div class="paragraph">
-<p>If you want to retrieve the room number related to a guest&#8217;s reservation, use the command <code>getroom</code>.<br></p>
+<p>If you want to retrieve the room related to a guest&#8217;s reservation, use the command <code>findroom</code>.<br></p>
 </div>
 <div class="paragraph">
-<p><strong>Format:</strong> <code>getroom i/ID</code></p>
+<p><strong>Format:</strong> <code>[rn/ROOM_NUMBER] &#8230;&#8203; [rn/ROOM_NUMBER] [n/NAME] &#8230;&#8203; [n/NAME] [i/ID] &#8230;&#8203; [i/ID]</code></p>
 </div>
 <div class="paragraph">
 <p><strong>Examples:</strong></p>
@@ -791,7 +791,7 @@ If you want to find guests using their names or id, use the commmand <code>findg
 <div class="ulist">
 <ul>
 <li>
-<p><code>getroom i/G1231231X</code><br></p>
+<p><code>findroom i/A000000 rn/001 n/Tuan Le</code><br></p>
 </li>
 </ul>
 </div>
@@ -947,7 +947,7 @@ e.g. <code>extend rn/313 td/2020-05-20</code></p>
 </li>
 <li>
 <p><strong>Find Guest</strong> : <code>findguest n/NAME …​ n/NAME i/ID …​ i/ID</code><br>
-e.g. <code>findguest n/Alice i/A10</code></p>
+e.g. <code>findguest i/A0000000 i/B0000000 n/Alice</code></p>
 </li>
 <li>
 <p><strong>Fetch Bill</strong> : <code>fetchbill i/ID [rn/ROOM_NUMBER]</code><br>
@@ -966,8 +966,8 @@ e.g. <code>deletecservice i/G1231231X rn/100 si/WC</code></p>
 e.g. <code>reserve i/G1231231X rn/102 df/ 2020-12-12 dt/ 2020-12-30</code></p>
 </li>
 <li>
-<p><strong>Locate Room</strong> : <code>getroom i/ID</code><br>
-e.g. <code>getroom i/ID</code></p>
+<p><strong>Locate Room</strong> : <code>rn/ROOM_NUMBER] &#8230;&#8203; [rn/ROOM_NUMBER] [n/NAME] &#8230;&#8203; [n/NAME] [i/ID] &#8230;&#8203; [i/ID]</code><br>
+e.g. <code>findroom i/A000000 rn/001 n/Tuan Le</code></p>
 </li>
 <li>
 <p><strong>Set Room Cost</strong> : <code>setrcost rn/ROOM_NUMBER c/COST</code><br>
@@ -976,11 +976,7 @@ e.g. <code>setrcost rn/101 c/50</code></p>
 <li>
 <p><strong>Clear</strong> : <code>clear</code></p>
 </li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 00:16:27 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 00:38:16 UTC</div></div></div></body></html>

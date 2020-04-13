@@ -34,9 +34,10 @@
 <li><a href="#search-feature">4.3. Search feature</a></li>
 <li><a href="#findroomcommand">4.4. FindRoomCommand</a></li>
 <li><a href="#findbookingcommand">4.5. FindBookingCommand</a></li>
-<li><a href="#billing-system-hui-ming">4.6. Billing System (Hui Ming)</a></li>
-<li><a href="#logging">4.7. Logging</a></li>
-<li><a href="#Implementation-Configuration">4.8. Configuration</a></li>
+<li><a href="#findemptyroomcommand">4.6. FindEmptyRoomCommand</a></li>
+<li><a href="#billing-system-hui-ming">4.7. Billing System (Hui Ming)</a></li>
+<li><a href="#logging">4.8. Logging</a></li>
+<li><a href="#Implementation-Configuration">4.9. Configuration</a></li>
 </ul>
 </li>
 <li><a href="#documentation">5. Documentation</a></li>
@@ -345,7 +346,7 @@ The following class plays an important role at the architecture level:</p>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p><code>Logic</code> uses the <code>AddressBookParser</code> class to parse the user command.</p>
+<p><code>Logic</code> uses the <code>MorpheusParser</code> class to parse the user command.</p>
 </li>
 <li>
 <p>This results in a <code>Command</code> object which is executed by the <code>LogicManager</code>.</p>
@@ -964,14 +965,6 @@ Or by providing the booking ID.</p>
 <div class="title">Figure 19. Activity Diagram of Search Feature</div>
 </div>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="findroomcommand"><a class="link" href="#findroomcommand">4.4. FindRoomCommand</a></h3>
-
-</div>
-<div class="sect2">
-<h3 id="findbookingcommand"><a class="link" href="#findbookingcommand">4.5. FindBookingCommand</a></h3>
 <div class="sect4">
 <h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
 <div class="ulist">
@@ -1006,8 +999,80 @@ Or by providing the booking ID.</p>
 </div>
 </div>
 </div>
+</div>
 <div class="sect2">
-<h3 id="billing-system-hui-ming"><a class="link" href="#billing-system-hui-ming">4.6. Billing System (Hui Ming)</a></h3>
+<h3 id="findroomcommand"><a class="link" href="#findroomcommand">4.4. FindRoomCommand</a></h3>
+<div class="sect3">
+<h4 id="implementation-10"><a class="link" href="#implementation-10">4.4.1. Implementation</a></h4>
+<div class="paragraph">
+<p>Currently this command only support searching of room full name or/and id number, or room number.</p>
+</div>
+<div class="paragraph">
+<p>The following steps show how the search guest feature works:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The find room command from the user is parsed into a list of pattern contained in the find room command.</p>
+</li>
+<li>
+<p>The find room command then executes and filters the guest list based on the patterns.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The diagram below show how the findroom command store its pattern.
+image::FindRoomCommand.png[]</p>
+</div>
+<div class="paragraph">
+<p>The diagram below shows the execution of the command:</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="findbookingcommand"><a class="link" href="#findbookingcommand">4.5. FindBookingCommand</a></h3>
+<div class="paragraph">
+<p>Currently this command only support searching of booking full name or/and id number, or room number.</p>
+</div>
+<div class="paragraph">
+<p>The following steps show how the search guest feature works:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The find booking command from the user is parsed into a list of pattern contained in the find booking command.</p>
+</li>
+<li>
+<p>The find booking command then executes and filters the guest list based on the patterns.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The diagram below show how the findbooking command store its pattern.
+image::FindBookingCommand.png[]</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="findemptyroomcommand"><a class="link" href="#findemptyroomcommand">4.6. FindEmptyRoomCommand</a></h3>
+<div class="paragraph">
+<p>This command support finding empty rooms</p>
+</div>
+<div class="paragraph">
+<p>The following steps show how the search feature works:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The find empty room command from the user is parsed into a list of pattern contained in the find booking command.</p>
+</li>
+<li>
+<p>The find empty room command then executes and filters the guest list based on the patterns.</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="billing-system-hui-ming"><a class="link" href="#billing-system-hui-ming">4.7. Billing System (Hui Ming)</a></h3>
 <div class="paragraph">
 <p>The billing system is designed to aid hotel receptionists in their bookkeeping. It is oversen by the <code>BookKeeper</code> class, which keeps track of all bills in the hotel and facillitates in the manipulation of bills.
 The bills are kept in a <code>UniqueBillList</code>, which ensures that there are no duplicate bills in the <code>BookKeeper</code> class.</p>
@@ -1053,12 +1118,12 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 <div class="title">Figure 21. Activity Diagram of Billing System</div>
 </div>
 <div class="sect3">
-<h4 id="setroomcost-command-hui-ming"><a class="link" href="#setroomcost-command-hui-ming">4.6.1. SetRoomCost Command (Hui Ming)</a></h4>
+<h4 id="setroomcost-command-hui-ming"><a class="link" href="#setroomcost-command-hui-ming">4.7.1. SetRoomCost Command (Hui Ming)</a></h4>
 <div class="paragraph">
 <p>This section goes through the implementation and design considerations of the <code>SetRoomCost</code> command.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
+<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the command is implemented:</p>
 </div>
@@ -1129,18 +1194,18 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect3">
-<h4 id="addservice-command"><a class="link" href="#addservice-command">4.6.2. AddService Command</a></h4>
+<h4 id="addservice-command"><a class="link" href="#addservice-command">4.7.2. AddService Command</a></h4>
 <div class="paragraph">
 <p>The command is also a Hotel Initialization feature and is hence covered above in <a href="#Initialization-AddService">Section 4.1.2, &#8220;AddService Command&#8221;</a>.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="chargeservice-command-hui-ming"><a class="link" href="#chargeservice-command-hui-ming">4.6.3. ChargeService Command (Hui Ming)</a></h4>
+<h4 id="chargeservice-command-hui-ming"><a class="link" href="#chargeservice-command-hui-ming">4.7.3. ChargeService Command (Hui Ming)</a></h4>
 <div class="paragraph">
 <p>This section goes through the implementation and design considerations of the <code>ChargeService</code> command.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
+<h5 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the command is implemented:</p>
 </div>
@@ -1214,12 +1279,12 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect3">
-<h4 id="deletechargedservice-command-hui-ming"><a class="link" href="#deletechargedservice-command-hui-ming">4.6.4. DeleteChargedService Command (Hui Ming)</a></h4>
+<h4 id="deletechargedservice-command-hui-ming"><a class="link" href="#deletechargedservice-command-hui-ming">4.7.4. DeleteChargedService Command (Hui Ming)</a></h4>
 <div class="paragraph">
 <p>This section goes through the implementation and design considerations of the <code>DeleteChargedService</code> command.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h5>
+<h5 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the command is implemented:</p>
 </div>
@@ -1293,12 +1358,12 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect3">
-<h4 id="fetchbill-command-hui-ming"><a class="link" href="#fetchbill-command-hui-ming">4.6.5. FetchBill Command (Hui Ming)</a></h4>
+<h4 id="fetchbill-command-hui-ming"><a class="link" href="#fetchbill-command-hui-ming">4.7.5. FetchBill Command (Hui Ming)</a></h4>
 <div class="paragraph">
 <p>This section goes through the implementation and design considerations of the <code>FetchBill</code> command.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h5>
+<h5 id="implementation-14"><a class="link" href="#implementation-14">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the command is implemented:</p>
 </div>
@@ -1403,14 +1468,14 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect2">
-<h3 id="logging"><a class="link" href="#logging">4.7. Logging</a></h3>
+<h3 id="logging"><a class="link" href="#logging">4.8. Logging</a></h3>
 <div class="paragraph">
 <p>We are using <code>java.util.logging</code> package for logging. The <code>LogsCenter</code> class is used to manage the logging levels and logging destinations.</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.8, &#8220;Configuration&#8221;</a>)</p>
+<p>The logging level can be controlled using the <code>logLevel</code> setting in the configuration file (See <a href="#Implementation-Configuration">Section 4.9, &#8220;Configuration&#8221;</a>)</p>
 </li>
 <li>
 <p>The <code>Logger</code> for a class can be obtained using <code>LogsCenter.getLogger(Class)</code> which will log messages according to the specified logging level</p>
@@ -1441,7 +1506,7 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect2">
-<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.8. Configuration</a></h3>
+<h3 id="Implementation-Configuration"><a class="link" href="#Implementation-Configuration">4.9. Configuration</a></h3>
 <div class="paragraph">
 <p>Certain properties of the application can be controlled (e.g user prefs file location, logging level) through the configuration file (default: <code>config.json</code>).</p>
 </div>
@@ -2943,4 +3008,4 @@ of the entire team, we believe that we have created an end-product that is able 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 14:41:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 15:02:05 UTC</div></div></div></body></html>

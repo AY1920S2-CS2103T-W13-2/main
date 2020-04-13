@@ -13,23 +13,24 @@
 <ul class="sectlevel2">
 <li><a href="#product-description-hui-ming">1.1. Product Description (Hui Ming)</a></li>
 <li><a href="#purpose-hui-ming">1.2. Purpose (Hui Ming)</a></li>
+<li><a href="#how-to-navigate-this-document">1.3. How to navigate this document</a></li>
 </ul>
 </li>
 <li><a href="#setting-up">2. Setting up</a></li>
 <li><a href="#design">3. Design</a>
 <ul class="sectlevel2">
-<li><a href="#Design-Architecture">3.1. Architecture</a></li>
+<li><a href="#Design-Architecture">3.1. Architecture<br></a></li>
 <li><a href="#Design-Ui">3.2. UI component</a></li>
 <li><a href="#Design-Logic">3.3. Logic component</a></li>
 <li><a href="#Design-Model">3.4. Model component</a></li>
-<li><a href="#Design-Storage">3.5. Storage component</a></li>
+<li><a href="#Design-Storage">3.5. Storage component<br></a></li>
 <li><a href="#Design-Commons">3.6. Common classes</a></li>
 </ul>
 </li>
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
-<li><a href="#hotel-initialization">4.1. Hotel Initialization</a></li>
-<li><a href="#hotel-services-feature">4.2. Hotel Services feature</a></li>
+<li><a href="#hotel-initialization-br">4.1. Hotel Initialization<br></a></li>
+<li><a href="#hotel-services">4.2. Hotel Services</a></li>
 <li><a href="#search-feature">4.3. Search feature</a></li>
 <li><a href="#billing-system-hui-ming">4.4. Billing System (Hui Ming)</a></li>
 <li><a href="#Implementation-Configuration">4.5. Configuration</a></li>
@@ -49,7 +50,7 @@
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
 <li><a href="#glossary">Appendix E: Glossary</a></li>
-<li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
+<li><a href="#instructions-for-manual-testing-br">Appendix F: Instructions for Manual Testing<br></a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
 <li><a href="#adding-a-guest">F.2. Adding a guest</a></li>
@@ -69,11 +70,10 @@
 <li><a href="#saving-data">F.16. Saving data</a></li>
 </ul>
 </li>
-<li><a href="#effort">Appendix G: Effort</a>
+<li><a href="#effort-br">Appendix G: Effort<br></a>
 <ul class="sectlevel2">
-<li><a href="#overview">G.1. Overview</a></li>
-<li><a href="#challenges">G.2. Challenges</a></li>
-<li><a href="#conclusion">G.3. Conclusion</a></li>
+<li><a href="#challenges">G.1. Challenges</a></li>
+<li><a href="#conclusion">G.2. Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -103,6 +103,53 @@ Most of the user interaction occurs via a CLI (Command Line Interface).</p>
 The intended audience is the <strong>developers, designers and software testers</strong> who wish to understand, maintain &amp; upgrade the desktop application.</p>
 </div>
 </div>
+<div class="sect2">
+<h3 id="how-to-navigate-this-document"><a class="link" href="#how-to-navigate-this-document">1.3. How to navigate this document</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p><em>This section shows you how to read and understand this document.</em></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Any text in <code>markup</code> suggests that you may enter it as a command in the app.</p>
+</li>
+<li>
+<p>A link like <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/tree/master">this</a> will take you to the link destination when clicked.</p>
+</li>
+<li>
+<p><kbd>Keyboard</kbd> shows that this is a key that can be pressed on the keyboard.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+This is a useful tip to help optimize your experience using Morpheus.
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+This is important information you need to take note of!
+</td>
+</tr>
+</table>
+</div>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -117,7 +164,10 @@ The intended audience is the <strong>developers, designers and software testers<
 <h2 id="design"><a class="link" href="#design">3. Design</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture</a></h3>
+<h3 id="Design-Architecture"><a class="link" href="#Design-Architecture">3.1. Architecture<br></a></h3>
+<div class="paragraph">
+<p>(Sanchari)</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/OverallArchitecture.png" alt="OverallArchitecture">
@@ -368,7 +418,10 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component</a></h3>
+<h3 id="Design-Storage"><a class="link" href="#Design-Storage">3.5. Storage component<br></a></h3>
+<div class="paragraph">
+<p>(Sanchari)</p>
+</div>
 <div class="imageblock">
 <div class="content">
 <img src="images/StorageDiagram.png" alt="StorageDiagram">
@@ -379,7 +432,8 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p><strong>API</strong> : <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/tree/master/src/main/java/seedu/address/storage/Storage.java"><code>Storage.java</code></a></p>
 </div>
 <div class="paragraph">
-<p>The <code>Storage</code> component,</p>
+<p>The <code>Storage</code> component is responsible for serializing <code>Model</code> and deserializing Json data to facilitate reading and writing into the database.<br>
+The <code>Storage</code> component can:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -413,9 +467,10 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>This section describes some noteworthy details on how certain features are implemented.</p>
 </div>
 <div class="sect2">
-<h3 id="hotel-initialization"><a class="link" href="#hotel-initialization">4.1. Hotel Initialization</a></h3>
+<h3 id="hotel-initialization-br"><a class="link" href="#hotel-initialization-br">4.1. Hotel Initialization<br></a></h3>
 <div class="paragraph">
-<p>The following steps show how to set up a hotel by adding guests, rooms and services:</p>
+<p>(Sanchari)
+The following steps show how to set up a hotel by adding guests, rooms and services:</p>
 </div>
 <div class="sect3">
 <h4 id="addguestcommand"><a class="link" href="#addguestcommand">4.1.1. AddGuestCommand</a></h4>
@@ -644,7 +699,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="hotel-services-feature"><a class="link" href="#hotel-services-feature">4.2. Hotel Services feature</a></h3>
+<h3 id="hotel-services"><a class="link" href="#hotel-services">4.2. Hotel Services</a></h3>
 <div class="sect3">
 <h4 id="reserve-command"><a class="link" href="#reserve-command">4.2.1. Reserve Command</a></h4>
 <div class="sect4">
@@ -1583,8 +1638,11 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect1">
-<h2 id="instructions-for-manual-testing"><a class="link" href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a></h2>
+<h2 id="instructions-for-manual-testing-br"><a class="link" href="#instructions-for-manual-testing-br">Appendix F: Instructions for Manual Testing<br></a></h2>
 <div class="sectionbody">
+<div class="paragraph">
+<p>(Sanchari)</p>
+</div>
 <div class="paragraph">
 <p>Given below are instructions to test the app manually.</p>
 </div>
@@ -2047,19 +2105,18 @@ Expected: Morpheus will restart with an empty addressbook and hotel.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="effort"><a class="link" href="#effort">Appendix G: Effort</a></h2>
+<h2 id="effort-br"><a class="link" href="#effort-br">Appendix G: Effort<br></a></h2>
 <div class="sectionbody">
-<div class="sect2">
-<h3 id="overview"><a class="link" href="#overview">G.1. Overview</a></h3>
 <div class="paragraph">
-<p>Morpheus is an extension from AB3 and is considerably more complex than AB3. We have incorporated several new features which required extending the
+<p>(Sanchari)
+=== Overview
+Morpheus is an extension from AB3 and is considerably more complex than AB3. We have incorporated several new features which required extending the
 UI, Storage and Model components of Morpheus. We extended current AB3 features (which only had 1 entity type: AddressBook) to include more entity types such as Hotel and BookKeeper which in turn
 contained more entities such as Rooms and Bills. We did this so as to be able to create an application that allows seamless management of a hotel&#8217;s daily
 activities. As there were many new things to add on to AB3, the entire team put in their collaborative effort to create the end product.</p>
 </div>
-</div>
 <div class="sect2">
-<h3 id="challenges"><a class="link" href="#challenges">G.2. Challenges</a></h3>
+<h3 id="challenges"><a class="link" href="#challenges">G.1. Challenges</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -2110,11 +2167,11 @@ The Ui was improved and edited using JavaFx and CSS. All bugs and errors that we
 </div>
 </div>
 <div class="sect2">
-<h3 id="conclusion"><a class="link" href="#conclusion">G.3. Conclusion</a></h3>
+<h3 id="conclusion"><a class="link" href="#conclusion">G.2. Conclusion</a></h3>
 <div class="paragraph">
 <p>We believe that this was a difficult project to execute as a hotel has many interlinked components working together. However, through the combined effort
 of the entire team, we believe that we have created an end-product that is able to manage the hotel&#8217;s important activities altogether in one application.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:50:50 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:58:45 UTC</div></div></div></body></html>

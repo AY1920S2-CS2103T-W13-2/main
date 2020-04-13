@@ -25,23 +25,18 @@
 <li><a href="#adding-a-tier-to-a-room-code-addtier-code">4.5. Adding a tier to a room: <code>addtier</code></a></li>
 <li><a href="#adding-an-available-service-code-addservice-code">4.6. Adding an available service: <code>addservice</code></a></li>
 <li><a href="#setting-the-cost-for-a-room-code-setrcost-code">4.7. Setting the cost for a room : <code>setrcost</code></a></li>
-<li><a href="#making-a-reservation-code-reserve-code">4.8. Making a reservation : <code>reserve</code></a></li>
-<li><a href="#checking-in-a-guest-code-checkin-code">4.9. Checking in a guest: <code>checkin</code></a></li>
-<li><a href="#checking-out-a-guest-code-checkout-code">4.10. Checking out a guest: <code>checkout</code></a></li>
-<li><a href="#extend-a-stay-for-a-guest-code-extend-code">4.11. Extend a stay for a guest: <code>extend</code></a></li>
-<li><a href="#finding-guests-code-findguest-code">4.12. Finding guests: <code>findguest</code></a></li>
-<li><a href="#charging-a-service-code-chargeservice-code">4.13. Charging a service : <code>chargeservice</code></a></li>
-<li><a href="#deleting-a-service-from-a-bill-code-deletecservice-code">4.14. Deleting a service from a bill : <code>deletecservice</code></a></li>
-<li><a href="#fetching-bill-of-a-guest-code-fetchbill-code">4.15. Fetching bill of a guest : <code>fetchbill</code></a></li>
-<li><a href="#finding-guests-code-findguest-code-2">4.16. Finding guests: <code>findguest</code></a></li>
-<li><a href="#finding-bookings-code-findbooking-code">4.17. Finding bookings: <code>findbooking</code></a></li>
-<li><a href="#locating-a-guest-s-room-code-getroom-code">4.18. Locating a guest&#8217;s room : <code>getroom</code></a></li>
-<li><a href="#deleting-a-guest-code-delete-code">4.19. Deleting a guest : <code>delete</code></a></li>
-<li><a href="#deleting-a-room-code-deleteroom-code">4.20. Deleting a room : <code>deleteroom</code></a></li>
-<li><a href="#deleting-an-available-service-code-deleteservice-code">4.21. Deleting an available service: <code>deleteservice</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">4.22. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">4.23. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">4.24. Saving the data</a></li>
+<li><a href="#checking-in-a-guest-code-checkin-code">4.8. Checking in a guest: <code>checkin</code></a></li>
+<li><a href="#checking-out-a-guest-code-checkout-code">4.9. Checking out a guest: <code>checkout</code></a></li>
+<li><a href="#extend-a-stay-for-a-guest-code-extend-code">4.10. Extend a stay for a guest: <code>extend</code></a></li>
+<li><a href="#charging-a-service-code-chargeservice-code">4.11. Charging a service : <code>chargeservice</code></a></li>
+<li><a href="#finding-bookings-code-findbooking-code">4.12. Finding bookings: <code>findbooking</code></a></li>
+<li><a href="#locating-a-guest-s-room-code-getroom-code">4.13. Locating a guest&#8217;s room : <code>getroom</code></a></li>
+<li><a href="#deleting-a-guest-code-delete-code">4.14. Deleting a guest : <code>delete</code></a></li>
+<li><a href="#deleting-a-room-code-deleteroom-code">4.15. Deleting a room : <code>deleteroom</code></a></li>
+<li><a href="#deleting-an-available-service-code-deleteservice-code">4.16. Deleting an available service: <code>deleteservice</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">4.17. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">4.18. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">4.19. Saving the data</a></li>
 </ul>
 </li>
 <li><a href="#faq">5. FAQ</a></li>
@@ -545,13 +540,9 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Result:</strong> Sets the cost for <code>101</code> as <code>50.00</code> per night.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="making-a-reservation-code-reserve-code"><a class="link" href="#making-a-reservation-code-reserve-code">4.8. Making a reservation : <code>reserve</code></a></h3>
-<div class="paragraph">
-<p>If you want to make a reservation for a guest in the hotel, use the command <code>reserve</code><br></p>
+<p><strong>Result:</strong> Sets the cost for <code>101</code> as <code>50.00</code> per night.
+=== Making a reservation : <code>reserve</code>
+If you want to make a reservation for a guest in the hotel, use the command <code>reserve</code><br></p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>reserve i/ID rn/ROOM_NUMBER fd/FROM_DATE td/TO_DATE</code></p>
@@ -571,7 +562,7 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 </div>
 </div>
 <div class="sect2">
-<h3 id="checking-in-a-guest-code-checkin-code"><a class="link" href="#checking-in-a-guest-code-checkin-code">4.9. Checking in a guest: <code>checkin</code></a></h3>
+<h3 id="checking-in-a-guest-code-checkin-code"><a class="link" href="#checking-in-a-guest-code-checkin-code">4.8. Checking in a guest: <code>checkin</code></a></h3>
 <div class="paragraph">
 <p>If you want to check in a guest to the hotel from the current date until the an end-date, use the command <code>checkin</code><br></p>
 </div>
@@ -605,7 +596,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="checking-out-a-guest-code-checkout-code"><a class="link" href="#checking-out-a-guest-code-checkout-code">4.10. Checking out a guest: <code>checkout</code></a></h3>
+<h3 id="checking-out-a-guest-code-checkout-code"><a class="link" href="#checking-out-a-guest-code-checkout-code">4.9. Checking out a guest: <code>checkout</code></a></h3>
 <div class="paragraph">
 <p>If you want to check out a guest from the hotel, use the command <code>checkout</code><br></p>
 </div>
@@ -627,7 +618,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="extend-a-stay-for-a-guest-code-extend-code"><a class="link" href="#extend-a-stay-for-a-guest-code-extend-code">4.11. Extend a stay for a guest: <code>extend</code></a></h3>
+<h3 id="extend-a-stay-for-a-guest-code-extend-code"><a class="link" href="#extend-a-stay-for-a-guest-code-extend-code">4.10. Extend a stay for a guest: <code>extend</code></a></h3>
 <div class="paragraph">
 <p>If you want to extend your stay, use the command <code>extend</code><br></p>
 </div>
@@ -662,16 +653,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="finding-guests-code-findguest-code"><a class="link" href="#finding-guests-code-findguest-code">4.12. Finding guests: <code>findguest</code></a></h3>
-<div class="paragraph">
-<p>If you want to find guests using their names or id, use the commmand <code>findguest</code>.<br></p>
-</div>
-<div class="paragraph">
-<p>Format: <code>findguest [n/NAME] &#8230;&#8203; [n/NAME] [i/ID] &#8230;&#8203; [i/ID]</code></p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="charging-a-service-code-chargeservice-code"><a class="link" href="#charging-a-service-code-chargeservice-code">4.13. Charging a service : <code>chargeservice</code></a></h3>
+<h3 id="charging-a-service-code-chargeservice-code"><a class="link" href="#charging-a-service-code-chargeservice-code">4.11. Charging a service : <code>chargeservice</code></a></h3>
 <div class="paragraph">
 <p>If you want to charges a service to the guest&#8217;s tab, use the command <code>chargeservice</code><br></p>
 </div>
@@ -689,13 +671,9 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Result:</strong> Charges service with the ID <code>WC</code> for room <code>100</code> to the guest with ID <code>G1231231X</code> 's bill.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="deleting-a-service-from-a-bill-code-deletecservice-code"><a class="link" href="#deleting-a-service-from-a-bill-code-deletecservice-code">4.14. Deleting a service from a bill : <code>deletecservice</code></a></h3>
-<div class="paragraph">
-<p>If you want to remove a charged service from the guest&#8217;s bill.<br></p>
+<p><strong>Result:</strong> Charges service with the ID <code>WC</code> for room <code>100</code> to the guest with ID <code>G1231231X</code> 's bill.
+=== Deleting a service from a bill : <code>deletecservice</code>
+If you want to remove a charged service from the guest&#8217;s bill.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>deletecservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
@@ -711,13 +689,9 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Result:</strong> Removes service with ID <code>WC</code> from guest with ID <code>G1231231X</code> 's bill for <code>100</code>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="fetching-bill-of-a-guest-code-fetchbill-code"><a class="link" href="#fetching-bill-of-a-guest-code-fetchbill-code">4.15. Fetching bill of a guest : <code>fetchbill</code></a></h3>
-<div class="paragraph">
-<p>If you want to retrieve the bill of a guest, use the command <code>fetchbill</code><br></p>
+<p><strong>Result:</strong> Removes service with ID <code>WC</code> from guest with ID <code>G1231231X</code> 's bill for <code>100</code>.
+=== Fetching bill of a guest : <code>fetchbill</code>
+If you want to retrieve the bill of a guest, use the command <code>fetchbill</code><br></p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>fetchbill i/ID [rn/ROOM_NUMBER]</code></p>
@@ -733,13 +707,9 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </ul>
 </div>
 <div class="paragraph">
-<p><strong>Result:</strong> Shows the entire bill, consisting of all costs incurred, for guest with ID <code>G1231231X</code> 's stay up till present moment.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="finding-guests-code-findguest-code-2"><a class="link" href="#finding-guests-code-findguest-code-2">4.16. Finding guests: <code>findguest</code></a></h3>
-<div class="paragraph">
-<p>If you want to find guests using their names or id, use the commmand <code>findguest</code>.<br></p>
+<p><strong>Result:</strong> Shows the entire bill, consisting of all costs incurred, for guest with ID <code>G1231231X</code> 's stay up till present moment.
+=== Finding guests: <code>findguest</code>
+If you want to find guests using their names or id, use the commmand <code>findguest</code>.<br></p>
 </div>
 <div class="paragraph">
 <p><strong>Format:</strong> <code>findguest [n/NAME] &#8230;&#8203; [n/NAME] [i/ID] &#8230;&#8203; [i/ID]</code></p>
@@ -773,7 +743,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="finding-bookings-code-findbooking-code"><a class="link" href="#finding-bookings-code-findbooking-code">4.17. Finding bookings: <code>findbooking</code></a></h3>
+<h3 id="finding-bookings-code-findbooking-code"><a class="link" href="#finding-bookings-code-findbooking-code">4.12. Finding bookings: <code>findbooking</code></a></h3>
 <div class="paragraph">
 <p>If you want to find bookings using the guest&#8217;s name, guest&#8217;s ID or by room number, use the command <code>findbooking</code>.<br></p>
 </div>
@@ -808,7 +778,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="locating-a-guest-s-room-code-getroom-code"><a class="link" href="#locating-a-guest-s-room-code-getroom-code">4.18. Locating a guest&#8217;s room : <code>getroom</code></a></h3>
+<h3 id="locating-a-guest-s-room-code-getroom-code"><a class="link" href="#locating-a-guest-s-room-code-getroom-code">4.13. Locating a guest&#8217;s room : <code>getroom</code></a></h3>
 <div class="paragraph">
 <p>If you want to retrieve the room number related to a guest&#8217;s reservation, use the command <code>getroom</code>.<br></p>
 </div>
@@ -830,7 +800,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-guest-code-delete-code"><a class="link" href="#deleting-a-guest-code-delete-code">4.19. Deleting a guest : <code>delete</code></a></h3>
+<h3 id="deleting-a-guest-code-delete-code"><a class="link" href="#deleting-a-guest-code-delete-code">4.14. Deleting a guest : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>If you want to delete a guest&#8217;s details from the hotel database, use the command <code>delete</code>.<br></p>
 </div>
@@ -852,7 +822,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-room-code-deleteroom-code"><a class="link" href="#deleting-a-room-code-deleteroom-code">4.20. Deleting a room : <code>deleteroom</code></a></h3>
+<h3 id="deleting-a-room-code-deleteroom-code"><a class="link" href="#deleting-a-room-code-deleteroom-code">4.15. Deleting a room : <code>deleteroom</code></a></h3>
 <div class="paragraph">
 <p>If you want to delete a room from the hotel, use the command <code>deleteroom</code>.<br></p>
 </div>
@@ -874,7 +844,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-an-available-service-code-deleteservice-code"><a class="link" href="#deleting-an-available-service-code-deleteservice-code">4.21. Deleting an available service: <code>deleteservice</code></a></h3>
+<h3 id="deleting-an-available-service-code-deleteservice-code"><a class="link" href="#deleting-an-available-service-code-deleteservice-code">4.16. Deleting an available service: <code>deleteservice</code></a></h3>
 <div class="paragraph">
 <p>If you want to delete an available service from the hotel database using the service&#8217;s ID, use the command <code>deleteservice</code><br></p>
 </div>
@@ -896,7 +866,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.22. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">4.17. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>If you want to clear all data from Morpheus, use the command <code>clear</code><br></p>
 </div>
@@ -905,7 +875,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.23. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">4.18. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p><strong>Result:</strong> If you want to exit the program, use the command <code>exit</code><br></p>
 </div>
@@ -914,7 +884,7 @@ A reservation in the guest&#8217;s ID must exist before checking the guest in.
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.24. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">4.19. Saving the data</a></h3>
 <div class="paragraph">
 <p>The data of Morpheus is saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -1013,4 +983,4 @@ e.g. <code>find James Jake</code></p>
 </ul>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-12 21:58:17 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 00:16:27 UTC</div></div></div></body></html>

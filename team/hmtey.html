@@ -1,0 +1,804 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]--><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Asciidoctor 1.5.6.1"><title>Tey Hui Ming - Project Portfolio</title><link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css"></head><body class="article"><div id="seedu-header"><nav class="navbar navbar-lg navbar-light bg-lighter"><div class="container"><a class="navbar-brand" href="https://ay1920s2-cs2103t-w13-2.github.io/main/"><img src="../images/morpheus_icon.png" alt="SE-EDU"></a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link active" href="../index.html">Morpheus</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/collate">Collate</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/se-book">Book</a></li><li class="nav-item"><a class="nav-link" href="https://se-edu.github.io/learningresources">Resources</a></li></ul></div></nav></div><div id="site-header"><nav class="navbar navbar-light bg-light"><div class="container"><a class="navbar-brand" href="../index.html">Morpheus</a><ul class="navbar-nav"><li class="nav-item"><a class="nav-link" href="../UserGuide.html">User Guide</a></li><li class="nav-item"><a class="nav-link" href="../DeveloperGuide.html">Developer Guide</a></li><li class="nav-item"><a class="nav-link" href="../LearningOutcomes.html">LOs</a></li><li class="nav-item"><a class="nav-link active" href="../AboutUs.html">About Us</a></li><li class="nav-item"><a class="nav-link" href="../ContactUs.html">Contact Us</a></li><li class="navitem"><a class="nav-link" href="https://github.com/AY1920S2-CS2103T-W13-2/main"><span class="fa fa-github fa-lg" aria-hidden="true"></span>&nbsp;View on GitHub</a></li></ul></div></nav></div><div id="header"><h1>Tey Hui Ming - Project Portfolio</h1></div><div id="content"><div class="sect1">
+<h2 id="project-morpheus"><a class="link" href="#project-morpheus">PROJECT: Morpheus</a></h2>
+<div class="sectionbody">
+<hr>
+</div>
+</div>
+<div class="sect1">
+<h2 id="overview"><a class="link" href="#overview">Overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Morpheus is a desktop application that aims to facilitate the administrative work of hotel services as a hotel management system. The user interacts with it using a CLI, and it has a GUI created with JavaFX.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="summary-of-contributions"><a class="link" href="#summary-of-contributions">Summary of contributions</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Major enhancement</strong>: Set up the <strong>billing system</strong> for the Morpheus</p>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Added the ability to <strong>charge services to a bill</strong>, <strong>remove charged services from a bill</strong> and <strong>fetch &amp; view bills</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the user to keep track of guests' bills and outstanding payments, with a list of their requested or used services.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because as a hotel management system, Morpheus should be able to carry out administrative work like bookkeeping. This makes the billing system a key feature of the product.</p>
+</li>
+<li>
+<p>Highlights: This enhancement is a <strong>core feature</strong> of Morpheus and <strong>necessary feature</strong> of the billing system. Hence, it affects commands to be added in the future. It required an in-depth analysis of design alternatives as there were many ways to keep track of and manipulate bills in the code.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Added the ability to <strong>store &amp; load bills</strong></p>
+<div class="ulist">
+<ul>
+<li>
+<p>What it does: Allows the application to store bill information to the hard disk upon exit and load the data when reopened.</p>
+</li>
+<li>
+<p>Justification: This feature improves the product significantly because in order to facilitate bookkeeping, Morpheus must be able to save and load bill information.</p>
+</li>
+<li>
+<p>Highlights: This enhancement is a <strong>necessary feature</strong> of the billing system and therefore affects commands to be added in the future. It required a deep understanding of the storage component in the original addressbook.</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p><strong>Minor enhancement</strong>: added the ability to set the cost of a room.</p>
+</li>
+<li>
+<p><strong>Code contributed</strong>: <a href="https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#=undefined&amp;search=hmtey">[Functional &amp; Test code</a>]</p>
+</li>
+<li>
+<p><strong>Other contributions</strong>:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Project management:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Managed releases <code>v1.2</code> - <code>v1.4</code> (3 releases) on GitHub</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Enhancements to existing features:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated old references to addressbook (Pull requests <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/177">#177</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/260">#260</a>)</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Documentation:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>User Guide: <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/95">#95</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/177/files">#177</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/183">#183</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Standardized and cleaned up team&#8217;s updates</p>
+</li>
+<li>
+<p>Added <code>setrcost</code>, <code>chargeservice</code>, <code>deletecservice</code> &amp; <code>fetchbill</code> features</p>
+</li>
+<li>
+<p>Updated <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/blob/master/docs/UserGuide.adoc#introduction">Introduction</a> &amp; <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/blob/master/docs/UserGuide.adoc#command-summary">Command Summary</a></p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/95">#95</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/259">#259</a></p>
+<div class="ulist">
+<ul>
+<li>
+<p>Standardized and cleaned up team&#8217;s updates</p>
+</li>
+<li>
+<p>Added <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/blob/master/docs/DeveloperGuide.adoc#billing-system">Billing System Implementation</a></p>
+</li>
+<li>
+<p>Added diagrams (Use Cases, Billing System)</p>
+</li>
+<li>
+<p>Updated <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/blob/master/docs/DeveloperGuide.adoc#introduction">Introduction</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/blob/master/docs/DeveloperGuide.adoc#user-stories">User Stories</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/blob/master/docs/DeveloperGuide.adoc#use-cases">Use Cases</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Community:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>PRs reviewed (with non-trivial review comments): <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/180">#180</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/206">#206</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/248">#248</a></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-user-guide"><a class="link" href="#contributions-to-the-user-guide">Contributions to the User Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the User Guide. They showcase my ability to write documentation targeting end-users.</em></p></td>
+</tr>
+</tbody>
+</table>
+<div class="sect2">
+<h3 id="setting-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#setting-the-cost-for-a-room-code-setrcost-code">Setting the cost for a room : <code>setrcost</code></a></h3>
+<div class="paragraph">
+<p>If you want to set the cost for a room (per night), use the command <code>setrcost</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>setrcost rn/ROOM_NUMBER c/COST</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>setrcost  rn/101 c/50.00</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Sets the cost for <code>101</code> as <code>50.00</code> per night.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="charging-a-service-code-chargeservice-code"><a class="link" href="#charging-a-service-code-chargeservice-code">Charging a service : <code>chargeservice</code></a></h3>
+<div class="paragraph">
+<p>If you want to charges a service to the guest&#8217;s tab, use the command <code>chargeservice</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>chargeservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>chargeservice i/G1231231X rn/100.00 si/WC</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Charges service with the ID <code>WC</code> for room <code>100</code> to the guest with ID <code>G1231231X</code> 's bill.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-service-from-a-bill-code-deletecservice-code"><a class="link" href="#deleting-a-service-from-a-bill-code-deletecservice-code">Deleting a service from a bill : <code>deletecservice</code></a></h3>
+<div class="paragraph">
+<p>If you want to remove a charged service from the guest&#8217;s bill.<br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>deletecservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deletecservice i/G1231231X rn/100 si/WC</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Removes service with ID <code>WC</code> from guest with ID <code>G1231231X</code> 's bill for <code>100</code>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fetching-bill-of-a-guest-code-fetchbill-code"><a class="link" href="#fetching-bill-of-a-guest-code-fetchbill-code">Fetching bill of a guest : <code>fetchbill</code></a></h3>
+<div class="paragraph">
+<p>If you want to retrieve the bill of a guest, use the command <code>fetchbill</code><br></p>
+</div>
+<div class="paragraph">
+<p><strong>Format:</strong> <code>fetchbill i/ID [rn/ROOM_NUMBER]</code></p>
+</div>
+<div class="paragraph">
+<p><strong>Examples:</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>fetchbill  i/G1231231X</code><br></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Result:</strong> Shows the entire bill, consisting of all costs incurred, for guest with ID <code>G1231231X</code> 's stay up till present moment.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="contributions-to-the-developer-guide"><a class="link" href="#contributions-to-the-developer-guide">Contributions to the Developer Guide</a></h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 100%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project.</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="product-description"><a class="link" href="#product-description">Product Description</a></h3>
+<div class="paragraph">
+<p>Morpheus is a desktop application that aims to facilitate the administrative work of hotel services as a hotel room management system.
+The system will also provide statistics and reports, constructed from the analysis of the details in the user-provided database.
+Most of the user interaction occurs via a CLI (Command Line Interface).</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Ui.png" alt="Ui">
+</div>
+<div class="title">Figure 1. Morpheus UI</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="purpose"><a class="link" href="#purpose">Purpose</a></h3>
+<div class="paragraph">
+<p>This <strong>Developer Guide</strong> describes the architecture and software design of Morpheus.
+The intended audience is the <strong>developers, designers and software testers</strong> who wish to understand, maintain &amp; upgrade the desktop application.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="billing-system"><a class="link" href="#billing-system">Billing System</a></h3>
+<div class="paragraph">
+<p>The billing system is designed to aid hotel receptionists in their bookkeeping and consists of the following operations:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>SetRoomCostCommand</code>&#8201;&#8212;&#8201;Sets the cost of a room.</p>
+</li>
+<li>
+<p><code>AddServiceCommand</code>&#8201;&#8212;&#8201;Creates a chargeable service.</p>
+</li>
+<li>
+<p><code>ChargeServiceCommand</code>&#8201;&#8212;&#8201;Charges a guest for a requested service.</p>
+</li>
+<li>
+<p><code>DeleteChargedServiceCommand</code>&#8201;&#8212;&#8201;Removes a charged service from the bill of a guest.</p>
+</li>
+<li>
+<p><code>FetchBillCommand</code>&#8201;&#8212;&#8201;Fetches the bill of a guest, including the cost of the room.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The following activity diagram summarizes the usage of the billing feature:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BillingActivityDiagram.png" alt="BillingActivityDiagram">
+</div>
+<div class="title">Figure 2. Activity Diagram of Billing System</div>
+</div>
+<div class="sect3">
+<h4 id="setroomcost-command"><a class="link" href="#setroomcost-command">SetRoomCost Command</a></h4>
+<div class="paragraph">
+<p>This section goes through the implementation and design considerations of the <code>SetRoomCost</code> command.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation"><a class="link" href="#implementation">Implementation</a></h5>
+<div class="paragraph">
+<p>The following steps show how the command is implemented:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The command from the user is parsed and undergoes checks for the validity of the given <code>ROOMNUMBER</code> and <code>COST</code>.</p>
+</li>
+<li>
+<p>If the parameters are valid, <code>SetRoomCostCommand#execute(Model model)</code> is invoked, which checks if the given room exists.</p>
+</li>
+<li>
+<p>If the room exists, a <code>RoomCost</code> object is created and <code>Model#setRoomCost(Room room, RoomCost roomCost)</code> is called.</p>
+</li>
+<li>
+<p><code>Room##setCost(RoomCost roomcost)</code> is then invoked to set the cost of the room by setting the 'roomCost' attribute of the <code>Room</code> object.</p>
+</li>
+<li>
+<p>If successful, a <code>CommandResult</code> object is created to show a success message in the feedback box of the ui.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below illustrates how the <code>SetRoomCost</code> command works with the input <code>setrcost rn/001 c/50</code>:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/SetRoomCostSequenceDiagram.png" alt="SetRoomCostSequenceDiagram">
+</div>
+<div class="title">Figure 3. Sequence Diagram of <code>SetRooomCost</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<div class="paragraph">
+<p>Below describes ideas that were considered when designing the command.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Store the cost of the room as an attribute in the <code>Room</code> object.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Application of OOP concepts.</p>
+</li>
+<li>
+<p>Cons: Requires a deeper understanding of the Logic &amp; Model components in order to implement.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store the costs of rooms in a separate list (e.g. as a HashMap) in the Hotel component.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simple to implement.</p>
+</li>
+<li>
+<p>Cons: Might limit the relationship between the rooms and their costs.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="addservice-command"><a class="link" href="#addservice-command">AddService Command</a></h4>
+<div class="paragraph">
+<p>The command is also a Hotel Initialization feature and is hence covered above in <a href="#Initialization-AddService">[Initialization-AddService]</a>.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="chargeservice-command"><a class="link" href="#chargeservice-command">ChargeService Command</a></h4>
+<div class="paragraph">
+<p>This section goes through the implementation and design considerations of the <code>ChargeService</code> command.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h5>
+<div class="paragraph">
+<p>The following steps show how the command is implemented:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The command from the user is parsed and undergoes checks for the validity of the given <code>PERSONID</code>, <code>ROOMNUMBER</code> and <code>SERVICEID</code>.</p>
+</li>
+<li>
+<p>If the parameters are valid, <code>ChargeServiceCommand#execute(Model model)</code> is invoked, which checks if the given guest, room and service exist.</p>
+</li>
+<li>
+<p>If they exist, <code>Model#chargeService(RoomId roomId, AvailableService service)</code> is called which in following calls <code>BookKeeper#chargeServiceToBill(RoomId roomId, AvailableService service)</code>.</p>
+</li>
+<li>
+<p>The bill for the corresponding room is retrieved and <code>Bill#addService(AvailableService service)</code> is then invoked by <code>BookKeeper</code>.</p>
+</li>
+<li>
+<p>The service is added to stored list of chargeable objects in the bill and its cost is added to the stored total in the bill.</p>
+</li>
+<li>
+<p>If successful, a <code>CommandResult</code> object is created to show a success message in the feedback box of the ui.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below illustrates how the <code>ChargeService</code> command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/ChargeServiceSequenceDiagram.png" alt="ChargeServiceSequenceDiagram">
+</div>
+<div class="title">Figure 4. Sequence Diagram of <code>ChargeService</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+<div class="paragraph">
+<p>Below describes ideas that were considered when designing the command.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Store the charged services in an ArrayList and the total cost as a double in the bill.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Implementing the removal of charges services would be more direct and simple.</p>
+</li>
+<li>
+<p>Cons: Have to be careful with the calculation of the total cost.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Create another class to handle the list of charged services.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Calculation of the total cost would be less prone to errors.</p>
+</li>
+<li>
+<p>Cons: Might cause the design of the application be unnecessarily complicated with many classes.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="deletechargedservice-command"><a class="link" href="#deletechargedservice-command">DeleteChargedService Command</a></h4>
+<div class="paragraph">
+<p>This section goes through the implementation and design considerations of the <code>DeleteChargedService</code> command.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
+<div class="paragraph">
+<p>The following steps show how the command is implemented:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The command from the user is parsed and undergoes checks for the validity of the given <code>PERSONID</code>, <code>ROOMNUMBER</code> and <code>SERVICEID</code>.</p>
+</li>
+<li>
+<p>If the parameters are valid, <code>DeleteChargedServiceCommand#execute(Model model)</code> is invoked, which checks if the given guest, room and service exist.</p>
+</li>
+<li>
+<p>If they exist, <code>Model#deleteChargedService(RoomId roomId, AvailableService service)</code> is called which in following calls <code>BookKeeper#deleteChargedServiceFromBill(RoomId roomId, AvailableService service)</code>.</p>
+</li>
+<li>
+<p>The bill for the corresponding room is retrieved and <code>Bill#deleteService(AvailableService service)</code> is then invoked by <code>BookKeeper</code>.</p>
+</li>
+<li>
+<p>The service is removed from the stored list of chargeable objects in the bill and its cost is subtracted from the stored total in the bill.</p>
+</li>
+<li>
+<p>If successful, a <code>CommandResult</code> object is created to show a success message in the feedback box of the ui.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below illustrates how the <code>DeleteChargedService</code> command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/RemoveChargedServiceSequenceDiagram.png" alt="RemoveChargedServiceSequenceDiagram">
+</div>
+<div class="title">Figure 5. Sequence Diagram of <code>DeleteChargedService</code> Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h5>
+<div class="paragraph">
+<p>Below describes ideas that were considered when designing the command.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Remove any one instance of the service in the list of charged services.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simple to implement.</p>
+</li>
+<li>
+<p>Cons: Does not make sense logically.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Remove the last instance of the service that was inserted.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Makes sense logically.</p>
+</li>
+<li>
+<p>Cons: Need to keep track of the index, which unnecessarily complicates the program as the output would be the same.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="fetchbill-command"><a class="link" href="#fetchbill-command">FetchBill Command</a></h4>
+<div class="paragraph">
+<p>This section goes through the implementation and design considerations of the <code>FetchBill</code> command.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
+<div class="paragraph">
+<p>The following steps show how the command is implemented:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The command from the user is parsed and undergoes checks for the validity of the given <code>PERSONID</code> and <code>ROOMNUMBER</code>, if provided.</p>
+</li>
+<li>
+<p>If the parameter/s are valid, <code>FetchBillCommand#execute(Model model)</code> is invoked, which checks if the given guest, room if <code>ROOMNUMBER</code> is provided, and bill/s exist.</p>
+</li>
+<li>
+<p>If they exist, different methods are called depending on whether <code>ROOMNUMBER</code> is provided:</p>
+<div class="ulist">
+<ul>
+<li>
+<p>If <code>ROOMNUMBER</code> is provided:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>Model#findBill(RoomId roomId)</code> is called to retrieve the bill for specified room.</p>
+</li>
+<li>
+<p><code>Bill#getBillTotal()</code> is next called to get the total cost of expenses.</p>
+</li>
+<li>
+<p><code>Model#updateFilteredBillList(Predicate predicate)</code> is then called to update the bill tab to show the bill details of the room.</p>
+</li>
+<li>
+<p>If successful, a <code>CommandResult</code> object is created to show a success message in the feedback box of the ui.</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>If <code>ROOMNUMBER</code> is not provided:</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p><code>Model#getGuestBillsTotal(PersonId personId)</code> is called to get the total of all the bills of the guest.</p>
+</li>
+<li>
+<p><code>Model#updateFilteredBillList(Predicate predicate)</code> is then called to update the bill tab to show all the bills belonging to the guest.</p>
+</li>
+<li>
+<p>If successful, a <code>CommandResult</code> object is created to show a success message in the feedback box of the ui.</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The sequence diagram below illustrates how the <code>FetchBill</code> command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/RemoveChargedServiceSequenceDiagram.png" alt="RemoveChargedServiceSequenceDiagram">
+</div>
+<div class="title">Figure 6. Sequence Diagram of RemoveChargedService Command</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
+<div class="paragraph">
+<p>Below describes ideas that were considered when designing the command.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Allow the user to fetch the bill of a room of all bills of a person with a single command.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier on user as they have lesser commands to remember.</p>
+</li>
+<li>
+<p>Cons: More considerations for different scenarios are needed, causing the implementation to be more complicated.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Have two separate commands to fetch the bill of a room and the bills of a person.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Easier to parse the parameters for the command.</p>
+</li>
+<li>
+<p>Cons: User needs to remember more commands.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="use-cases"><a class="link" href="#use-cases">Appendix A: Use Cases</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>(For all use cases below, the <strong>System</strong> is the <code>Morpheus</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UseCaseDiagram.png" alt="UseCaseDiagram">
+</div>
+<div class="title">Figure 7. Use Case Diagram</div>
+</div>
+<h3 id="use-cases-example" class="discrete">Use cases example:</h3>
+<div class="sect2">
+<h3 id="show-list-of-available-rooms"><a class="link" href="#show-list-of-available-rooms">Show list of available rooms</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to list the available room for a given date</p>
+</li>
+<li>
+<p>Morpheus shows a list of rooms that is available</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The list is empty.</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-make-a-reservation-for-a-room"><a class="link" href="#use-case-make-a-reservation-for-a-room">Use case: Make a reservation for a room</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to <a href="#c1-show-list-of-available-rooms"><u>show list of available rooms (C1)</u></a></p>
+</li>
+<li>
+<p>User requests to make a booking for the selected room(s)</p>
+</li>
+<li>
+<p>Morpheus will mark the booking</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given room(s) are invalid or booked.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="use-case-get-bill"><a class="link" href="#use-case-get-bill">Use case: Get bill</a></h3>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to get bill from room number or customer&#8217;s name</p>
+</li>
+<li>
+<p>Morpheus provide the bill</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a. The given room number and customer&#8217;s name is not valid</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. AddressBook shows an error message.</p>
+<div class="paragraph">
+<p>Use case resumes at step 1.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 00:16:27 UTC</div></div></div></body></html>

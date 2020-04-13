@@ -732,14 +732,143 @@ The <code>Storage</code> component can:</p>
 </div>
 <div class="sect3">
 <h4 id="checkin-command"><a class="link" href="#checkin-command">4.2.2. Checkin Command</a></h4>
+<div class="paragraph">
+<p>This command checks in guest either with a room number, guest&#8217;s name, and the end date of the stay.
+Or by providing the booking ID.</p>
+</div>
 <div class="sect4">
 <h5 id="implementation-6"><a class="link" href="#implementation-6">Implementation</a></h5>
-
+<div class="paragraph">
+<p>The following steps show how the CheckIn command is implemented.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The command is parsed by <code>CheckInCommandParser#parse(String args)</code> into list of pattern there (room number, guest id, end date of the stay or booking id).</p>
+</li>
+<li>
+<p>If <code>BOOKING_ID</code> exists in the pattern, it will ignore the rest of the pattern and checkin using that booking id instead by creating <code>CheckInByIdCommand</code></p>
+</li>
+<li>
+<p>The <code>CheckInByIdCommand</code> will invoke <code>model#findBookingById(String BookigId)</code> which will create a normal <code>CheckInCommand</code></p>
+</li>
+<li>
+<p><code>CheckInCommand</code> will call <code>model#checkIn</code> will be called.</p>
+</li>
+<li>
+<p>The list in the UI will be updated by calling <code>model#updateFilteredRoomList(Predicate predicate)</code></p>
+</li>
+<li>
+<p>The room will be charged by calling <code>model#chargeRoomCost(RoomId roomId, RoomCost roomCost, Stay stay)</code>.</p>
+</li>
+<li>
+<p>If all of the above is successfully executed, this will return a <code>CommandResult</code> object to show success message.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<div class="title">Sequence Diagram for CheckInCommand</div>
+<p>image::CheckInSequenceDiagram.png</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
+<div class="paragraph">
+<p>Below describes ideas that were considered when designing the command.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Create a stay object which differentiate between the current stay and reservation.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Could easily get the list of current stay.</p>
+</li>
+<li>
+<p>Cons: Requires more planning since we have to maintain 2 list now (stay and reservation).</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Store all stay in a reservation object.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simple to implement.</p>
+</li>
+<li>
+<p>Cons: Could not differentiate between stay and reservation unless there is another instance in the reservation object.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect3">
 <h4 id="checkout-command"><a class="link" href="#checkout-command">4.2.3. Checkout Command</a></h4>
-
+<div class="paragraph">
+<p>This command checks out a guest from the hotel by providing a room number.</p>
+</div>
+<div class="sect4">
+<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
+<div class="paragraph">
+<p>The folowing steps show how the CheckOut command is implemented.</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The command is parsed by <code>CheckOutCommandParser#parse(String args)</code> into list of pattern there (room number).</p>
+</li>
+<li>
+<p>The <code>CheckOutCommandParser</code> will create <code>CheckOutCommand</code></p>
+</li>
+<li>
+<p><code>CheckOutCommand</code> will call <code>model#checkOut</code> will be called.</p>
+</li>
+<li>
+<p>The list in the UI will be updated by calling <code>model#updateFilteredRoomList(Predicate predicate)</code></p>
+</li>
+<li>
+<p>The room will clean up the previous bill by calling <code>model#deleteBill(RoomId roomId)</code>.</p>
+</li>
+<li>
+<p>If all of the above is successfully executed, this will return a <code>CommandResult</code> object to show success message.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="extend-command"><a class="link" href="#extend-command">4.2.4. Extend Command</a></h4>
+<div class="paragraph">
+<p>This command extend the booking of a guest by providing room number and end date of the stay.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-8"><a class="link" href="#implementation-8">4.2.5. Implementation</a></h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The command is parsed by <code>ExtendCommandParser#parse(String args)</code> into list of pattern there (room number and end date).</p>
+</li>
+<li>
+<p>The <code>ExtendCommandParser</code> will create <code>ExtendCommand</code></p>
+</li>
+<li>
+<p><code>ExtendCommand</code> will call <code>model#extendRoom</code> to extend the room in the hotel.</p>
+</li>
+<li>
+<p><code>ExtendCommand</code> will call <code>model#chargeExtendRoomCost</code> to charge the room according to the room cost and number of extra nights.</p>
+</li>
+<li>
+<p>If this is successfully executer, this will return a <code>CommandResult</code> object to show success message.</p>
+</li>
+</ol>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -747,7 +876,7 @@ The <code>Storage</code> component can:</p>
 <div class="sect3">
 <h4 id="findguestcommand"><a class="link" href="#findguestcommand">4.3.1. FindGuestCommand</a></h4>
 <div class="sect4">
-<h5 id="implementation-7"><a class="link" href="#implementation-7">Implementation</a></h5>
+<h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
 <div class="paragraph">
 <p>Currently this command only support searching for full name or/and id number.</p>
 </div>
@@ -784,7 +913,7 @@ The <code>Storage</code> component can:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
+<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -870,7 +999,7 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 <p>This section goes through the implementation and design considerations of the <code>SetRoomCost</code> command.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-8"><a class="link" href="#implementation-8">Implementation</a></h5>
+<h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the command is implemented:</p>
 </div>
@@ -904,7 +1033,7 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
+<h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
 <div class="paragraph">
 <p>Below describes ideas that were considered when designing the command.</p>
 </div>
@@ -952,7 +1081,7 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 <p>This section goes through the implementation and design considerations of the <code>ChargeService</code> command.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-9"><a class="link" href="#implementation-9">Implementation</a></h5>
+<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the command is implemented:</p>
 </div>
@@ -989,7 +1118,7 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
+<h5 id="design-considerations-7"><a class="link" href="#design-considerations-7">Design Considerations</a></h5>
 <div class="paragraph">
 <p>Below describes ideas that were considered when designing the command.</p>
 </div>
@@ -1031,7 +1160,7 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 <p>This section goes through the implementation and design considerations of the <code>DeleteChargedService</code> command.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-10"><a class="link" href="#implementation-10">Implementation</a></h5>
+<h5 id="implementation-12"><a class="link" href="#implementation-12">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the command is implemented:</p>
 </div>
@@ -1068,7 +1197,7 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-7"><a class="link" href="#design-considerations-7">Design Considerations</a></h5>
+<h5 id="design-considerations-8"><a class="link" href="#design-considerations-8">Design Considerations</a></h5>
 <div class="paragraph">
 <p>Below describes ideas that were considered when designing the command.</p>
 </div>
@@ -1110,7 +1239,7 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 <p>This section goes through the implementation and design considerations of the <code>FetchBill</code> command.</p>
 </div>
 <div class="sect4">
-<h5 id="implementation-11"><a class="link" href="#implementation-11">Implementation</a></h5>
+<h5 id="implementation-13"><a class="link" href="#implementation-13">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the command is implemented:</p>
 </div>
@@ -1177,7 +1306,7 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-8"><a class="link" href="#design-considerations-8">Design Considerations</a></h5>
+<h5 id="design-considerations-9"><a class="link" href="#design-considerations-9">Design Considerations</a></h5>
 <div class="paragraph">
 <p>Below describes ideas that were considered when designing the command.</p>
 </div>
@@ -2835,4 +2964,4 @@ of the entire team, we believe that we have created an end-product that is able 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:56:41 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:57:44 UTC</div></div></div></body></html>

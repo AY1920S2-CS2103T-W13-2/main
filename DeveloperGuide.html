@@ -371,6 +371,9 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <li>
 <p>can save Hotel data in json format and read it back.</p>
 </li>
+<li>
+<p>can save BookKeeper data in json format and read it back.</p>
+</li>
 </ul>
 </div>
 </div>
@@ -409,7 +412,10 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>The <code>addguest</code> command entered by the user is parsed and the different fields are tokenized.</p>
 </li>
 <li>
-<p>The command is then executed by creating a new Guest object using the fields entered and adding the guest object into the Hotel.</p>
+<p><code>AddGuestCommand#execute(Model model)</code> is invoked which checks for validity of the entered parameter values.</p>
+</li>
+<li>
+<p>The command is then executed by creating a new Guest object using the parameter values entered and adding the Guest object into the Hotel.</p>
 </li>
 </ol>
 </div>
@@ -420,45 +426,14 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/AddGuestClass.png" alt="AddGuestClass">
 </div>
-<div class="title">Figure 10. Class diagram for AddGuestCommand</div>
+<div class="title">Figure 10. Class Diagram for AddGuestCommand</div>
 </div>
 </div>
 </div>
 <div class="sect3">
-<h4 id="addroomcommand"><a class="link" href="#addroomcommand">4.1.2. AddRoomCommand</a></h4>
+<h4 id="Initialization-AddService"><a class="link" href="#Initialization-AddService">4.1.2. AddService Command</a></h4>
 <div class="sect4">
 <h5 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h5>
-<div class="paragraph">
-<p>This command adds a room into the hotel using the room number, tier and the cost of the room.</p>
-</div>
-<div class="paragraph">
-<p>The following steps show how the add room feature works:</p>
-</div>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>The <code>addroom</code> command entered by the user is parsed and the different fields are tokenized.</p>
-</li>
-<li>
-<p>A new room object is created using the tokenized arguments and it is added into the hotel.</p>
-</li>
-</ol>
-</div>
-<div class="paragraph">
-<p>The diagram below shows the class diagram for AddRoomCommand</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="images/AddRoomClassDiagram.png" alt="AddRoomClassDiagram">
-</div>
-<div class="title">Figure 11. Class diagram for AddRoomCommand</div>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="Initialization-AddService"><a class="link" href="#Initialization-AddService">4.1.3. AddService Command</a></h4>
-<div class="sect4">
-<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
 <div class="paragraph">
 <p>The following steps show how the AddService command is implemented:</p>
 </div>
@@ -482,7 +457,50 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/AddServiceClass.png" alt="AddServiceClass">
 </div>
-<div class="title">Figure 12. Class diagram for AddServiceCommand</div>
+<div class="title">Figure 11. Class Diagram for AddServiceCommand</div>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="addroomcommand"><a class="link" href="#addroomcommand">4.1.3. AddRoomCommand</a></h4>
+<div class="sect4">
+<h5 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h5>
+<div class="paragraph">
+<p>This command adds a room into the hotel using the room number, tier and the cost of the room.</p>
+</div>
+<div class="paragraph">
+<p>The following steps show how the add room feature works:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>The <code>addroom</code> command entered by the user is parsed and the different fields are tokenized.</p>
+</li>
+<li>
+<p><code>AddRoomCommand#execute(model)</code> is invoked which checks for validity of the arguments.</p>
+</li>
+<li>
+<p>If all arguments are valid, a new Room object is created using the tokenized arguments and it is added into the hotel.</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>The diagram below shows the class diagram for AddRoomCommand</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddRoomClassDiagram.png" alt="AddRoomClassDiagram">
+</div>
+<div class="title">Figure 12. Class Diagram for AddRoomCommand</div>
+</div>
+<div class="paragraph">
+<p>The Diagram below shows the sequence diagram for AddRoomCommand. All Initialization commands are similar in their interactions with the <a href="#Design-Logic">Section 3.3, &#8220;Logic component&#8221;</a> and <a href="#Design-Model">Section 3.4, &#8220;Model component&#8221;</a>.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/AddRoomSequenceDiagram.png" alt="AddRoomSequenceDiagram">
+</div>
+<div class="title">Figure 13. Sequence Diagram for AddRoomCommand</div>
 </div>
 <div class="paragraph">
 <p>The Diagram below shows the general activity sequence of the initialization feature.</p>
@@ -491,7 +509,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/AddCommandDiagram.png" alt="AddCommandDiagram">
 </div>
-<div class="title">Figure 13. Activity Diagram of Hotel Initialization</div>
+<div class="title">Figure 14. Activity Diagram of Hotel Initialization</div>
 </div>
 </div>
 </div>
@@ -564,7 +582,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/FindGuestCommand.png" alt="FindGuestCommand">
 </div>
-<div class="title">Figure 14. Class diagram for FindGuestCommand</div>
+<div class="title">Figure 15. Class diagram for FindGuestCommand</div>
 </div>
 <div class="paragraph">
 <p>The diagram below shows the execution of the command:</p>
@@ -573,7 +591,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/SearchWorkflow.png" alt="SearchWorkflow">
 </div>
-<div class="title">Figure 15. Activity Diagram of Search Feature</div>
+<div class="title">Figure 16. Activity Diagram of Search Feature</div>
 </div>
 </div>
 <div class="sect4">
@@ -642,7 +660,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/BillingActivityDiagram.png" alt="BillingActivityDiagram">
 </div>
-<div class="title">Figure 16. Activity Diagram of Billing System</div>
+<div class="title">Figure 17. Activity Diagram of Billing System</div>
 </div>
 <div class="sect3">
 <h4 id="setroomcost-command"><a class="link" href="#setroomcost-command">4.4.1. SetRoomCost Command</a></h4>
@@ -680,7 +698,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/SetRoomCostSequenceDiagram.png" alt="SetRoomCostSequenceDiagram">
 </div>
-<div class="title">Figure 17. Sequence Diagram of <code>SetRooomCost</code> Command</div>
+<div class="title">Figure 18. Sequence Diagram of <code>SetRooomCost</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -723,7 +741,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect3">
 <h4 id="addservice-command"><a class="link" href="#addservice-command">4.4.2. AddService Command</a></h4>
 <div class="paragraph">
-<p>The command is also a Hotel Initialization feature and is hence covered above in <a href="#Initialization-AddService">Section 4.1.3, &#8220;AddService Command&#8221;</a>.</p>
+<p>The command is also a Hotel Initialization feature and is hence covered above in <a href="#Initialization-AddService">Section 4.1.2, &#8220;AddService Command&#8221;</a>.</p>
 </div>
 </div>
 <div class="sect3">
@@ -765,7 +783,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/ChargeServiceSequenceDiagram.png" alt="ChargeServiceSequenceDiagram">
 </div>
-<div class="title">Figure 18. Sequence Diagram of <code>ChargeService</code> Command</div>
+<div class="title">Figure 19. Sequence Diagram of <code>ChargeService</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -844,7 +862,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/RemoveChargedServiceSequenceDiagram.png" alt="RemoveChargedServiceSequenceDiagram">
 </div>
-<div class="title">Figure 19. Sequence Diagram of <code>DeleteChargedService</code> Command</div>
+<div class="title">Figure 20. Sequence Diagram of <code>DeleteChargedService</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -953,7 +971,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/RemoveChargedServiceSequenceDiagram.png" alt="RemoveChargedServiceSequenceDiagram">
 </div>
-<div class="title">Figure 20. Sequence Diagram of RemoveChargedService Command</div>
+<div class="title">Figure 21. Sequence Diagram of RemoveChargedService Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -1254,7 +1272,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="content">
 <img src="images/UseCaseDiagram.png" alt="UseCaseDiagram">
 </div>
-<div class="title">Figure 21. Use Case Diagram</div>
+<div class="title">Figure 22. Use Case Diagram</div>
 </div>
 <h3 id="use-cases-example" class="discrete">Use cases example:</h3>
 <div class="sect2">
@@ -1584,4 +1602,4 @@ Expected: There is no such room. Error message shown in result display box.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 00:38:16 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 05:42:51 UTC</div></div></div></body></html>

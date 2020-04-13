@@ -946,6 +946,7 @@ Use case ends.
 Use case ends.
 //end::usecases[]
 
+//tag::nonfunctional[]
 [appendix]
 == Non Functional Requirements
 
@@ -959,6 +960,8 @@ Use case ends.
 .  Should be able to store back-ups data in case of breaking down.
 
 [appendix]
+//end::nonfunctional[]
+
 == Glossary
 [[mainstream-os]] Mainstream OS::
 Windows, Linux, Unix, OS-X

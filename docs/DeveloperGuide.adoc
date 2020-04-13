@@ -117,8 +117,10 @@ The sections below give more details of each component.
 //tag::UiCompJohnny[]
 === UI component
 
+(Johnny)
+
 .Structure of the UI Component
-image::UiDiagram.png[]
+image::UIDiagram.png[]
 
 *API* : link:{repoURL}/src/main/java/seedu/address/ui/Ui.java[`Ui.java`]
 
@@ -130,8 +132,7 @@ The `UI` component,
 
 * Executes user commands using the `Logic` component.
 * Listens for changes to `Model` data so that the UI can be updated with the modified data.
-
-* Receive command result to change view accordingly.
+* Receive command result and change user view accordingly.
 
 Below is diagram for how UI extract command result for changing view.
 
@@ -314,6 +315,15 @@ The following steps show how the Reserve command is implemented.
 
 ===== Design Considerations
 
+Below describes ideas that were considered when designing the command.
+
+* **Alternative 1 (current choice):** Reservation is stored in 1 list.
+** Pros: Easy to loop through all reservation to make sure there is no clash between them.
+** Cons: Querying the schedule for a specific room require to iterate through all the reservation.
+* **Alternative 2:** Reservation store for each room.
+** Pros: Each room have their own schedule.
+** Cons: Harder to implement if we want to find an empty room for certain period of time.
+
 
 .Class Diagram for ReserveCommand
 image::ReserveClassDiagram.png[]
@@ -412,6 +422,9 @@ The diagram below shows the execution of the command:
 
 .Activity Diagram of Search Feature
 image::SearchWorkflow.png[]
+
+=== FindRoomCommand
+=== FindBookingCommand
 
 ===== Design Considerations
 * **Alternative 1 (current choice):** Store pattern as list of name and id.
@@ -999,6 +1012,7 @@ Use case ends.
 Use case ends.
 //end::usecases[]
 
+//tag::nonfunctional[]
 [appendix]
 == Non Functional Requirements
 
@@ -1012,6 +1026,8 @@ Use case ends.
 .  Should be able to store back-ups data in case of breaking down.
 
 [appendix]
+//end::nonfunctional[]
+
 == Glossary
 [[mainstream-os]] Mainstream OS::
 Windows, Linux, Unix, OS-X

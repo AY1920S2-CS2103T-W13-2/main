@@ -79,6 +79,7 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window. +
 * _This section highlights the features of Morpheus._
 
 ====
+//tag::overview[]
 *[.underline]#Overview Of Features#*
 
 Features can be divided into 5 groups of commands
@@ -97,14 +98,17 @@ Features can be divided into 5 groups of commands
 ** `deletecservice` command removes a charged service from the bill of customers.
 ** `fetchbill` command fetches the bill of a guest.
 
-* Statistical commands
-
-** `findguest`, `findroom` , `findbooking` quickly looks up guests, rooms and bookings.
-
 * Deletion commands
 
 ** `delete` command deletes a guest from the hotel database.
+** `deleteroom` command deletes a room from the hotel database.
 ** `deleteservice` and `deletebooking` commands removes available services and bookings from the hotel database.
+
+* Find commands
+** `findroom` command finds room with specific person, or room ids.
+** `findguest` command finds a guest in the hotel.
+** `findemptyroom` command finds list of empty rooms in the hotel.
+** `findbooking` command finds booking ids from names and room ids.
 
 * General purpose commands
 
@@ -120,6 +124,7 @@ Features can be divided into 5 groups of commands
 * Items in square brackets are optional e.g `n/NAME [t/TIER]` can be used as `n/Smith t/Member` or as `n/Smith`.
 * Parameters can be in any order e.g. if the command specifies `n/NAME rn/ROOM_NUMBER`, `rn/ROOM_NUMBER n/NAME` is also acceptable.
 ====
+//end::overview[]
 
 //tag::commonparameters[]
 =====
@@ -153,7 +158,7 @@ If you need to view help, use the command `help` .
 *Format:*: `help`
 
 //tag::switch[]
-=== Switching between tabs : `switch`
+=== Switching between tabs : `switch`(Johnny)
 If you want to switch to a new tab and view all the data on the specified tab, use the command `switch` .
 
 *Format:*: `switch TAB_NAME`
@@ -339,7 +344,7 @@ If you want to retrieve the bill of a guest, use the command `fetchbill` +
 
 //tag::findguest[]
 
-=== Finding guests: `findguest`
+=== Finding guests: `findguest` (Johnny)
 If you want to find guests using their names or id, use the commmand `findguest`. +
 
 *Format:* `findguest [n/NAME] ... [n/NAME] [i/ID] ... [i/ID]`
@@ -391,7 +396,8 @@ Format: `delete INDEX`
 
 *Result:* Deletes the first guest on the list.
 
-=== Deleting a room : `deleteroom`
+//tag::deleteroom[]
+=== Deleting a room by room number : `deleteroom`
 
 If you want to delete a room from the hotel, use the command `deleteroom`. +
 
@@ -403,6 +409,20 @@ If you want to delete a room from the hotel, use the command `deleteroom`. +
 
 *Result:* Deletes room `101` into the database.
 
+=== Deleting a room by the position it appears in current room tab: `deleteroom`
+
+If you want to delete a room from the hotel by the index it appears in current room tab. +
+
+*Format:* `deleteroom INDEX`
+
+*Examples:*
+
+* `deleteroom 1` +
+
+*Result:* Deletes the first room in the list.
+//end::deleteroom[]
+
+//tag::deleteservice[]
 === Deleting an available service: `deleteservice`
 If you want to delete an available service from the hotel database using the service's ID, use the command `deleteservice` +
 
@@ -413,6 +433,18 @@ If you want to delete an available service from the hotel database using the ser
 * `deleteservice si/WC` +
 
 *Result:* Deletes a service with service ID `WC`.
+
+=== Deletting an available service by the position it appears in current service tab: `deleteservice`
+
+*Format:* `deleteservice INDEX`
+
+*Examples:*
+
+* `deleteservice 1`
+
+*Result:* Deletes the first room the the list.
+//end::deleteservice[]
+
 
 === Clearing all entries : `clear`
 If you want to clear all data from Morpheus, use the command `clear` +

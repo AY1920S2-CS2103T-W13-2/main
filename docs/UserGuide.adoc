@@ -200,8 +200,6 @@ If you want to add a room to the hotel database, use the command `addroom` +
 
 *Result:* Add room `101` into the database.
 
-NOTE: `TIER` should be in uppercase
-
 === Adding a tier to a room: `addtier`
 
 If you want to add a tier and set this tier for certain rooms, use the command `addtier` +

@@ -86,7 +86,6 @@ Features can be divided into 5 groups of commands
 * Initialization commands
 ** `addguest` command adds a guest.
 ** `addroom` command adds a room into hotel.
-** `addtier` command adds a tier to a room
 ** `addservice` command adds an available service to the hotel.
 ** `setrcost` command sets the cost of a room.
 
@@ -178,7 +177,7 @@ If you want to add a guest to the hotel database, use the command `addguest` +
 
 NOTE: - You may use `t/TAG` to specify the status of the guest in the hotel! E.g. `t/VIP` +
 - The only valid values for `TAG` are `VIP` and `Member`. +
-- Any other values will result in an empty tag.
+- Any other values will result in an empty tag for the person displayed in the list.
 
 *Examples:*
 
@@ -199,18 +198,6 @@ If you want to add a room to the hotel database, use the command `addroom` +
 * `addroom rn/101 ti/GOLD c/150.00` +
 
 *Result:* Add room `101` into the database.
-
-=== Adding a tier to a room: `addtier`
-
-If you want to add a tier and set this tier for certain rooms, use the command `addtier` +
-
-*Format:* `addtier ti/TIER_NAME rn/ROOM_NUMBERS`
-
-*Examples:*
-
-* `addtier ti/GOLD rn/001 002 003`. +
-
-*Result:* Sets the tier for rooms `001`, `002`, and `003` to `GOLD`.
 
 === Adding an available service: `addservice`
 
@@ -461,10 +448,8 @@ There is no need to save manually.
 * *Switch tab*: `switch TAB_NAME`
 * *Add Guest* : `addguest n/NAME i/ID p/PHONE_NUMBER e/EMAIL` +
 e.g. `addguest n/John Doe i/G1231231X p/1928310 e/johndoe@gmail.com`
-* `Add Room` : `addroom rn/ROOM_NUMBER` +
-e.g. `addroom rn/101`
-* *Add Tier* : `addtier ti/TIER_NAME rn/ROOM_NUMBERS` +
-e.g. `addtier ti/Gold rn/12E 12F 12T`
+* *Add Room* : `addroom rn/ROOM_NUMBER ti/TIER c/cost` +
+e.g. `addroom rn/101 ti/GOLD c/140.00`
 * *Add Service* : `addservice si/SERVICE_ID d/DESCRIPTION c/COST` +
 e.g. `addservice si/WC d/Wash clothes c/100.00`
 * *Check in* : `checkin i/ID rn/ROOM_NUMBER td/TO_DATE` or +
@@ -475,20 +460,19 @@ or `checkin bi/a1b2c3d4`
 e.g. `checkout rn/101`
 * *Extend* : `extend rn/ROOM_NUMBER td/TO_DATE` +
 e.g. `extend rn/313 td/2020-05-20`
-* *List* : `list`
 * *Find Guest* : `findguest n/NAME …​ n/NAME i/ID …​ i/ID` +
 e.g. `findguest i/A0000000 i/B0000000 n/Alice`
 * *Fetch Bill* : `fetchbill i/ID [rn/ROOM_NUMBER]` +
 e.g. `fetchbill i/G1231231X`
 * *Charge Service* : `chargeservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID` +
 e.g. `chargeservice i/G1231231X rn/100 si/WC`
-* *Delete Charged Service* : `deleteceservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID` +
+* *Delete Charged Service* : `deletecservice i/PERSON_ID rn/ROOM_NUMBER si/SERVICE_ID` +
 e.g. `deletecservice i/G1231231X rn/100 si/WC`
 * *Make Reservation* : `reserve i/ID rn/ROOM_NUMBER df/FROM_DATE dt/TO_DATE` +
 e.g. `reserve i/G1231231X rn/102 df/ 2020-12-12 dt/ 2020-12-30`
 * *Locate Room* : `rn/ROOM_NUMBER] ... [rn/ROOM_NUMBER] [n/NAME] ... [n/NAME] [i/ID] ... [i/ID]` +
 e.g. `findroom i/A000000 rn/001 n/Tuan Le`
-* *Set Room Cost* : `setrcost rn/ROOM_NUMBER c/COST` +
+* *Set Room Cost* : `setrcost rn/ROOM_NUMBER c/COST` +s
 e.g. `setrcost rn/101 c/50`
 * *Clear* : `clear`
 

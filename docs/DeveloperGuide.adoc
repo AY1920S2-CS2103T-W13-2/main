@@ -65,8 +65,8 @@ The *_Architecture Diagram_* given above explains the high-level design of the A
 This is a quick representation of how the Command Pattern works: +
 _Client -> Invoker -> CommandQueue -> ExecuteCommand_
 
-In this case, the client is the application which creates and adds a command object to the invoker.
-The invoker then executes the command objects.
+In this case, the Application (Client) which creates and adds a command object to the Logic Manager (Invoker).
+The Invoker then executes the command objects by calling `Command#execute()`.
 //end::Architecture[]
 
 Given below is a quick overview of the components in the architecture of the software.
@@ -157,7 +157,7 @@ link:{repoURL}/src/main/java/seedu/address/logic/Logic.java[`Logic.java`]
 
 Given below is the Sequence Diagram for interactions within the `Logic` component for the `execute("deleteroom")` API call.
 
-.Interactions Inside the Logic Component for the `deleteroom` Command
+.Interactions Inside the Logic Component for the `deleteroom` Command (Sanchari)
 image::LogicSequenceDiagram.png[]
 
 
@@ -305,8 +305,12 @@ This command makes a reservation under the specified guest's name for the specif
 The following steps show how the Reserve command is implemented.
 
 1. The command from the user is tokenized and parsed.
-2. `ReserveCommand#execute(Model model)` is invoked which checks if guest ID, room ID exists in the database and if there are any clashes with other bookings.
+2. If there are no missing tokens, `ReserveCommand#execute(Model model)` is invoked which checks if guest ID, room ID exists in the database and if there are any clashes with other bookings.
 3. A new Booking object is created and added into the hotel database.
+4. If the above is successfully executed, this will return a `CommandResult` object to show a success message.
+
+===== Design Considerations
+
 
 //tag::checkin[]
 ==== Checkin Command
@@ -327,7 +331,7 @@ The following steps show how the CheckIn command is implemented.
 7. If all of the above is successfully executed, this will return a `CommandResult` object to show success message.
 
 .Sequence Diagram for CheckInCommand
-image::CheckInSequenceDiagram.png
+image::CheckInSequenceDiagram.png[]
 
 ===== Design Considerations
 
@@ -1234,8 +1238,7 @@ These instructions only provide a starting point for testers to work on; testers
 
 [appendix]
 //tag::effort[]
-== Effort +
-(Sanchari)
+== Effort (Sanchari)
 === Overview
 Morpheus is an extension from AB3 and is considerably more complex than AB3. We have incorporated several new features which required extending the
 UI, Storage and Model components of Morpheus. We extended current AB3 features (which only had 1 entity type: AddressBook) to include more entity types such as Hotel and BookKeeper which in turn

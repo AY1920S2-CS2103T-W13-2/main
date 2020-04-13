@@ -512,7 +512,7 @@ e.g. `deletecservice i/G1231231X rn/100 si/WC`
 e.g. `reserve i/G1231231X rn/102 df/ 2020-12-12 dt/ 2020-12-30`
 * *Locate Room* : `rn/ROOM_NUMBER] ... [rn/ROOM_NUMBER] [n/NAME] ... [n/NAME] [i/ID] ... [i/ID]` +
 e.g. `findroom i/A000000 rn/001 n/Tuan Le`
-* *Set Room Cost* : `setrcost rn/ROOM_NUMBER c/COST` +s
+* *Set Room Cost* : `setrcost rn/ROOM_NUMBER c/COST` +
 e.g. `setrcost rn/101 c/50`
 * *Clear* : `clear`
 

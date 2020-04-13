@@ -22,7 +22,7 @@ Morpheus is a desktop application that aims to facilitate the administrative wor
 
 * *Minor enhancement*: Added booking ID implementation. 
 
-* *Code contributed*: [https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=dawidjaja&sort=groupTitle&sortWithin=title&since=2020-02-14&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false[Functional code & Test code] 
+* *Code contributed*: [https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=dawidjaja&sort=groupTitle&sortWithin=title&since=2020-02-14&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false[Functional code & Test code]]
 
 * *Other contributions*:
 

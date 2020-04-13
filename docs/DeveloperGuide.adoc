@@ -358,6 +358,8 @@ The following steps show how the search guest feature works:
 2.  The find room command then executes and filters the guest list based on the patterns.
 
 The diagram below show how the findroom command store its pattern.
+
+.Class diagram for FindGuestCommand
 image::FindRoomCommand.png[]
 
 The diagram below shows the execution of the command:
@@ -372,6 +374,8 @@ The following steps show how the search guest feature works:
 2.  The find booking command then executes and filters the guest list based on the patterns.
 
 The diagram below show how the findbooking command store its pattern.
+
+.Class diagram for FindGuestCommand
 image::FindBookingCommand.png[]
 
 === FindEmptyRoomCommand

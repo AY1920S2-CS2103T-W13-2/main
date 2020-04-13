@@ -34,8 +34,7 @@ Morpheus is a hotel management system desktop application designed to manage the
 
 ** Enhancements to existing features:
 
-*** Updated the GUI color scheme (Pull requests https://github.com[#33], https://github.com[#34])
-*** Wrote additional tests for existing features (Pull requests https://github.com[#36], https://github.com[#38])
+*** Wrote additional tests for existing features.
 ** Documentation:
 *** Did cosmetic tweaks to existing contents of the User Guide: https://github.com/AY1920S2-CS2103T-W13-2/main/pull/285[#285]
 ** Community:
@@ -58,6 +57,7 @@ include::../UserGuide.adoc[tag=overview]
 
 include::../UserGuide.adoc[tag=deleteroom]
 
+include::../UserGuide.adoc[tag=deleteservice]
 
 
 == Contributions to the Developer Guide
@@ -69,8 +69,4 @@ include::../UserGuide.adoc[tag=deleteroom]
 include::../DeveloperGuide.adoc[tag=nonfunctional]
 include::../DeveloperGuide.adoc[tag=findcommand]
 
-
-== PROJECT: PowerPointLabs
-
----
 

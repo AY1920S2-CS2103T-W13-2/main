@@ -78,8 +78,9 @@ e.g. typing *`help`* and pressing kbd:[Enter] will open the help window. +
 == Features
 * _This section highlights the features of Morpheus._
 
-====
 //tag::overview[]
+====
+
 *[.underline]#Overview Of Features#*
 
 Features can be divided into 5 groups of commands
@@ -118,6 +119,7 @@ Features can be divided into 5 groups of commands
 ** `clear` command clears all entries.
 ** `switch` command navigate between tabs.
 ====
+//end::overview[]
 ====
 *[.underline]#Command Format:#*
 
@@ -125,7 +127,7 @@ Features can be divided into 5 groups of commands
 * Items in square brackets are optional e.g `n/NAME [t/TIER]` can be used as `n/Smith t/Member` or as `n/Smith`.
 * Parameters can be in any order e.g. if the command specifies `n/NAME rn/ROOM_NUMBER`, `rn/ROOM_NUMBER n/NAME` is also acceptable.
 ====
-//end::overview[]
+
 
 //tag::commonparameters[]
 =====

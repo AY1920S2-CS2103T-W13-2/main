@@ -315,6 +315,15 @@ The following steps show how the Reserve command is implemented.
 
 ===== Design Considerations
 
+Below describes ideas that were considered when designing the command.
+
+* **Alternative 1 (current choice):** Reservation is stored in 1 list.
+** Pros: Easy to loop through all reservation to make sure there is no clash between them.
+** Cons: Querying the schedule for a specific room require to iterate through all the reservation.
+* **Alternative 2:** Reservation store for each room.
+** Pros: Each room have their own schedule.
+** Cons: Harder to implement if we want to find an empty room for certain period of time.
+
 
 .Class Diagram for ReserveCommand
 image::ReserveClassDiagram.png[]

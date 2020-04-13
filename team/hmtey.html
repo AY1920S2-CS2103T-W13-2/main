@@ -75,6 +75,9 @@
 <li>
 <p>Managed releases <code>v1.2</code> - <code>v1.4</code> (3 releases) on GitHub</p>
 </li>
+<li>
+<p>Maintaining the issue tracker</p>
+</li>
 </ul>
 </div>
 </li>
@@ -109,7 +112,7 @@
 </div>
 </li>
 <li>
-<p>Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/95">#95</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/259">#259</a></p>
+<p>Developer Guide: <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/95">#95</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/259">#259</a>, <a href="https://github.com/AY1920S2-CS2103T-W13-2/main/pull/271">#271</a></p>
 <div class="ulist">
 <ul>
 <li>
@@ -161,7 +164,7 @@
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="setting-the-cost-for-a-room-code-setrcost-code"><a class="link" href="#setting-the-cost-for-a-room-code-setrcost-code">Setting the cost for a room : <code>setrcost</code></a></h3>
+<h3 id="setting-the-cost-for-a-room-code-setrcost-code-hui-ming"><a class="link" href="#setting-the-cost-for-a-room-code-setrcost-code-hui-ming">Setting the cost for a room : <code>setrcost</code> (Hui Ming)</a></h3>
 <div class="paragraph">
 <p>If you want to set the cost for a room (per night), use the command <code>setrcost</code><br></p>
 </div>
@@ -183,7 +186,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="charging-a-service-code-chargeservice-code"><a class="link" href="#charging-a-service-code-chargeservice-code">Charging a service : <code>chargeservice</code></a></h3>
+<h3 id="charging-a-service-code-chargeservice-code-hui-ming"><a class="link" href="#charging-a-service-code-chargeservice-code-hui-ming">Charging a service : <code>chargeservice</code> (Hui Ming)</a></h3>
 <div class="paragraph">
 <p>If you want to charges a service to the guest&#8217;s tab, use the command <code>chargeservice</code><br></p>
 </div>
@@ -196,7 +199,7 @@
 <div class="ulist">
 <ul>
 <li>
-<p><code>chargeservice i/G1231231X rn/100.00 si/WC</code><br></p>
+<p><code>chargeservice i/G1231231X rn/100 si/WC</code><br></p>
 </li>
 </ul>
 </div>
@@ -205,7 +208,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-service-from-a-bill-code-deletecservice-code"><a class="link" href="#deleting-a-service-from-a-bill-code-deletecservice-code">Deleting a service from a bill : <code>deletecservice</code></a></h3>
+<h3 id="deleting-a-service-from-a-bill-code-deletecservice-code-hui-ming"><a class="link" href="#deleting-a-service-from-a-bill-code-deletecservice-code-hui-ming">Deleting a service from a bill : <code>deletecservice</code> (Hui Ming)</a></h3>
 <div class="paragraph">
 <p>If you want to remove a charged service from the guest&#8217;s bill.<br></p>
 </div>
@@ -227,7 +230,7 @@
 </div>
 </div>
 <div class="sect2">
-<h3 id="fetching-bill-of-a-guest-code-fetchbill-code"><a class="link" href="#fetching-bill-of-a-guest-code-fetchbill-code">Fetching bill of a guest : <code>fetchbill</code></a></h3>
+<h3 id="fetching-bill-of-a-guest-code-fetchbill-code-hui-ming"><a class="link" href="#fetching-bill-of-a-guest-code-fetchbill-code-hui-ming">Fetching bill of a guest : <code>fetchbill</code> (Hui Ming)</a></h3>
 <div class="paragraph">
 <p>If you want to retrieve the bill of a guest, use the command <code>fetchbill</code><br></p>
 </div>
@@ -269,7 +272,7 @@
 <h2 id="introduction"><a class="link" href="#introduction">Introduction</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="product-description"><a class="link" href="#product-description">Product Description</a></h3>
+<h3 id="product-description-hui-ming"><a class="link" href="#product-description-hui-ming">Product Description (Hui Ming)</a></h3>
 <div class="paragraph">
 <p>Morpheus is a desktop application that aims to facilitate the administrative work of hotel services as a hotel room management system.
 The system will also provide statistics and reports, constructed from the analysis of the details in the user-provided database.
@@ -283,16 +286,29 @@ Most of the user interaction occurs via a CLI (Command Line Interface).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="purpose"><a class="link" href="#purpose">Purpose</a></h3>
+<h3 id="purpose-hui-ming"><a class="link" href="#purpose-hui-ming">Purpose (Hui Ming)</a></h3>
 <div class="paragraph">
 <p>This <strong>Developer Guide</strong> describes the architecture and software design of Morpheus.
 The intended audience is the <strong>developers, designers and software testers</strong> who wish to understand, maintain &amp; upgrade the desktop application.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="billing-system"><a class="link" href="#billing-system">Billing System</a></h3>
+<h3 id="billing-system-hui-ming"><a class="link" href="#billing-system-hui-ming">Billing System (Hui Ming)</a></h3>
 <div class="paragraph">
-<p>The billing system is designed to aid hotel receptionists in their bookkeeping and consists of the following operations:</p>
+<p>The billing system is designed to aid hotel receptionists in their bookkeeping. It is oversen by the <code>BookKeeper</code> class, which keeps track of all bills in the hotel and facillitates in the manipulation of bills.
+The bills are kept in a <code>UniqueBillList</code>, which ensures that there are no duplicate bills in the <code>BookKeeper</code> class.</p>
+</div>
+<div class="paragraph">
+<p>The structure of the billing system is shown in the class diagram below:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/BillingClassDiagram.png" alt="BillingClassDiagram">
+</div>
+<div class="title">Figure 2. Class Diagram of Billing System</div>
+</div>
+<div class="paragraph">
+<p>To utilize the billing system, users are provided with the following operations:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -314,16 +330,16 @@ The intended audience is the <strong>developers, designers and software testers<
 </ul>
 </div>
 <div class="paragraph">
-<p>The following activity diagram summarizes the usage of the billing feature:</p>
+<p>The following activity diagram summarizes the typical procedure of billing a guest:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/BillingActivityDiagram.png" alt="BillingActivityDiagram">
 </div>
-<div class="title">Figure 2. Activity Diagram of Billing System</div>
+<div class="title">Figure 3. Activity Diagram of Billing System</div>
 </div>
 <div class="sect3">
-<h4 id="setroomcost-command"><a class="link" href="#setroomcost-command">SetRoomCost Command</a></h4>
+<h4 id="setroomcost-command-hui-ming"><a class="link" href="#setroomcost-command-hui-ming">SetRoomCost Command (Hui Ming)</a></h4>
 <div class="paragraph">
 <p>This section goes through the implementation and design considerations of the <code>SetRoomCost</code> command.</p>
 </div>
@@ -358,7 +374,7 @@ The intended audience is the <strong>developers, designers and software testers<
 <div class="content">
 <img src="../images/SetRoomCostSequenceDiagram.png" alt="SetRoomCostSequenceDiagram">
 </div>
-<div class="title">Figure 3. Sequence Diagram of <code>SetRooomCost</code> Command</div>
+<div class="title">Figure 4. Sequence Diagram of <code>SetRooomCost</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -405,7 +421,7 @@ The intended audience is the <strong>developers, designers and software testers<
 </div>
 </div>
 <div class="sect3">
-<h4 id="chargeservice-command"><a class="link" href="#chargeservice-command">ChargeService Command</a></h4>
+<h4 id="chargeservice-command-hui-ming"><a class="link" href="#chargeservice-command-hui-ming">ChargeService Command (Hui Ming)</a></h4>
 <div class="paragraph">
 <p>This section goes through the implementation and design considerations of the <code>ChargeService</code> command.</p>
 </div>
@@ -437,13 +453,13 @@ The intended audience is the <strong>developers, designers and software testers<
 </ol>
 </div>
 <div class="paragraph">
-<p>The sequence diagram below illustrates how the <code>ChargeService</code> command works:</p>
+<p>The sequence diagram below illustrates how the <code>ChargeService</code> command works with the input <code>chargeservice i/A000000 rn/001 si/WC</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
 <img src="../images/ChargeServiceSequenceDiagram.png" alt="ChargeServiceSequenceDiagram">
 </div>
-<div class="title">Figure 4. Sequence Diagram of <code>ChargeService</code> Command</div>
+<div class="title">Figure 5. Sequence Diagram of <code>ChargeService</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -484,7 +500,7 @@ The intended audience is the <strong>developers, designers and software testers<
 </div>
 </div>
 <div class="sect3">
-<h4 id="deletechargedservice-command"><a class="link" href="#deletechargedservice-command">DeleteChargedService Command</a></h4>
+<h4 id="deletechargedservice-command-hui-ming"><a class="link" href="#deletechargedservice-command-hui-ming">DeleteChargedService Command (Hui Ming)</a></h4>
 <div class="paragraph">
 <p>This section goes through the implementation and design considerations of the <code>DeleteChargedService</code> command.</p>
 </div>
@@ -499,7 +515,7 @@ The intended audience is the <strong>developers, designers and software testers<
 <p>The command from the user is parsed and undergoes checks for the validity of the given <code>PERSONID</code>, <code>ROOMNUMBER</code> and <code>SERVICEID</code>.</p>
 </li>
 <li>
-<p>If the parameters are valid, <code>DeleteChargedServiceCommand#execute(Model model)</code> is invoked, which checks if the given guest, room and service exist.</p>
+<p>If the parameters are valid, <code>DeleteChargedServiceCommand#execute(Model model)</code> is invoked, which checks if the given guest, room, service and bill exist.</p>
 </li>
 <li>
 <p>If they exist, <code>Model#deleteChargedService(RoomId roomId, AvailableService service)</code> is called which in following calls <code>BookKeeper#deleteChargedServiceFromBill(RoomId roomId, AvailableService service)</code>.</p>
@@ -516,13 +532,13 @@ The intended audience is the <strong>developers, designers and software testers<
 </ol>
 </div>
 <div class="paragraph">
-<p>The sequence diagram below illustrates how the <code>DeleteChargedService</code> command works:</p>
+<p>The sequence diagram below illustrates how the <code>DeleteChargedService</code> command works with the input <code>deletecservice i/A000000 rn/001 si/WC</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/RemoveChargedServiceSequenceDiagram.png" alt="RemoveChargedServiceSequenceDiagram">
+<img src="../images/DeleteChargedServiceSequenceDiagram.png" alt="DeleteChargedServiceSequenceDiagram">
 </div>
-<div class="title">Figure 5. Sequence Diagram of <code>DeleteChargedService</code> Command</div>
+<div class="title">Figure 6. Sequence Diagram of <code>DeleteChargedService</code> Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -563,7 +579,7 @@ The intended audience is the <strong>developers, designers and software testers<
 </div>
 </div>
 <div class="sect3">
-<h4 id="fetchbill-command"><a class="link" href="#fetchbill-command">FetchBill Command</a></h4>
+<h4 id="fetchbill-command-hui-ming"><a class="link" href="#fetchbill-command-hui-ming">FetchBill Command (Hui Ming)</a></h4>
 <div class="paragraph">
 <p>This section goes through the implementation and design considerations of the <code>FetchBill</code> command.</p>
 </div>
@@ -625,13 +641,13 @@ The intended audience is the <strong>developers, designers and software testers<
 </ol>
 </div>
 <div class="paragraph">
-<p>The sequence diagram below illustrates how the <code>FetchBill</code> command works:</p>
+<p>The sequence diagram below illustrates how the <code>FetchBill</code> command works with the input <code>fetchbill i/A000000 rn/001</code>:</p>
 </div>
 <div class="imageblock">
 <div class="content">
-<img src="../images/RemoveChargedServiceSequenceDiagram.png" alt="RemoveChargedServiceSequenceDiagram">
+<img src="../images/FetchBillSequenceDiagram.png" alt="FetchBillSequenceDiagram">
 </div>
-<div class="title">Figure 6. Sequence Diagram of RemoveChargedService Command</div>
+<div class="title">Figure 7. Sequence Diagram of FetchBill Command</div>
 </div>
 </div>
 <div class="sect4">
@@ -684,7 +700,7 @@ The intended audience is the <strong>developers, designers and software testers<
 <div class="content">
 <img src="../images/UseCaseDiagram.png" alt="UseCaseDiagram">
 </div>
-<div class="title">Figure 7. Use Case Diagram</div>
+<div class="title">Figure 8. Use Case Diagram</div>
 </div>
 <h3 id="use-cases-example" class="discrete">Use cases example:</h3>
 <div class="sect2">
@@ -801,4 +817,4 @@ The intended audience is the <strong>developers, designers and software testers<
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:20:36 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 09:50:50 UTC</div></div></div></body></html>

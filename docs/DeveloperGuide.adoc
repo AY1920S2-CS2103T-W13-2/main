@@ -298,8 +298,11 @@ image::AddCommandDiagram.png[]
 
 === Hotel Services (Daniel)
 
+//tag::reserve[]
 ==== Reserve Command
+
 ===== Implementation
+
 This command makes a reservation under the specified guest's name for the specified duration.
 
 The following steps show how the Reserve command is implemented.
@@ -307,6 +310,11 @@ The following steps show how the Reserve command is implemented.
 1. The command from the user is tokenized and parsed.
 2. `ReserveCommand#execute(Model model)` is invoked which checks if guest ID, room ID exists in the database and if there are any clashes with other bookings.
 3. A new Booking object is created and added into the hotel database.
+
+.Class Diagram for ReserveCommand
+image::ReserveClassDiagram.png[]
+
+//end::reserve[]
 
 //tag::checkin[]
 ==== Checkin Command
@@ -327,7 +335,7 @@ The following steps show how the CheckIn command is implemented.
 7. If all of the above is successfully executed, this will return a `CommandResult` object to show success message.
 
 .Sequence Diagram for CheckInCommand
-image::CheckInSequenceDiagram.png
+image::CheckInSequenceDiagram.png[]
 
 ===== Design Considerations
 

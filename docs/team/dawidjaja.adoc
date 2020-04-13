@@ -20,16 +20,16 @@ Morpheus is a desktop application that aims to facilitate the administrative wor
 ** What it does: This allows the user to extend the stay of guest.
 ** Justification: Guest could probably extend stay if they wanted to. Without creating the bill for the previous stay, extend command allows it to be combined in the same bill.
 
-* *Minor enhancement*: added a history command that allows the user to navigate to previous commands using up/down keys.
+* *Minor enhancement*: Added booking ID implementation. 
 
-* *Code contributed*: [https://github.com[Functional code]] [https://github.com[Test code]] _{give links to collated code files}_
+* *Code contributed*: [https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=dawidjaja&sort=groupTitle&sortWithin=title&since=2020-02-14&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false[Functional code & Test code] 
 
 * *Other contributions*:
 
 ** Project management:
 *** Managed releases `v1.3`
 *** Created several milestones on Github Page
-*** Create and assign issue after discovery of bugs (Example: https://github.com[#249])
+*** Create and assign issue after discovery of bugs (Example: https://github.com/AY1920S2-CS2103T-W13-2/main/pull/249[#249])
 ** Documentation:
 *** Update the User Guide accordingly https://github.com/AY1920S2-CS2103T-W13-2/main/pull/61[#61]
 ** Community:

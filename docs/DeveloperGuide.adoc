@@ -396,7 +396,7 @@ This command extend the booking of a guest by providing room number and end date
 //end::extend[]
 
 
-=== Search feature (Tuan)
+=== Search feature
 
 //tag::findguest[]
 ==== FindGuestCommand
@@ -430,8 +430,8 @@ image::SearchWorkflow.png[]
 
 
 //tag::findcommand[]
-==== FindRoomCommand
-===== Implementation
+=== FindRoomCommand
+==== Implementation
 Currently this command only support searching of room full name or/and id number, or room number.
 
 The following steps show how the search guest feature works:
@@ -447,8 +447,7 @@ image::FindRoomCommand.png[]
 
 The diagram below shows the execution of the command:
 
-==== FindBookingCommand
-===== Implementation
+=== FindBookingCommand
 Currently this command only support searching of booking full name or/and id number, or room number.
 
 The following steps show how the search guest feature works:
@@ -462,8 +461,7 @@ The diagram below show how the findbooking command store its pattern.
 .Class diagram for FindGuestCommand
 image::FindBookingCommand.png[]
 
-==== FindEmptyRoomCommand
-===== Implementation
+=== FindEmptyRoomCommand
 This command support finding empty rooms
 
 The following steps show how the search feature works:

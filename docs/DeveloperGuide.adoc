@@ -298,8 +298,11 @@ image::AddCommandDiagram.png[]
 
 === Hotel Services (Daniel)
 
+//tag::reserve[]
 ==== Reserve Command
+
 ===== Implementation
+
 This command makes a reservation under the specified guest's name for the specified duration.
 
 The following steps show how the Reserve command is implemented.
@@ -311,6 +314,11 @@ The following steps show how the Reserve command is implemented.
 
 ===== Design Considerations
 
+
+.Class Diagram for ReserveCommand
+image::ReserveClassDiagram.png[]
+
+//end::reserve[]
 
 //tag::checkin[]
 ==== Checkin Command

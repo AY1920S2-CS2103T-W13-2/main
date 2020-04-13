@@ -372,13 +372,26 @@ NOTE: - The order of the keywords does not matter. e.g. `n/Alice i/A10` is same 
 === Locating a guest's room : `findroom`
 If you want to retrieve the room related to a guest's reservation, use the command `findroom`. +
 
-*Format:* `[rn/ROOM_NUMBER] ... [rn/ROOM_NUMBER] [n/NAME] ... [n/NAME] [i/ID] ... [i/ID]`
+*Format:* `findroom [rn/ROOM_NUMBER] ... [rn/ROOM_NUMBER] [n/NAME] ... [n/NAME] [i/ID] ... [i/ID]`
 
 *Examples:*
 
 * `findroom i/A000000 rn/001 n/Tuan Le` +
 
 *Result:* Shows the room booked by the guest with ID `A000000`
+
+//tag::findemptyroom[]
+=== Finding empty room: `findemptyroom`
+If you want to find empty rooms, use the command `findemptyroom` +
+
+*Format:* `findemptyroom`
+
+*Examples:*
+
+* `findemptyroom`
+
+*Result:* Shows the empty rooms.
+//end::findemptyroom[]
 
 === Deleting a guest : `delete`
 If you want to delete a guest's details from the hotel database, use the command `delete`. +

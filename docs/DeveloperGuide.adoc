@@ -146,7 +146,7 @@ image::LogicClassDiagram.png[]
 *API* :
 link:{repoURL}/src/main/java/seedu/address/logic/Logic.java[`Logic.java`]
 
-.  `Logic` uses the `AddressBookParser` class to parse the user command.
+.  `Logic` uses the `MorpheusParser` class to parse the user command.
 .  This results in a `Command` object which is executed by the `LogicManager`.
 .  The command execution can affect the `Model` (e.g. adding a room).
 .  The result of the command execution is encapsulated as a `CommandResult` object which is passed back to the `Ui`.
@@ -419,9 +419,6 @@ The diagram below shows the execution of the command:
 .Activity Diagram of Search Feature
 image::SearchWorkflow.png[]
 
-=== FindRoomCommand
-=== FindBookingCommand
-
 ===== Design Considerations
 * **Alternative 1 (current choice):** Store pattern as list of name and id.
 ** Pros: Simpler to test and understand.
@@ -430,6 +427,46 @@ image::SearchWorkflow.png[]
 ** Pros: Easy to implement and add more complicated pattern.
 ** Cons: Harder to test, more prone to error.
 //end::findguest[]
+
+
+//tag::findcommand[]
+=== FindRoomCommand
+==== Implementation
+Currently this command only support searching of room full name or/and id number, or room number.
+
+The following steps show how the search guest feature works:
+
+1.  The find room command from the user is parsed into a list of pattern contained in the find room command.
+
+2.  The find room command then executes and filters the guest list based on the patterns.
+
+The diagram below show how the findroom command store its pattern.
+image::FindRoomCommand.png[]
+
+The diagram below shows the execution of the command:
+
+=== FindBookingCommand
+Currently this command only support searching of booking full name or/and id number, or room number.
+
+The following steps show how the search guest feature works:
+
+1.  The find booking command from the user is parsed into a list of pattern contained in the find booking command.
+
+2.  The find booking command then executes and filters the guest list based on the patterns.
+
+The diagram below show how the findbooking command store its pattern.
+image::FindBookingCommand.png[]
+
+=== FindEmptyRoomCommand
+This command support finding empty rooms
+
+The following steps show how the search feature works:
+
+1.  The find empty room command from the user is parsed into a list of pattern contained in the find booking command.
+
+2.  The find empty room command then executes and filters the guest list based on the patterns.
+//end::findcommand[]
+
 
 //tag::billingsystem[]
 === Billing System (Hui Ming)

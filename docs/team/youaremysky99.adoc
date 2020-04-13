@@ -13,30 +13,36 @@ Morpheus is a hotel management system desktop application designed to manage the
 
 == Summary of contributions
 
+* *Major enhancement*: implementing structure of Hotel
+** What it does: Implementing structure of Hotel, basic objects such as Booking, Charges, Tier, Service.
+** Justification: This enhancement sets foundation for developing Morpheus.
 * *Major enhancement*: implementing hotel initialization
 ** What it does: Allows user to initialize hotel with data such as rooms, costs, available services.
-** Justification: All basic add commands: `addroom`, `addservice`, `addtier`.
-** Highlights: This enhancement affects existing commands and commands to be added in future. It required an in-depth analysis of design alternatives. The implementation too was challenging as it required changes to existing commands.
-** Credits: _{mention here if you reused any code/ideas from elsewhere or if a third-party library is heavily used in the feature so that a reader can make a more accurate judgement of how much effort went into the feature}_
+* *Major enhancement*: implementing deleting commands
+** What it does: Allows user to delete guests, rooms, bookings, services from hote.
+* *Major enhancement*: implementing finding commands
+** What it does: Allows user to find guests, bookings, rooms, empty rooms, services from hotel.
+* *Minor enhancement*: Implementing how UI shows response after each command:
+** What it does: Shows response by switching tabs, and filtering details to show that the action has been done.
 
-* *Minor enhancement*: added a history command that allows the user to navigate to previous commands using up/down keys.
-
-* *Code contributed*: [https://github.com[Functional code]] [https://github.com[Test code]] _{give links to collated code files}_
+* *Code contributed*: [https://nus-cs2103-ay1920s2.github.io/tp-dashboard/#search=&sort=groupTitle&sortWithin=title&since=2020-02-14&timeframe=commit&mergegroup=false&groupSelect=groupByRepos&breakdown=false&tabOpen=true&tabType=authorship&tabAuthor=youaremysky99&tabRepo=AY1920S2-CS2103T-W13-2%2Fmain%5Bmaster%5D[Functional code]]
 
 * *Other contributions*:
 
 ** Project management:
+*** Managed releases `v1.2` - `v1.4` (3 releases) on GitHub
 
 ** Enhancements to existing features:
+
 *** Updated the GUI color scheme (Pull requests https://github.com[#33], https://github.com[#34])
-*** Wrote additional tests for existing features to increase coverage from 88% to 92% (Pull requests https://github.com[#36], https://github.com[#38])
+*** Wrote additional tests for existing features (Pull requests https://github.com[#36], https://github.com[#38])
 ** Documentation:
-*** Did cosmetic tweaks to existing contents of the User Guide: https://github.com[#14]
+*** Did cosmetic tweaks to existing contents of the User Guide: https://github.com/AY1920S2-CS2103T-W13-2/main/pull/285[#285]
 ** Community:
-*** PRs reviewed (with non-trivial review comments): https://github.com[#12], https://github.com[#32], https://github.com[#19], https://github.com[#42]
+*** Issues management: https://github.com/AY1920S2-CS2103T-W13-2/main/issues/193[#193], https://github.com/AY1920S2-CS2103T-W13-2/main/issues/210[#210]
+*** PRs reviewed (with non-trivial review comments): https://github.com/AY1920S2-CS2103T-W13-2/main/pull/84[#84], https://github.com/AY1920S2-CS2103T-W13-2/main/pull/175[#175]
 *** Contributed to forum discussions (examples:  https://github.com[1], https://github.com[2], https://github.com[3], https://github.com[4])
-*** Reported bugs and suggestions for other teams in the class (examples:  https://github.com[1], https://github.com[2], https://github.com[3])
-*** Some parts of the history feature I added was adopted by several other class mates (https://github.com[1], https://github.com[2])
+*** Reported bugs and suggestions for other teams in the class (https://github.com/youaremysky99/ped/issues)
 ** Tools:
 *** Integrated a new Github plugin (Travis CI) to the team repo
 
@@ -60,13 +66,11 @@ include::../UserGuide.adoc[tag=deleteroom]
 |_Given below are sections I contributed to the Developer Guide. They showcase my ability to write technical documentation and the technical depth of my contributions to the project._
 |===
 
-include::../DeveloperGuide.adoc[tag=undoredo]
-
-include::../DeveloperGuide.adoc[tag=dataencryption]
+include::../DeveloperGuide.adoc[tag=nonfunctional]
+include::../DeveloperGuide.adoc[tag=findcommand]
 
 
 == PROJECT: PowerPointLabs
 
 ---
 
-_{Optionally, you may include other projects in your portfolio.}_

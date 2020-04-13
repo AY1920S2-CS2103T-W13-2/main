@@ -318,6 +318,9 @@ The following steps show how the Reserve command is implemented.
 .Class Diagram for ReserveCommand
 image::ReserveClassDiagram.png[]
 
+.Sequence Diagram for ReserveCommand
+image::ReserveSequenceDiagram.png[]
+
 //end::reserve[]
 
 //tag::checkin[]

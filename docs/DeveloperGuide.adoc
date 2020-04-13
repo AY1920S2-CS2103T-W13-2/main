@@ -37,15 +37,13 @@ The intended audience is the *developers, designers and software testers* who wi
 === How to navigate this document
 * _This section shows you how to read and understand this document._
 
-** Any text in `markup` suggests that you may enter it as a command in the app.
+** Any text in `markup` suggests it is a code snippet.
 
 ** A link like link:{repoURL}[this] will take you to the link destination when clicked.
 
-** kbd:[Keyboard] shows that this is a key that can be pressed on the keyboard.
-
 TIP: This is a useful tip to help optimize your experience using Morpheus.
 
-NOTE: This is important information you need to take note of!
+NOTE: This is important information to take note of!
 
 == Setting up
 
@@ -115,9 +113,7 @@ The sections below give more details of each component.
 [[Design-Ui]]
 
 //tag::UiCompJohnny[]
-=== UI component
-
-(Johnny)
+=== UI component (Johnny)
 
 .Structure of the UI Component
 image::UIDiagram.png[]
@@ -279,12 +275,12 @@ The diagram below shows the class diagram for AddRoomCommand
 image::AddRoomClassDiagram.png[]
 
 ===== Design Considerations
-* **Alternative 1 (current choice):** New Room object is created and added to hotel in Hotel.
-** Pros: Command has no knowledge of Model and its attributes.
-** Cons: More prone to error.
-* **Alternative 2:** Creates a new Guest object in AddRoomCommandParser.
+* **Alternative 1 (current choice):** Rooms are stored in an `ObservableList` in Hotel.
+** Pros: Better OOP design.
+** Cons: Harder to test.
+* **Alternative 2:** Rooms are stored in an `ObservableList` in Model.
 ** Pros: Simpler to test and understand.
-** Cons: Command object should not know details about model and its attributes i.e. Room.
+** Cons: Model is at a higher abstraction level and should not have knowledge of individual rooms.
 
 The Diagram below shows the sequence diagram for AddRoomCommand. All Initialization commands above are similar in their interactions with the <<Design-Logic>> and <<Design-Model>>.
 

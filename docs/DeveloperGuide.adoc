@@ -336,6 +336,16 @@ The diagram below shows the execution of the command:
 .Activity Diagram of Search Feature
 image::SearchWorkflow.png[]
 
+===== Design Considerations
+* **Alternative 1 (current choice):** Store pattern as list of name and id.
+** Pros: Simpler to test and understand.
+** Cons: Difficult to extend the implementation.
+* **Alternative 2:** Store pattern as a combination of Predicate.
+** Pros: Easy to implement and add more complicated pattern.
+** Cons: Harder to test, more prone to error.
+//end::findguest[]
+
+
 //tag::findcommand[]
 === FindRoomCommand
 ==== Implementation
@@ -374,14 +384,6 @@ The following steps show how the search feature works:
 2.  The find empty room command then executes and filters the guest list based on the patterns.
 //end::findcommand[]
 
-===== Design Considerations
-* **Alternative 1 (current choice):** Store pattern as list of name and id.
-** Pros: Simpler to test and understand.
-** Cons: Difficult to extend the implementation.
-* **Alternative 2:** Store pattern as a combination of Predicate.
-** Pros: Easy to implement and add more complicated pattern.
-** Cons: Harder to test, more prone to error.
-//end::findguest[]
 
 //tag::billingsystem[]
 === Billing System (Hui Ming)

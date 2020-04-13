@@ -354,26 +354,381 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
+<h3 id="adding-a-guest"><a class="link" href="#adding-a-guest">Adding a guest</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a guest when all guests are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all persons using the <code>switch guest</code> command. Multiple guests in the list.</p>
+</li>
+<li>
+<p>Test case: <code>addguest n/Joey i/J000000 p/12345679 e/joey@email.com t/VIP</code><br>
+Expected: Guest Joey is added to the list. Details of the added Guest shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addguest n/Jolene i/J000000 p/12345679 e/jolene@email.com t/VIP</code><br>
+Expected: Guest Id clashes with an existing guest. No Guest is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect addguest commands to try: <code>addguest</code>, <code>addguest i/P000000 p/12345679 e/joey@email.com</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-room"><a class="link" href="#adding-a-room">Adding a room</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a room when all rooms are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all rooms using the <code>switch room</code> command. Multiple rooms in the list.</p>
+</li>
+<li>
+<p>Test case: <code>addroom rn/300 ti/GOLD c/300.00</code><br>
+Expected: Room 300 is added to the list. Details of the added Room shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addroom rn/300 ti/GOLD c/300.00</code><br>
+Expected: Room Id clashes with an existing room. No Room is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addroom rn/400 ti/Gold c/300.00</code><br>
+Expected: Invalid Tier value. No Room is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect addroom commands to try: <code>addroom</code>, <code>addroom rn/500 ti/BRONZE</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-tier"><a class="link" href="#adding-a-tier">Adding a tier</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a tier and setting it to rooms</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all rooms using the <code>switch room</code> command. Multiple rooms in the list.</p>
+</li>
+<li>
+<p>Test case: <code>addtier ti/GOLD rn/001 002 003</code>
+Expected: Sets the tier for rooms <code>001</code>, <code>002</code>, and <code>003</code> to <code>GOLD</code></p>
+</li>
+<li>
+<p>Test case: <code>addtier ti/Gold rn/001 002 003</code>
+Expected: Invalid tier value. No tier added. Error message shown.</p>
+</li>
+<li>
+<p>Other invalid addtier commands to try: <code>addtier</code> , <code>addtier ti/BRONZE rn/000</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-service"><a class="link" href="#adding-a-service">Adding a service</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a service when all services are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all service using the <code>switch service</code> command. Multiple services in the list.</p>
+</li>
+<li>
+<p>Test case: <code>addservice si/WC d/Wash clothes c/100.00</code><br>
+Expected: Service WC is added to the list. Details of the added Service shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addservice si/WC d/Other service c/100.00</code><br>
+Expected: Service Id clashes with an existing service. No service is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addservice si/WC c/100.00</code><br>
+Expected: Invalid description value. No service is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect addservice commands to try: <code>addservice</code>, <code>addservice c/190.00</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reserving-a-room"><a class="link" href="#reserving-a-room">Reserving a room</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a booking when all bookings are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all the bookings by using the <code>switch booking</code> command. Multiple bookings shown.</p>
+</li>
+<li>
+<p>Test case: <code>reserve i/i000000 rn/001 fd/2020-12-12 td/2020-12-24</code><br>
+Expected: Room number <code>001</code> is reserved by person <code>I000000</code> from <code>2020-12-12</code> to <code>2020-12-24</code></p>
+</li>
+<li>
+<p>Test case: <code>reserve i/B000000 rn/001 fd/2020-12-13 td/2020-12-23</code><br>
+Expected: There is a clash in booking dates for the same room. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Test case: <code>reserve i/Bzagda rn/001 fd/2020-12-13 td/2020-12-23</code>
+Expected: No such person found. No booking made. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect reserve commands to try: <code>reserve</code>, <code>reserve i/A000000</code> , <code>reserve i/i000000 rn/004 fd/2012-12-12 td/2012-12-24</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="checking-in-and-out-guests"><a class="link" href="#checking-in-and-out-guests">Checking in and out guests</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with check-ins and check-outs</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookings by using the command <code>switch booking</code></p>
+</li>
+<li>
+<p>Test case: <code>checkin i/i000000 rn/001 td/2020-12-24</code><br>
+Expected: Guest <code>i000000</code> is checked into room <code>001</code></p>
+</li>
+<li>
+<p>Test case: <code>checkin i/B000000 rn/5602 td/2020-12-23</code><br>
+Expected: There is no such room. Error message shown in result display box.</p>
+</li>
+<li>
+<p>Test case: <code>checkout rn/001</code><br>
+Expected: Guest is checked out of room <code>001</code></p>
+</li>
+<li>
+<p>Test case: <code>checkout rn/009</code><br>
+Expected: Room <code>009</code> has no guests. Error message is shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect checkin/checkout commands to try: <code>checkin</code>, <code>checkin i/A000000</code> , <code>checkin i/i000000 rn/004 fd/2012-12-12 td/2012-12-24</code>, <code>checkout</code> , <code>checkout rn/000</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="extending-the-stay-of-a-guest"><a class="link" href="#extending-the-stay-of-a-guest">Extending the stay of a guest</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with extension of a stay.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all the stays by using the <code>switch room</code> command. Stays are shown in the rooms.</p>
+</li>
+<li>
+<p>Test case: <code>extend rn/101 td/2020-04-20</code><br>
+Expected: Room number <code>101</code> 's stay is extended until <code>2020-04-20</code></p>
+</li>
+<li>
+<p>Test case: <code>extend rn/006 td/2020-04-20</code><br>
+Expected: There is no guest checked into room <code>006</code>. Stay cannot be extended. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Test case: <code>extend rn/001 fd/2012-12-12</code><br>
+Expected: Invalid date. Date has passed. Stay cannot be extended. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect extend commands to try: <code>extend</code>, <code>reserve rn/000</code> , <code>extend td/2012-12-12</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="charging-a-service"><a class="link" href="#charging-a-service">Charging a service</a></h3>
+<div class="olist loweralpha">
+<div class="title">Charging a service to the guest&#8217;s tab.</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all the stays by using the <code>switch room</code> command. Stays are shown in the rooms.</p>
+</li>
+<li>
+<p>Test case: <code>chargeservice i/A000000 rn/004 si/WC</code><br>
+Expected: Charges service with the ID <code>WC</code> for room <code>100</code> to the guest with ID <code>A000000</code> 's bill.</p>
+</li>
+<li>
+<p>Test case: <code>chargeservice i/R000000 rn/004 si/WC</code><br>
+Expected: Guest <code>R000000</code> is not checked in. No service can be added to his bill. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect chargeservice commands to try: <code>chargeservice</code>, <code>chargeservice i/R000000 rn/000 si/WC</code> , `chargeservice i/R000000 rn/100 si/DD</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fetching-the-bill-of-a-guest"><a class="link" href="#fetching-the-bill-of-a-guest">Fetching the bill of a guest</a></h3>
+<div class="olist loweralpha">
+<div class="title">Retrieving the bill of a guest</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all the stays by using the <code>switch room</code> command. Stays are shown in the rooms.</p>
+</li>
+<li>
+<p>Test case: <code>fetchbill i/A000000</code><br>
+Expected: Shows the entire bill, consisting of all costs incurred, for guest with ID <code>G1231231X</code> 's stay up till present moment.</p>
+</li>
+<li>
+<p>Test case: <code>fetchbill i/R000000</code><br>
+Expected: Guest <code>R000000</code> is not checked in. His bill cannot be shown. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect fetchbill commands to try: <code>fetchbill</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-service-from-a-bill"><a class="link" href="#deleting-service-from-a-bill">Deleting service from a bill</a></h3>
+<div class="olist loweralpha">
+<div class="title">Deleting a service from a bill</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bills by using the <code>switch bill</code> command</p>
+</li>
+<li>
+<p>Test case: <code>deletecservice i/G1231231X rn/100 si/WC</code>
+Expected: Removes service with ID <code>WC</code> from guest with ID <code>G1231231X</code> 's bill for room <code>100</code></p>
+</li>
+<li>
+<p>Test case: <code>deletecservice i/B000000 rn/100 si/WC</code>
+Expected: Guest <code>B000000</code> does not have the service <code>WC</code> in their bill. Error message shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect deletecservice commands to try: <code>deletecservice</code> , <code>deletecservice i/A000000 rn/000</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-a-guest"><a class="link" href="#finding-a-guest">Finding a guest</a></h3>
+<div class="olist loweralpha">
+<div class="title">Finding a guest from the list</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all guests by using the <code>switch guest</code> command. Guests are listed.</p>
+</li>
+<li>
+<p>Test case: <code>findguest i/A0000000 n/Alice</code>
+Expected: Shows persons with name: <code>Alice</code> or ID: <code>A1000000</code></p>
+</li>
+<li>
+<p>Test case: <code>findguest</code>
+Expected: Invalid command format. Error message is shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect findguest commands to try: <code>findguest i/</code> , <code>findguest n/</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-a-room"><a class="link" href="#finding-a-room">Finding a room</a></h3>
+<div class="olist loweralpha">
+<div class="title">Finding a room related to a guest&#8217;s reservation/stay</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all rooms by using the <code>switch room</code> command. Rooms are listed.</p>
+</li>
+<li>
+<p>Test case: <code>findroom i/A000000 rn/001 n/Tuan Le</code>
+Expected: Shows rooms booked by Guest with name: <code>Tuan Le</code> and/or ID: <code>A000000</code></p>
+</li>
+<li>
+<p>Test case: <code>findroom</code>
+Expected: Invalid command format. Error message is shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect findroom commands to try: <code>findroom i/</code> , <code>findroom n/</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-a-booking"><a class="link" href="#finding-a-booking">Finding a booking</a></h3>
+<div class="olist loweralpha">
+<div class="title">Finding a booking made by a guest</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookings by using the <code>switch room</code> command. Rooms are listed.</p>
+</li>
+<li>
+<p>Test case: <code>findbooking n/Alice rn/001</code>
+Expected: Shows booking of <code>Alice</code> or of room <code>001</code>.</p>
+</li>
+<li>
+<p>Test case: <code>findbooking</code>
+Expected: Invalid command format. Error message is shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect findbooking commands to try: <code>findbooking rn/</code> , <code>findbooking n/</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
 <h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">Deleting a person</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Deleting a Guest while all Guests are listed</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all guests using the <code>switch guest</code> command. Multiple guests in the list.</p>
 </li>
 <li>
 <p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+Expected: First Guest is deleted from the list. Details of the deleted Guest shown in the status message.</p>
 </li>
 <li>
 <p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+Expected: Index is out of bounds. No Guest is deleted. Error details shown in the status message. Status bar remains the same.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size)
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -407,59 +762,5 @@ Expected: Morpheus will restart with an empty addressbook and hotel.</p>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="reserving-a-room"><a class="link" href="#reserving-a-room">Reserving a room</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with clashes in bookings</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: List all the bookings by clicking on booking tab. Multiple bookings.</p>
-</li>
-<li>
-<p>Test case: <code>reserve i/i000000 rn/001 fd/2020-12-12 td/2020-12-24</code><br>
-Expected: Room number <code>001</code> is reserved by person <code>I000000</code> from <code>2020-12-12</code> to <code>2020-12-24</code></p>
-</li>
-<li>
-<p>Test case: <code>reserve i/B000000 rn/001 fd/2020-12-13 td/2020-12-23</code><br>
-Expected: There is a clash in booking dates for the same room. Error details shown in the result display box.</p>
-</li>
-<li>
-<p>Test case: <code>reserve i/Bzagda rn/001 fd/2020-12-13 td/2020-12-23</code>
-Expected: No such person found. No booking made. Error details shown in the status message.</p>
-</li>
-</ol>
 </div>
-</li>
-</ol>
-</div>
-</div>
-<div class="sect2">
-<h3 id="checking-in-and-out-guests"><a class="link" href="#checking-in-and-out-guests">Checking in and out guests</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with invalid check-ins and check-outs</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: List all bookings by using the command <code>switch booking</code></p>
-</li>
-<li>
-<p>Test case: <code>checkin i/i000000 rn/001 td/2020-12-24</code><br>
-Expected: Guest <code>i000000</code> is checked into room <code>001</code></p>
-</li>
-<li>
-<p>Test case: <code>checkin i/B000000 rn/5602 td/2020-12-23</code><br>
-Expected: There is no such room. Error message shown in result display box.</p>
-</li>
-</ol>
-</div>
-</li>
-</ol>
-</div>
-</div>
-</div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:20:41 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:20:36 UTC</div></div></div></body></html>

@@ -29,7 +29,7 @@
 <li><a href="#implementation">4. Implementation</a>
 <ul class="sectlevel2">
 <li><a href="#hotel-initialization">4.1. Hotel Initialization</a></li>
-<li><a href="#service-feature">4.2. Service feature</a></li>
+<li><a href="#hotel-services-feature">4.2. Hotel Services feature</a></li>
 <li><a href="#search-feature">4.3. Search feature</a></li>
 <li><a href="#billing-system">4.4. Billing System</a></li>
 <li><a href="#Implementation-Configuration">4.5. Configuration</a></li>
@@ -52,10 +52,28 @@
 <li><a href="#instructions-for-manual-testing">Appendix F: Instructions for Manual Testing</a>
 <ul class="sectlevel2">
 <li><a href="#launch-and-shutdown">F.1. Launch and Shutdown</a></li>
-<li><a href="#deleting-a-person">F.2. Deleting a person</a></li>
-<li><a href="#saving-data">F.3. Saving data</a></li>
-<li><a href="#reserving-a-room">F.4. Reserving a room</a></li>
-<li><a href="#checking-in-and-out-guests">F.5. Checking in and out guests</a></li>
+<li><a href="#adding-a-guest">F.2. Adding a guest</a></li>
+<li><a href="#adding-a-room">F.3. Adding a room</a></li>
+<li><a href="#adding-a-tier">F.4. Adding a tier</a></li>
+<li><a href="#adding-a-service">F.5. Adding a service</a></li>
+<li><a href="#reserving-a-room">F.6. Reserving a room</a></li>
+<li><a href="#checking-in-and-out-guests">F.7. Checking in and out guests</a></li>
+<li><a href="#extending-the-stay-of-a-guest">F.8. Extending the stay of a guest</a></li>
+<li><a href="#charging-a-service">F.9. Charging a service</a></li>
+<li><a href="#fetching-the-bill-of-a-guest">F.10. Fetching the bill of a guest</a></li>
+<li><a href="#deleting-service-from-a-bill">F.11. Deleting service from a bill</a></li>
+<li><a href="#finding-a-guest">F.12. Finding a guest</a></li>
+<li><a href="#finding-a-room">F.13. Finding a room</a></li>
+<li><a href="#finding-a-booking">F.14. Finding a booking</a></li>
+<li><a href="#deleting-a-person">F.15. Deleting a person</a></li>
+<li><a href="#saving-data">F.16. Saving data</a></li>
+</ul>
+</li>
+<li><a href="#effort">Appendix G: Effort</a>
+<ul class="sectlevel2">
+<li><a href="#overview">G.1. Overview</a></li>
+<li><a href="#challenges">G.2. Challenges</a></li>
+<li><a href="#conclusion">G.3. Conclusion</a></li>
 </ul>
 </li>
 </ul>
@@ -394,7 +412,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <div class="sect2">
 <h3 id="hotel-initialization"><a class="link" href="#hotel-initialization">4.1. Hotel Initialization</a></h3>
 <div class="paragraph">
-<p>The following steps show how to set up a hotel:</p>
+<p>The following steps show how to set up a hotel by adding guests, rooms and services:</p>
 </div>
 <div class="sect3">
 <h4 id="addguestcommand"><a class="link" href="#addguestcommand">4.1.1. AddGuestCommand</a></h4>
@@ -417,6 +435,9 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <li>
 <p>The command is then executed by creating a new Guest object using the parameter values entered and adding the Guest object into the Hotel.</p>
 </li>
+<li>
+<p>If successful, a <code>CommandResult</code> object is created to show a success message in the feedback box of the ui.</p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
@@ -427,6 +448,39 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <img src="images/AddGuestClass.png" alt="AddGuestClass">
 </div>
 <div class="title">Figure 10. Class Diagram for AddGuestCommand</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Creates a new Guest object in AddGuestCommandParser.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simpler to test and understand.</p>
+</li>
+<li>
+<p>Cons: Command object should not know details about model i.e. Person.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> New Guest object is created and added to hotel in model.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Command has no knowledge of Model and its attributes.</p>
+</li>
+<li>
+<p>Cons: More prone to error.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -446,7 +500,10 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <p>If the parameters are valid, <code>AddServiceCommand#execute(Model model)</code> is invoked, which checks if the service id exists.</p>
 </li>
 <li>
-<p>If the service id does not exist, a <code>AvailableService</code> object is created and `Model#add(AvailableService service) is called to add an available service to hotel.</p>
+<p>If the service id does not exist, a <code>AvailableService</code> object is created and <code>Model#add(AvailableService service)</code> is called to add an available service to hotel.</p>
+</li>
+<li>
+<p>If successful, a <code>CommandResult</code> object is created to show a success message in the feedback box of the ui.</p>
 </li>
 </ol>
 </div>
@@ -458,6 +515,39 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <img src="images/AddServiceClass.png" alt="AddServiceClass">
 </div>
 <div class="title">Figure 11. Class Diagram for AddServiceCommand</div>
+</div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> Creates a new Service object in AddServiceCommandParser.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simpler to test and understand.</p>
+</li>
+<li>
+<p>Cons: Command object should not know details about model i.e. Service.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> New Service object is created and added to hotel in model.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Command has no knowledge of Model and its attributes.</p>
+</li>
+<li>
+<p>Cons: More prone to error.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
 </div>
 </div>
 </div>
@@ -482,6 +572,9 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 <li>
 <p>If all arguments are valid, a new Room object is created using the tokenized arguments and it is added into the hotel.</p>
 </li>
+<li>
+<p>If successful, a <code>CommandResult</code> object is created to show a success message in the feedback box of the ui.</p>
+</li>
 </ol>
 </div>
 <div class="paragraph">
@@ -493,8 +586,41 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 <div class="title">Figure 12. Class Diagram for AddRoomCommand</div>
 </div>
+</div>
+<div class="sect4">
+<h5 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h5>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Alternative 1 (current choice):</strong> New Room object is created and added to hotel in Hotel.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Command has no knowledge of Model and its attributes.</p>
+</li>
+<li>
+<p>Cons: More prone to error.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p><strong>Alternative 2:</strong> Creates a new Guest object in AddRoomCommandParser.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Pros: Simpler to test and understand.</p>
+</li>
+<li>
+<p>Cons: Command object should not know details about model and its attributes i.e. Room.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>The Diagram below shows the sequence diagram for AddRoomCommand. All Initialization commands are similar in their interactions with the <a href="#Design-Logic">Section 3.3, &#8220;Logic component&#8221;</a> and <a href="#Design-Model">Section 3.4, &#8220;Model component&#8221;</a>.</p>
+<p>The Diagram below shows the sequence diagram for AddRoomCommand. All Initialization commands above are similar in their interactions with the <a href="#Design-Logic">Section 3.3, &#8220;Logic component&#8221;</a> and <a href="#Design-Model">Section 3.4, &#8220;Model component&#8221;</a>.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -515,7 +641,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect2">
-<h3 id="service-feature"><a class="link" href="#service-feature">4.2. Service feature</a></h3>
+<h3 id="hotel-services-feature"><a class="link" href="#hotel-services-feature">4.2. Hotel Services feature</a></h3>
 <div class="sect3">
 <h4 id="reserve-command"><a class="link" href="#reserve-command">4.2.1. Reserve Command</a></h4>
 <div class="sect4">
@@ -595,7 +721,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h5>
+<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -702,7 +828,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h5>
+<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
 <div class="paragraph">
 <p>Below describes ideas that were considered when designing the command.</p>
 </div>
@@ -787,7 +913,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h5>
+<h5 id="design-considerations-6"><a class="link" href="#design-considerations-6">Design Considerations</a></h5>
 <div class="paragraph">
 <p>Below describes ideas that were considered when designing the command.</p>
 </div>
@@ -866,7 +992,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h5>
+<h5 id="design-considerations-7"><a class="link" href="#design-considerations-7">Design Considerations</a></h5>
 <div class="paragraph">
 <p>Below describes ideas that were considered when designing the command.</p>
 </div>
@@ -975,7 +1101,7 @@ As a more OOP model, we can store a <code>Tag</code> list in <code>Address Book<
 </div>
 </div>
 <div class="sect4">
-<h5 id="design-considerations-5"><a class="link" href="#design-considerations-5">Design Considerations</a></h5>
+<h5 id="design-considerations-8"><a class="link" href="#design-considerations-8">Design Considerations</a></h5>
 <div class="paragraph">
 <p>Below describes ideas that were considered when designing the command.</p>
 </div>
@@ -1494,26 +1620,26 @@ Expected: The most recent window size and location is retained.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.2. Deleting a person</a></h3>
+<h3 id="adding-a-guest"><a class="link" href="#adding-a-guest">F.2. Adding a guest</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>Deleting a person while all persons are listed</p>
+<p>Adding a guest when all guests are listed.</p>
 <div class="olist loweralpha">
 <ol class="loweralpha" type="a">
 <li>
-<p>Prerequisites: List all persons using the <code>list</code> command. Multiple persons in the list.</p>
+<p>Prerequisites: List all persons using the <code>switch guest</code> command. Multiple guests in the list.</p>
 </li>
 <li>
-<p>Test case: <code>delete 1</code><br>
-Expected: First contact is deleted from the list. Details of the deleted contact shown in the status message. Timestamp in the status bar is updated.</p>
+<p>Test case: <code>addguest n/Joey i/J000000 p/12345679 e/joey@email.com t/VIP</code><br>
+Expected: Guest Joey is added to the list. Details of the added Guest shown in the status message.</p>
 </li>
 <li>
-<p>Test case: <code>delete 0</code><br>
-Expected: No person is deleted. Error details shown in the status message. Status bar remains the same.</p>
+<p>Test case: <code>addguest n/Jolene i/J000000 p/12345679 e/jolene@email.com t/VIP</code><br>
+Expected: Guest Id clashes with an existing guest. No Guest is added. Error details shown in the status message.</p>
 </li>
 <li>
-<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size) <em>{give more}</em><br>
+<p>Other incorrect addguest commands to try: <code>addguest</code>, <code>addguest i/P000000 p/12345679 e/joey@email.com</code><br>
 Expected: Similar to previous.</p>
 </li>
 </ol>
@@ -1523,7 +1649,362 @@ Expected: Similar to previous.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-data"><a class="link" href="#saving-data">F.3. Saving data</a></h3>
+<h3 id="adding-a-room"><a class="link" href="#adding-a-room">F.3. Adding a room</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a room when all rooms are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all rooms using the <code>switch room</code> command. Multiple rooms in the list.</p>
+</li>
+<li>
+<p>Test case: <code>addroom rn/300 ti/GOLD c/300.00</code><br>
+Expected: Room 300 is added to the list. Details of the added Room shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addroom rn/300 ti/GOLD c/300.00</code><br>
+Expected: Room Id clashes with an existing room. No Room is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addroom rn/400 ti/Gold c/300.00</code><br>
+Expected: Invalid Tier value. No Room is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect addroom commands to try: <code>addroom</code>, <code>addroom rn/500 ti/BRONZE</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-tier"><a class="link" href="#adding-a-tier">F.4. Adding a tier</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a tier and setting it to rooms</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all rooms using the <code>switch room</code> command. Multiple rooms in the list.</p>
+</li>
+<li>
+<p>Test case: <code>addtier ti/GOLD rn/001 002 003</code>
+Expected: Sets the tier for rooms <code>001</code>, <code>002</code>, and <code>003</code> to <code>GOLD</code></p>
+</li>
+<li>
+<p>Test case: <code>addtier ti/Gold rn/001 002 003</code>
+Expected: Invalid tier value. No tier added. Error message shown.</p>
+</li>
+<li>
+<p>Other invalid addtier commands to try: <code>addtier</code> , <code>addtier ti/BRONZE rn/000</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-service"><a class="link" href="#adding-a-service">F.5. Adding a service</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a service when all services are listed.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all service using the <code>switch service</code> command. Multiple services in the list.</p>
+</li>
+<li>
+<p>Test case: <code>addservice si/WC d/Wash clothes c/100.00</code><br>
+Expected: Service WC is added to the list. Details of the added Service shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addservice si/WC d/Other service c/100.00</code><br>
+Expected: Service Id clashes with an existing service. No service is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>addservice si/WC c/100.00</code><br>
+Expected: Invalid description value. No service is added. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect addservice commands to try: <code>addservice</code>, <code>addservice c/190.00</code><br>
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="reserving-a-room"><a class="link" href="#reserving-a-room">F.6. Reserving a room</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Adding a booking when all bookings are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all the bookings by using the <code>switch booking</code> command. Multiple bookings shown.</p>
+</li>
+<li>
+<p>Test case: <code>reserve i/i000000 rn/001 fd/2020-12-12 td/2020-12-24</code><br>
+Expected: Room number <code>001</code> is reserved by person <code>I000000</code> from <code>2020-12-12</code> to <code>2020-12-24</code></p>
+</li>
+<li>
+<p>Test case: <code>reserve i/B000000 rn/001 fd/2020-12-13 td/2020-12-23</code><br>
+Expected: There is a clash in booking dates for the same room. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Test case: <code>reserve i/Bzagda rn/001 fd/2020-12-13 td/2020-12-23</code>
+Expected: No such person found. No booking made. Error details shown in the status message.</p>
+</li>
+<li>
+<p>Other incorrect reserve commands to try: <code>reserve</code>, <code>reserve i/A000000</code> , <code>reserve i/i000000 rn/004 fd/2012-12-12 td/2012-12-24</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="checking-in-and-out-guests"><a class="link" href="#checking-in-and-out-guests">F.7. Checking in and out guests</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with check-ins and check-outs</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookings by using the command <code>switch booking</code></p>
+</li>
+<li>
+<p>Test case: <code>checkin i/i000000 rn/001 td/2020-12-24</code><br>
+Expected: Guest <code>i000000</code> is checked into room <code>001</code></p>
+</li>
+<li>
+<p>Test case: <code>checkin i/B000000 rn/5602 td/2020-12-23</code><br>
+Expected: There is no such room. Error message shown in result display box.</p>
+</li>
+<li>
+<p>Test case: <code>checkout rn/001</code><br>
+Expected: Guest is checked out of room <code>001</code></p>
+</li>
+<li>
+<p>Test case: <code>checkout rn/009</code><br>
+Expected: Room <code>009</code> has no guests. Error message is shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect checkin/checkout commands to try: <code>checkin</code>, <code>checkin i/A000000</code> , <code>checkin i/i000000 rn/004 fd/2012-12-12 td/2012-12-24</code>, <code>checkout</code> , <code>checkout rn/000</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="extending-the-stay-of-a-guest"><a class="link" href="#extending-the-stay-of-a-guest">F.8. Extending the stay of a guest</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Dealing with extension of a stay.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all the stays by using the <code>switch room</code> command. Stays are shown in the rooms.</p>
+</li>
+<li>
+<p>Test case: <code>extend rn/101 td/2020-04-20</code><br>
+Expected: Room number <code>101</code> 's stay is extended until <code>2020-04-20</code></p>
+</li>
+<li>
+<p>Test case: <code>extend rn/006 td/2020-04-20</code><br>
+Expected: There is no guest checked into room <code>006</code>. Stay cannot be extended. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Test case: <code>extend rn/001 fd/2012-12-12</code><br>
+Expected: Invalid date. Date has passed. Stay cannot be extended. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect extend commands to try: <code>extend</code>, <code>reserve rn/000</code> , <code>extend td/2012-12-12</code></p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="charging-a-service"><a class="link" href="#charging-a-service">F.9. Charging a service</a></h3>
+<div class="olist loweralpha">
+<div class="title">Charging a service to the guest&#8217;s tab.</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all the stays by using the <code>switch room</code> command. Stays are shown in the rooms.</p>
+</li>
+<li>
+<p>Test case: <code>chargeservice i/A000000 rn/004 si/WC</code><br>
+Expected: Charges service with the ID <code>WC</code> for room <code>100</code> to the guest with ID <code>A000000</code> 's bill.</p>
+</li>
+<li>
+<p>Test case: <code>chargeservice i/R000000 rn/004 si/WC</code><br>
+Expected: Guest <code>R000000</code> is not checked in. No service can be added to his bill. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect chargeservice commands to try: <code>chargeservice</code>, <code>chargeservice i/R000000 rn/000 si/WC</code> , `chargeservice i/R000000 rn/100 si/DD</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="fetching-the-bill-of-a-guest"><a class="link" href="#fetching-the-bill-of-a-guest">F.10. Fetching the bill of a guest</a></h3>
+<div class="olist loweralpha">
+<div class="title">Retrieving the bill of a guest</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all the stays by using the <code>switch room</code> command. Stays are shown in the rooms.</p>
+</li>
+<li>
+<p>Test case: <code>fetchbill i/A000000</code><br>
+Expected: Shows the entire bill, consisting of all costs incurred, for guest with ID <code>G1231231X</code> 's stay up till present moment.</p>
+</li>
+<li>
+<p>Test case: <code>fetchbill i/R000000</code><br>
+Expected: Guest <code>R000000</code> is not checked in. His bill cannot be shown. Error details shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect fetchbill commands to try: <code>fetchbill</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-service-from-a-bill"><a class="link" href="#deleting-service-from-a-bill">F.11. Deleting service from a bill</a></h3>
+<div class="olist loweralpha">
+<div class="title">Deleting a service from a bill</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bills by using the <code>switch bill</code> command</p>
+</li>
+<li>
+<p>Test case: <code>deletecservice i/G1231231X rn/100 si/WC</code>
+Expected: Removes service with ID <code>WC</code> from guest with ID <code>G1231231X</code> 's bill for room <code>100</code></p>
+</li>
+<li>
+<p>Test case: <code>deletecservice i/B000000 rn/100 si/WC</code>
+Expected: Guest <code>B000000</code> does not have the service <code>WC</code> in their bill. Error message shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect deletecservice commands to try: <code>deletecservice</code> , <code>deletecservice i/A000000 rn/000</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-a-guest"><a class="link" href="#finding-a-guest">F.12. Finding a guest</a></h3>
+<div class="olist loweralpha">
+<div class="title">Finding a guest from the list</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all guests by using the <code>switch guest</code> command. Guests are listed.</p>
+</li>
+<li>
+<p>Test case: <code>findguest i/A0000000 n/Alice</code>
+Expected: Shows persons with name: <code>Alice</code> or ID: <code>A1000000</code></p>
+</li>
+<li>
+<p>Test case: <code>findguest</code>
+Expected: Invalid command format. Error message is shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect findguest commands to try: <code>findguest i/</code> , <code>findguest n/</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-a-room"><a class="link" href="#finding-a-room">F.13. Finding a room</a></h3>
+<div class="olist loweralpha">
+<div class="title">Finding a room related to a guest&#8217;s reservation/stay</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all rooms by using the <code>switch room</code> command. Rooms are listed.</p>
+</li>
+<li>
+<p>Test case: <code>findroom i/A000000 rn/001 n/Tuan Le</code>
+Expected: Shows rooms booked by Guest with name: <code>Tuan Le</code> and/or ID: <code>A000000</code></p>
+</li>
+<li>
+<p>Test case: <code>findroom</code>
+Expected: Invalid command format. Error message is shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect findroom commands to try: <code>findroom i/</code> , <code>findroom n/</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="finding-a-booking"><a class="link" href="#finding-a-booking">F.14. Finding a booking</a></h3>
+<div class="olist loweralpha">
+<div class="title">Finding a booking made by a guest</div>
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all bookings by using the <code>switch room</code> command. Rooms are listed.</p>
+</li>
+<li>
+<p>Test case: <code>findbooking n/Alice rn/001</code>
+Expected: Shows booking of <code>Alice</code> or of room <code>001</code>.</p>
+</li>
+<li>
+<p>Test case: <code>findbooking</code>
+Expected: Invalid command format. Error message is shown in the result display box.</p>
+</li>
+<li>
+<p>Other incorrect findbooking commands to try: <code>findbooking rn/</code> , <code>findbooking n/</code></p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-person"><a class="link" href="#deleting-a-person">F.15. Deleting a person</a></h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Deleting a Guest while all Guests are listed</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Prerequisites: List all guests using the <code>switch guest</code> command. Multiple guests in the list.</p>
+</li>
+<li>
+<p>Test case: <code>delete 1</code><br>
+Expected: First Guest is deleted from the list. Details of the deleted Guest shown in the status message.</p>
+</li>
+<li>
+<p>Test case: <code>delete 0</code><br>
+Expected: Index is out of bounds. No Guest is deleted. Error details shown in the status message. Status bar remains the same.</p>
+</li>
+<li>
+<p>Other incorrect delete commands to try: <code>delete</code>, <code>delete x</code> (where x is larger than the list size)
+Expected: Similar to previous.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="saving-data"><a class="link" href="#saving-data">F.16. Saving data</a></h3>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
@@ -1547,59 +2028,77 @@ Expected: Morpheus will restart with an empty addressbook and hotel.</p>
 </ol>
 </div>
 </div>
-<div class="sect2">
-<h3 id="reserving-a-room"><a class="link" href="#reserving-a-room">F.4. Reserving a room</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Dealing with clashes in bookings</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
-<li>
-<p>Prerequisites: List all the bookings by clicking on booking tab. Multiple bookings.</p>
-</li>
-<li>
-<p>Test case: <code>reserve i/i000000 rn/001 fd/2020-12-12 td/2020-12-24</code><br>
-Expected: Room number <code>001</code> is reserved by person <code>I000000</code> from <code>2020-12-12</code> to <code>2020-12-24</code></p>
-</li>
-<li>
-<p>Test case: <code>reserve i/B000000 rn/001 fd/2020-12-13 td/2020-12-23</code><br>
-Expected: There is a clash in booking dates for the same room. Error details shown in the result display box.</p>
-</li>
-<li>
-<p>Test case: <code>reserve i/Bzagda rn/001 fd/2020-12-13 td/2020-12-23</code>
-Expected: No such person found. No booking made. Error details shown in the status message.</p>
-</li>
-</ol>
 </div>
-</li>
-</ol>
+</div>
+<div class="sect1">
+<h2 id="effort"><a class="link" href="#effort">Appendix G: Effort</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="overview"><a class="link" href="#overview">G.1. Overview</a></h3>
+<div class="paragraph">
+<p>Morpheus is an extension from AB3 and is considerably more complex than AB3. We have incorporated several new features which required extending the
+UI, Storage and Model components of Morpheus. We extended current AB3 features (which only had 1 entity type: AddressBook) to include more entity types such as Hotel and BookKeeper which in turn
+contained more entities such as Rooms and Bills. We did this so as to be able to create an application that allows seamless management of a hotel&#8217;s daily
+activities. As there were many new things to add on to AB3, the entire team put in their collaborative effort to create the end product.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="checking-in-and-out-guests"><a class="link" href="#checking-in-and-out-guests">F.5. Checking in and out guests</a></h3>
-<div class="olist arabic">
-<ol class="arabic">
+<h3 id="challenges"><a class="link" href="#challenges">G.2. Challenges</a></h3>
+<div class="ulist">
+<ul>
 <li>
-<p>Dealing with invalid check-ins and check-outs</p>
-<div class="olist loweralpha">
-<ol class="loweralpha" type="a">
+<p>Planning out the structure and architecture of the application</p>
+<div class="ulist">
+<ul>
 <li>
-<p>Prerequisites: List all bookings by using the command <code>switch booking</code></p>
+<p>A hotel is a complex system of activities, thus we had to hold several meetings to discuss what would be the structure of our application so as to allow
+management of all the activities in one app.</p>
 </li>
-<li>
-<p>Test case: <code>checkin i/i000000 rn/001 td/2020-12-24</code><br>
-Expected: Guest <code>i000000</code> is checked into room <code>001</code></p>
-</li>
-<li>
-<p>Test case: <code>checkin i/B000000 rn/5602 td/2020-12-23</code><br>
-Expected: There is no such room. Error message shown in result display box.</p>
-</li>
-</ol>
+</ul>
 </div>
 </li>
-</ol>
+<li>
+<p>New storage components for the <code>Hotel</code> and <code>BookKeeper</code></p>
+<div class="ulist">
+<ul>
+<li>
+<p>As the AddressBook only stored persons, we has to extend the storage system to keep track of the hotel&#8217;s data and the finance data in the <code>Hotel</code> and <code>BookKeeper</code>
+classes respectively. This required thorough understanding of AB3&#8217;s storage system.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>New Commands to aid the job of a hotel receptionist.</p>
+<div class="ulist">
+<ul>
+<li>
+<p>We had to extend AB3&#8217;s current implementation of <code>Logic</code> as a hotel receptionist has to manage many more things than a person list. Hence, through
+thorough understanding of the <code>Model</code> and <code>Logic</code> component, we implemented a variety of new commands that works with the model to digitize the management of a hotel.</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>User Interface</p>
+<div class="ulist">
+<ul>
+<li>
+<p>We wanted to show all of the hotel&#8217;s activity and data in 1 window. As such, it was necessary to upgrade AB3&#8217;s UI to incorporate the hotel&#8217;s data.
+The Ui was improved and edited using JavaFx and CSS. All bugs and errors that were reflected in the Ui were tested and fixed by the team.</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="conclusion"><a class="link" href="#conclusion">G.3. Conclusion</a></h3>
+<div class="paragraph">
+<p>We believe that this was a difficult project to execute as a hotel has many interlinked components working together. However, through the combined effort
+of the entire team, we believe that we have created an end-product that is able to manage the hotel&#8217;s important activities altogether in one application.</p>
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 07:20:41 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 08:20:36 UTC</div></div></div></body></html>

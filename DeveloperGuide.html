@@ -41,11 +41,23 @@
 <li><a href="#dev-ops">7. Dev Ops</a></li>
 <li><a href="#product-scope">Appendix A: Product Scope</a></li>
 <li><a href="#user-stories-sanchari-hui-ming">Appendix B: User Stories (Sanchari &amp; Hui Ming)</a></li>
-<li><a href="#use-cases">Appendix C: Use Cases</a>
-<ul class="sectlevel2">
-<li><a href="#show-list-of-available-rooms">C.1. Show list of available rooms</a></li>
-<li><a href="#use-case-make-a-reservation-for-a-room">C.2. Use case: Make a reservation for a room</a></li>
-<li><a href="#use-case-get-bill">C.3. Use case: Get bill</a></li>
+<li><a href="#use-cases-hui-ming">Appendix C: Use Cases (Hui Ming)</a>
+<ul class="sectlevel4">
+<li><a href="#use-case-uc01-add-a-guest">Use Case: UC01 - Add a guest</a></li>
+<li><a href="#use-case-uc02-add-a-room">Use Case: UC02 - Add a room</a></li>
+<li><a href="#use-case-uc03-add-a-tier">Use Case: UC03 - Add a tier</a></li>
+<li><a href="#use-case-uc04-add-a-service">Use Case: UC04 - Add a service</a></li>
+<li><a href="#use-case-uc05-reserve-a-room">Use Case: UC05 - Reserve a room</a></li>
+<li><a href="#use-case-uc06-check-in-a-guest">Use Case: UC06 - Check in a guest</a></li>
+<li><a href="#use-case-uc07-check-out-a-guest">Use Case: UC07 - Check out a guest</a></li>
+<li><a href="#use-case-uc08-extend-the-stay-of-a-guest">Use Case: UC08 - Extend the stay of a guest</a></li>
+<li><a href="#use-case-uc09-charging-a-guest-for-a-service">Use Case: UC09 - Charging a guest for a service</a></li>
+<li><a href="#use-case-uc10-fetch-the-bills-of-a-guest">Use Case: UC10 - Fetch the bills of a guest</a></li>
+<li><a href="#use-case-uc11-remove-a-charged-service-from-a-bill">Use Case: UC11 - Remove a charged service from a bill</a></li>
+<li><a href="#use-case-uc12-search-for-a-guest">Use Case: UC12 - Search for a guest</a></li>
+<li><a href="#use-case-uc13-search-for-a-room">Use Case: UC13 - Search for a room</a></li>
+<li><a href="#use-case-uc14-search-for-a-booking">Use Case: UC14 - Search for a booking</a></li>
+<li><a href="#use-case-uc15-delete-a-guest">Use Case: UC15 - Delete a guest</a></li>
 </ul>
 </li>
 <li><a href="#non-functional-requirements">Appendix D: Non Functional Requirements</a></li>
@@ -1453,30 +1465,27 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </div>
 </div>
 <div class="sect1">
-<h2 id="use-cases"><a class="link" href="#use-cases">Appendix C: Use Cases</a></h2>
+<h2 id="use-cases-hui-ming"><a class="link" href="#use-cases-hui-ming">Appendix C: Use Cases (Hui Ming)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>(For all use cases below, the <strong>System</strong> is the <code>Morpheus</code> and the <strong>Actor</strong> is the <code>user</code>, unless specified otherwise)</p>
 </div>
-<div class="imageblock">
-<div class="content">
-<img src="images/UseCaseDiagram.png" alt="UseCaseDiagram">
-</div>
-<div class="title">Figure 23. Use Case Diagram</div>
-</div>
 <h3 id="use-cases-example" class="discrete">Use cases example:</h3>
-<div class="sect2">
-<h3 id="show-list-of-available-rooms"><a class="link" href="#show-list-of-available-rooms">C.1. Show list of available rooms</a></h3>
+<div class="sect4">
+<h5 id="use-case-uc01-add-a-guest"><a class="link" href="#use-case-uc01-add-a-guest">Use Case: UC01 - Add a guest</a></h5>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to list the available room for a given date</p>
+<p>User requests to add a guest</p>
 </li>
 <li>
-<p>Morpheus shows a list of rooms that is available</p>
+<p>User supplies guest name, id, phone number, email &amp; tags</p>
+</li>
+<li>
+<p>Morpheus adds the guest to the application</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1489,29 +1498,36 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 <div class="ulist none">
 <ul class="none">
 <li>
-<p>2a. The list is empty.</p>
+<p>2a. The guest already exists in the application.</p>
+<div class="ulist none">
+<ul class="none">
+<li>
+<p>2a1. Morpheus shows an error message.</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
 </li>
 </ul>
 </div>
+</li>
+</ul>
 </div>
-<div class="sect2">
-<h3 id="use-case-make-a-reservation-for-a-room"><a class="link" href="#use-case-make-a-reservation-for-a-room">C.2. Use case: Make a reservation for a room</a></h3>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc02-add-a-room"><a class="link" href="#use-case-uc02-add-a-room">Use Case: UC02 - Add a room</a></h5>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to <a href="#c1-show-list-of-available-rooms"><u>show list of available rooms (C1)</u></a></p>
+<p>User requests to add a room</p>
 </li>
 <li>
-<p>User requests to make a booking for the selected room(s)</p>
+<p>User supplies room number, tier and cost</p>
 </li>
 <li>
-<p>Morpheus will mark the booking</p>
+<p>Morpheus adds the room to the application</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1521,16 +1537,16 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>2a. The given room(s) are invalid or booked.</p>
-<div class="ulist none">
-<ul class="none">
+<p>2a. The room already exists in the application</p>
+<div class="ulist">
+<ul>
 <li>
-<p>2a1. AddressBook shows an error message.</p>
+<p>2a1. Morpheus shows an error message</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -1539,18 +1555,21 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 </ul>
 </div>
 </div>
-<div class="sect2">
-<h3 id="use-case-get-bill"><a class="link" href="#use-case-get-bill">C.3. Use case: Get bill</a></h3>
+<div class="sect4">
+<h5 id="use-case-uc03-add-a-tier"><a class="link" href="#use-case-uc03-add-a-tier">Use Case: UC03 - Add a tier</a></h5>
 <div class="paragraph">
 <p><strong>MSS</strong></p>
 </div>
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>User requests to get bill from room number or customer&#8217;s name</p>
+<p>User requests to add a tier to a room</p>
 </li>
 <li>
-<p>Morpheus provide the bill</p>
+<p>User supplies tier and room number</p>
+</li>
+<li>
+<p>Morpheus adds a tier to the application</p>
 <div class="paragraph">
 <p>Use case ends.</p>
 </div>
@@ -1560,16 +1579,668 @@ The bills are kept in a <code>UniqueBillList</code>, which ensures that there ar
 <div class="paragraph">
 <p><strong>Extensions</strong></p>
 </div>
-<div class="ulist none">
-<ul class="none">
+<div class="ulist">
+<ul>
 <li>
-<p>2a. The given room number and customer&#8217;s name is not valid</p>
-<div class="ulist none">
-<ul class="none">
+<p>2a. The room already exists in the application</p>
+<div class="ulist">
+<ul>
 <li>
-<p>2a1. AddressBook shows an error message.</p>
+<p>2a1. Morpheus shows an error message</p>
 <div class="paragraph">
-<p>Use case resumes at step 1.</p>
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The room already has a tier</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2b1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc04-add-a-service"><a class="link" href="#use-case-uc04-add-a-service">Use Case: UC04 - Add a service</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to add a service</p>
+</li>
+<li>
+<p>User supplies service id, description and cost</p>
+</li>
+<li>
+<p>Morpheus adds the service to the application</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The service already exists in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc05-reserve-a-room"><a class="link" href="#use-case-uc05-reserve-a-room">Use Case: UC05 - Reserve a room</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to reserve a room</p>
+</li>
+<li>
+<p>User supplies guest id, room number, start and end dates of reservation</p>
+</li>
+<li>
+<p>Morpheus reserves the room</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The guest does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The room does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2b1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2c. The room is already reserved/occupied</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2c1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc06-check-in-a-guest"><a class="link" href="#use-case-uc06-check-in-a-guest">Use Case: UC06 - Check in a guest</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to check in a guest</p>
+</li>
+<li>
+<p>User supplies guest id, room number end date of check out</p>
+</li>
+<li>
+<p>Morpheus marks the room as occupied</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The guest does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The room does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2b1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2c. The room is already reserved/occupied</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2c1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc07-check-out-a-guest"><a class="link" href="#use-case-uc07-check-out-a-guest">Use Case: UC07 - Check out a guest</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to check out a guest</p>
+</li>
+<li>
+<p>User supplies room number</p>
+</li>
+<li>
+<p>Morpheus marks the room as unoccupied</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The room does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The room is not occupied</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2b1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc08-extend-the-stay-of-a-guest"><a class="link" href="#use-case-uc08-extend-the-stay-of-a-guest">Use Case: UC08 - Extend the stay of a guest</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to extend the stay of a guest</p>
+</li>
+<li>
+<p>User supplies room number and new date to check out</p>
+</li>
+<li>
+<p>Morpheus updates the period of time where the room is occupied</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The room does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The room is not occupied</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2b1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2c. The room is reserved by another guest</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2c1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc09-charging-a-guest-for-a-service"><a class="link" href="#use-case-uc09-charging-a-guest-for-a-service">Use Case: UC09 - Charging a guest for a service</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to charge a guest for a service</p>
+</li>
+<li>
+<p>User supplies guest id, room number and service id</p>
+</li>
+<li>
+<p>Morpheus charges the service to the bill of the guest</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The guest does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The room does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2b1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2c. The service does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2c1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2d. The guest is not checked into the specified room</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2d1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc10-fetch-the-bills-of-a-guest"><a class="link" href="#use-case-uc10-fetch-the-bills-of-a-guest">Use Case: UC10 - Fetch the bills of a guest</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to fetch the bill of a guest</p>
+</li>
+<li>
+<p>User supplies guest id</p>
+</li>
+<li>
+<p>Morpheus shows the total outstanding payment of the guest and the bill details</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The guest does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The guest does not have outstanding bills</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2b1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc11-remove-a-charged-service-from-a-bill"><a class="link" href="#use-case-uc11-remove-a-charged-service-from-a-bill">Use Case: UC11 - Remove a charged service from a bill</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to remove a charged service from a bill</p>
+</li>
+<li>
+<p>User supplies guest id, room number and service id</p>
+</li>
+<li>
+<p>Morpheus removed charged service from the bill of the guest</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The guest does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2b. The room does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2b1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2c. The service does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2c1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2d. The guest does not have outstanding bills</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2d1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>2e. The bill does not have the charged service</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2e1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc12-search-for-a-guest"><a class="link" href="#use-case-uc12-search-for-a-guest">Use Case: UC12 - Search for a guest</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to search for a guest</p>
+</li>
+<li>
+<p>User supplies guest id and/or name</p>
+</li>
+<li>
+<p>Morpheus shows a list of guests with matching id/names</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc13-search-for-a-room"><a class="link" href="#use-case-uc13-search-for-a-room">Use Case: UC13 - Search for a room</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to search for a room</p>
+</li>
+<li>
+<p>User supplies guest id and/or name and/or room number</p>
+</li>
+<li>
+<p>Morpheus shows a list of rooms with matching id/names/room bumbers</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc14-search-for-a-booking"><a class="link" href="#use-case-uc14-search-for-a-booking">Use Case: UC14 - Search for a booking</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to search for a guest</p>
+</li>
+<li>
+<p>User supplies guest id and/or name and/or room number</p>
+</li>
+<li>
+<p>Morpheus shows a list of bookings with matching id/names/room numbers</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect4">
+<h5 id="use-case-uc15-delete-a-guest"><a class="link" href="#use-case-uc15-delete-a-guest">Use Case: UC15 - Delete a guest</a></h5>
+<div class="paragraph">
+<p><strong>MSS</strong></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>User requests to delete a guest</p>
+</li>
+<li>
+<p>User supplies index of guest or guest id</p>
+</li>
+<li>
+<p>Morpheus deletes the guest from the application</p>
+<div class="paragraph">
+<p>Use case ends.</p>
+</div>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p><strong>Extensions</strong></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>2a. The guest does not exist in the application</p>
+<div class="ulist">
+<ul>
+<li>
+<p>2a1. Morpheus shows an error message</p>
+<div class="paragraph">
+<p>Use case ends.</p>
 </div>
 </li>
 </ul>
@@ -2164,4 +2835,4 @@ of the entire team, we believe that we have created an end-product that is able 
 </div>
 </div>
 </div>
-</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:14:29 UTC</div></div></div></body></html>
+</div></div><div id="footer"><div class="container"><div id="footer-text">Last updated 2020-04-13 11:20:11 UTC</div></div></div></body></html>

@@ -42,7 +42,7 @@ public class DeleteChargedServiceCommand extends Command {
     public static final String MESSAGE_GUEST_NONEXISTENT = "Guest (ID: %1$s) does not exist in the system.";
     public static final String MESSAGE_ROOM_NONEXISTENT = "Room %1$s does not exist in the system.";
     public static final String MESSAGE_SERVICE_NONEXISTENT = "Service (ID: %1$s) does not exist in the system.";
-    public static final String MESSAGE_BILL_NONEXISTENT = "Guest (ID: %1$s) does not have any outstanding bills for"
+    public static final String MESSAGE_BILL_NONEXISTENT = "Guest (ID: %1$s) does not have any outstanding bills for "
             + "Room %2$s.";
     public static final String MESSAGE_SERIVCE_NOT_IN_BILL = "Service (ID: %1$s) does not exist in the bill.";
 

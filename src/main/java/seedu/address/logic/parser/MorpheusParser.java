@@ -9,7 +9,6 @@ import java.util.regex.Pattern;
 import seedu.address.logic.commands.AddGuestCommand;
 import seedu.address.logic.commands.AddRoomCommand;
 import seedu.address.logic.commands.AddServiceCommand;
-import seedu.address.logic.commands.AddTierCommand;
 import seedu.address.logic.commands.ChargeServiceCommand;
 import seedu.address.logic.commands.CheckInCommand;
 import seedu.address.logic.commands.CheckOutCommand;
@@ -78,9 +77,6 @@ public class MorpheusParser {
 
         case CheckOutCommand.COMMAND_WORD:
             return new CheckOutCommandParser().parse(arguments);
-
-        case AddTierCommand.COMMAND_WORD:
-            return new AddTierCommandParser().parse(arguments);
 
         case EditCommand.COMMAND_WORD:
             return new EditCommandParser().parse(arguments);
